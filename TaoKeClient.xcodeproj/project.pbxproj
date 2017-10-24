@@ -1,0 +1,777 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		026FD94C86D7ADE6718D044A /* libPods-TaoKeClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C991403214A430B2EDC53D /* libPods-TaoKeClient.a */; };
+		DB3DD9951F9B106C007F53E7 /* TKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3DD98C1F9B106B007F53E7 /* TKAppDelegate.m */; };
+		DB3DD9961F9B106C007F53E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB3DD9901F9B106B007F53E7 /* Assets.xcassets */; };
+		DB3DD99A1F9B1130007F53E7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB3DD9981F9B1130007F53E7 /* Info.plist */; };
+		DB3DD99B1F9B1130007F53E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3DD9991F9B1130007F53E7 /* main.m */; };
+		DB3DD99F1F9B1169007F53E7 /* TKRootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3DD99E1F9B1169007F53E7 /* TKRootTabBarController.m */; };
+		DB3DD9AB1F9B2C15007F53E7 /* TKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3DD9AA1F9B2C15007F53E7 /* TKViewController.m */; };
+		DB3DD9AE1F9B2C3F007F53E7 /* TKCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3DD9AD1F9B2C3F007F53E7 /* TKCollectionViewController.m */; };
+		DB3DD9B11F9B2D1A007F53E7 /* TKTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3DD9B01F9B2D1A007F53E7 /* TKTableViewController.m */; };
+		DB3DD9B41F9B2E69007F53E7 /* UIColor+ImageGenerate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3DD9B21F9B2E69007F53E7 /* UIColor+ImageGenerate.m */; };
+		DB3DD9BA1F9B3202007F53E7 /* UINavigationController+TKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3DD9B91F9B3202007F53E7 /* UINavigationController+TKExtension.m */; };
+		DB3DD9BD1F9B34B1007F53E7 /* TKUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3DD9BC1F9B34B1007F53E7 /* TKUtility.m */; };
+		DB3DD9C61F9B3AB5007F53E7 /* TKDictionaryProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3DD9BE1F9B3AB5007F53E7 /* TKDictionaryProxy.m */; };
+		DB3DD9C71F9B3AB5007F53E7 /* TKTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3DD9C21F9B3AB5007F53E7 /* TKTimer.m */; };
+		DB3DD9C81F9B3AB5007F53E7 /* TKArchiverManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3DD9C31F9B3AB5007F53E7 /* TKArchiverManager.m */; };
+		DB3DD9C91F9B3AB5007F53E7 /* TKRuntimeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3DD9C41F9B3AB5007F53E7 /* TKRuntimeTool.m */; };
+		DB6417C01F9EEB720060CE98 /* TKDiscountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6417BF1F9EEB720060CE98 /* TKDiscountViewController.m */; };
+		DB6417C31F9EF10C0060CE98 /* UIView+TKFrameChanged.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6417C11F9EF10C0060CE98 /* UIView+TKFrameChanged.m */; };
+		DB6417C61F9F0C3F0060CE98 /* AppAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB6417C51F9F0C3F0060CE98 /* AppAssets.xcassets */; };
+		DB6417D11F9F0DF90060CE98 /* LLSegmentBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6417CA1F9F0DF90060CE98 /* LLSegmentBar.m */; };
+		DB6417D21F9F0DF90060CE98 /* LLSegmentBarConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6417CC1F9F0DF90060CE98 /* LLSegmentBarConfig.m */; };
+		DB6417D31F9F0DF90060CE98 /* LLSegmentBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6417CE1F9F0DF90060CE98 /* LLSegmentBarVC.m */; };
+		DB6417D41F9F0DF90060CE98 /* UIView+LLSegmentBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6417D01F9F0DF90060CE98 /* UIView+LLSegmentBar.m */; };
+		DB6417D71F9F14E10060CE98 /* TKAllCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6417D61F9F14E10060CE98 /* TKAllCategoryViewController.m */; };
+		DB6417DB1F9F1CA30060CE98 /* NSDictionary+TKIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6417DA1F9F1CA30060CE98 /* NSDictionary+TKIdentifier.m */; };
+		DB6417E21F9F22300060CE98 /* TKAllCategoryHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6417E11F9F22300060CE98 /* TKAllCategoryHeaderView.m */; };
+		DB6417E91F9F22A60060CE98 /* TKCardCycleCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6417E61F9F22A60060CE98 /* TKCardCycleCollectionCell.m */; };
+		DB6417EA1F9F22A60060CE98 /* TKCardCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6417E81F9F22A60060CE98 /* TKCardCycleScrollView.m */; };
+		DB6417F11F9F31960060CE98 /* TKScrollPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6417F01F9F31960060CE98 /* TKScrollPageViewController.m */; };
+		DB6417F41F9F31ED0060CE98 /* NSArray+TKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6417F31F9F31ED0060CE98 /* NSArray+TKExtension.m */; };
+		DB6417F71F9F35F50060CE98 /* SDCycleScrollView+TKIndexSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6417F61F9F35F50060CE98 /* SDCycleScrollView+TKIndexSetter.m */; };
+		DB6417FA1F9F401E0060CE98 /* NSString+TKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6417F81F9F401D0060CE98 /* NSString+TKExtension.m */; };
+		DB6417FD1F9F403C0060CE98 /* NSObject+TKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6417FB1F9F403C0060CE98 /* NSObject+TKExtension.m */; };
+		DB6418031F9F42EF0060CE98 /* NSDate+TKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6418021F9F42EF0060CE98 /* NSDate+TKExtension.m */; };
+		DBCF03151F9EE5E900D44188 /* TKNetWorkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCF03131F9EE5E900D44188 /* TKNetWorkingManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		56C991403214A430B2EDC53D /* libPods-TaoKeClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TaoKeClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADE388CD7C58A6A5D8FB33F1 /* Pods-TaoKeClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaoKeClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-TaoKeClient/Pods-TaoKeClient.release.xcconfig"; sourceTree = "<group>"; };
+		AF002C2BC19B4DD486EA8031 /* Pods-TaoKeClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaoKeClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TaoKeClient/Pods-TaoKeClient.debug.xcconfig"; sourceTree = "<group>"; };
+		DB3DD98B1F9B106B007F53E7 /* TKAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAppDelegate.h; sourceTree = "<group>"; };
+		DB3DD98C1F9B106B007F53E7 /* TKAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAppDelegate.m; sourceTree = "<group>"; };
+		DB3DD9901F9B106B007F53E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DB3DD9981F9B1130007F53E7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = TaoKeClient/Info.plist; sourceTree = SOURCE_ROOT; };
+		DB3DD9991F9B1130007F53E7 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = TaoKeClient/main.m; sourceTree = SOURCE_ROOT; };
+		DB3DD99D1F9B1169007F53E7 /* TKRootTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKRootTabBarController.h; sourceTree = "<group>"; };
+		DB3DD99E1F9B1169007F53E7 /* TKRootTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKRootTabBarController.m; sourceTree = "<group>"; };
+		DB3DD9A11F9B11E7007F53E7 /* TaoKe-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TaoKe-Prefix.pch"; sourceTree = "<group>"; };
+		DB3DD9A21F9B11FB007F53E7 /* TKAppConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKAppConfig.h; sourceTree = "<group>"; };
+		DB3DD9A91F9B2C15007F53E7 /* TKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKViewController.h; sourceTree = "<group>"; };
+		DB3DD9AA1F9B2C15007F53E7 /* TKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKViewController.m; sourceTree = "<group>"; };
+		DB3DD9AC1F9B2C3F007F53E7 /* TKCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKCollectionViewController.h; sourceTree = "<group>"; };
+		DB3DD9AD1F9B2C3F007F53E7 /* TKCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKCollectionViewController.m; sourceTree = "<group>"; };
+		DB3DD9AF1F9B2D1A007F53E7 /* TKTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKTableViewController.h; sourceTree = "<group>"; };
+		DB3DD9B01F9B2D1A007F53E7 /* TKTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKTableViewController.m; sourceTree = "<group>"; };
+		DB3DD9B21F9B2E69007F53E7 /* UIColor+ImageGenerate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ImageGenerate.m"; sourceTree = "<group>"; };
+		DB3DD9B31F9B2E69007F53E7 /* UIColor+ImageGenerate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ImageGenerate.h"; sourceTree = "<group>"; };
+		DB3DD9B81F9B3202007F53E7 /* UINavigationController+TKExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+TKExtension.h"; sourceTree = "<group>"; };
+		DB3DD9B91F9B3202007F53E7 /* UINavigationController+TKExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+TKExtension.m"; sourceTree = "<group>"; };
+		DB3DD9BB1F9B34B1007F53E7 /* TKUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKUtility.h; sourceTree = "<group>"; };
+		DB3DD9BC1F9B34B1007F53E7 /* TKUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKUtility.m; sourceTree = "<group>"; };
+		DB3DD9BE1F9B3AB5007F53E7 /* TKDictionaryProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKDictionaryProxy.m; sourceTree = "<group>"; };
+		DB3DD9BF1F9B3AB5007F53E7 /* TKDictionaryProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKDictionaryProxy.h; sourceTree = "<group>"; };
+		DB3DD9C01F9B3AB5007F53E7 /* TKArchiverManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKArchiverManager.h; sourceTree = "<group>"; };
+		DB3DD9C11F9B3AB5007F53E7 /* TKRuntimeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKRuntimeTool.h; sourceTree = "<group>"; };
+		DB3DD9C21F9B3AB5007F53E7 /* TKTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTimer.m; sourceTree = "<group>"; };
+		DB3DD9C31F9B3AB5007F53E7 /* TKArchiverManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKArchiverManager.m; sourceTree = "<group>"; };
+		DB3DD9C41F9B3AB5007F53E7 /* TKRuntimeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKRuntimeTool.m; sourceTree = "<group>"; };
+		DB3DD9C51F9B3AB5007F53E7 /* TKTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTimer.h; sourceTree = "<group>"; };
+		DB48017C1F9B0A76007C3864 /* TaoKeClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaoKeClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB6417BE1F9EEB720060CE98 /* TKDiscountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKDiscountViewController.h; sourceTree = "<group>"; };
+		DB6417BF1F9EEB720060CE98 /* TKDiscountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKDiscountViewController.m; sourceTree = "<group>"; };
+		DB6417C11F9EF10C0060CE98 /* UIView+TKFrameChanged.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TKFrameChanged.m"; sourceTree = "<group>"; };
+		DB6417C21F9EF10C0060CE98 /* UIView+TKFrameChanged.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TKFrameChanged.h"; sourceTree = "<group>"; };
+		DB6417C51F9F0C3F0060CE98 /* AppAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppAssets.xcassets; sourceTree = "<group>"; };
+		DB6417C91F9F0DF90060CE98 /* LLSegmentBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSegmentBar.h; sourceTree = "<group>"; };
+		DB6417CA1F9F0DF90060CE98 /* LLSegmentBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSegmentBar.m; sourceTree = "<group>"; };
+		DB6417CB1F9F0DF90060CE98 /* LLSegmentBarConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSegmentBarConfig.h; sourceTree = "<group>"; };
+		DB6417CC1F9F0DF90060CE98 /* LLSegmentBarConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSegmentBarConfig.m; sourceTree = "<group>"; };
+		DB6417CD1F9F0DF90060CE98 /* LLSegmentBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSegmentBarVC.h; sourceTree = "<group>"; };
+		DB6417CE1F9F0DF90060CE98 /* LLSegmentBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSegmentBarVC.m; sourceTree = "<group>"; };
+		DB6417CF1F9F0DF90060CE98 /* UIView+LLSegmentBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LLSegmentBar.h"; sourceTree = "<group>"; };
+		DB6417D01F9F0DF90060CE98 /* UIView+LLSegmentBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LLSegmentBar.m"; sourceTree = "<group>"; };
+		DB6417D51F9F14E10060CE98 /* TKAllCategoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKAllCategoryViewController.h; sourceTree = "<group>"; };
+		DB6417D61F9F14E10060CE98 /* TKAllCategoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKAllCategoryViewController.m; sourceTree = "<group>"; };
+		DB6417D91F9F1CA30060CE98 /* NSDictionary+TKIdentifier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+TKIdentifier.h"; sourceTree = "<group>"; };
+		DB6417DA1F9F1CA30060CE98 /* NSDictionary+TKIdentifier.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+TKIdentifier.m"; sourceTree = "<group>"; };
+		DB6417DC1F9F1DFE0060CE98 /* TKGood.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKGood.h; sourceTree = "<group>"; };
+		DB6417DD1F9F210F0060CE98 /* TKCategoryTitle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKCategoryTitle.h; sourceTree = "<group>"; };
+		DB6417E01F9F22300060CE98 /* TKAllCategoryHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKAllCategoryHeaderView.h; sourceTree = "<group>"; };
+		DB6417E11F9F22300060CE98 /* TKAllCategoryHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKAllCategoryHeaderView.m; sourceTree = "<group>"; };
+		DB6417E51F9F22A60060CE98 /* TKCardCycleCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCardCycleCollectionCell.h; sourceTree = "<group>"; };
+		DB6417E61F9F22A60060CE98 /* TKCardCycleCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCardCycleCollectionCell.m; sourceTree = "<group>"; };
+		DB6417E71F9F22A60060CE98 /* TKCardCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCardCycleScrollView.h; sourceTree = "<group>"; };
+		DB6417E81F9F22A60060CE98 /* TKCardCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCardCycleScrollView.m; sourceTree = "<group>"; };
+		DB6417EF1F9F31960060CE98 /* TKScrollPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKScrollPageViewController.h; sourceTree = "<group>"; };
+		DB6417F01F9F31960060CE98 /* TKScrollPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKScrollPageViewController.m; sourceTree = "<group>"; };
+		DB6417F21F9F31EC0060CE98 /* NSArray+TKExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+TKExtension.h"; sourceTree = "<group>"; };
+		DB6417F31F9F31ED0060CE98 /* NSArray+TKExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+TKExtension.m"; sourceTree = "<group>"; };
+		DB6417F51F9F35F50060CE98 /* SDCycleScrollView+TKIndexSetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDCycleScrollView+TKIndexSetter.h"; sourceTree = "<group>"; };
+		DB6417F61F9F35F50060CE98 /* SDCycleScrollView+TKIndexSetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SDCycleScrollView+TKIndexSetter.m"; sourceTree = "<group>"; };
+		DB6417F81F9F401D0060CE98 /* NSString+TKExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TKExtension.m"; sourceTree = "<group>"; };
+		DB6417F91F9F401D0060CE98 /* NSString+TKExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TKExtension.h"; sourceTree = "<group>"; };
+		DB6417FB1F9F403C0060CE98 /* NSObject+TKExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TKExtension.m"; sourceTree = "<group>"; };
+		DB6417FC1F9F403C0060CE98 /* NSObject+TKExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+TKExtension.h"; sourceTree = "<group>"; };
+		DB6418011F9F42EF0060CE98 /* NSDate+TKExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+TKExtension.h"; sourceTree = "<group>"; };
+		DB6418021F9F42EF0060CE98 /* NSDate+TKExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TKExtension.m"; sourceTree = "<group>"; };
+		DBCF03121F9EE5E900D44188 /* TKNetWorkingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKNetWorkingManager.h; sourceTree = "<group>"; };
+		DBCF03131F9EE5E900D44188 /* TKNetWorkingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKNetWorkingManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB4801791F9B0A76007C3864 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				026FD94C86D7ADE6718D044A /* libPods-TaoKeClient.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		033E7CB31A278DE9DDCAD11A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AF002C2BC19B4DD486EA8031 /* Pods-TaoKeClient.debug.xcconfig */,
+				ADE388CD7C58A6A5D8FB33F1 /* Pods-TaoKeClient.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		12B79976DA46904DAEEBC3E4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				56C991403214A430B2EDC53D /* libPods-TaoKeClient.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB3DD9871F9B106B007F53E7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB3DD9981F9B1130007F53E7 /* Info.plist */,
+				DB3DD9991F9B1130007F53E7 /* main.m */,
+				DB3DD9971F9B1128007F53E7 /* Base.lproj */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DB3DD98A1F9B106B007F53E7 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				DB3DD98B1F9B106B007F53E7 /* TKAppDelegate.h */,
+				DB3DD98C1F9B106B007F53E7 /* TKAppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		DB3DD98D1F9B106B007F53E7 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				DB3DD9A11F9B11E7007F53E7 /* TaoKe-Prefix.pch */,
+				DB3DD9A21F9B11FB007F53E7 /* TKAppConfig.h */,
+				DB3DD9BB1F9B34B1007F53E7 /* TKUtility.h */,
+				DB3DD9BC1F9B34B1007F53E7 /* TKUtility.m */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		DB3DD98E1F9B106B007F53E7 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				DB3DD9A31F9B1235007F53E7 /* Category */,
+				DB3DD9A41F9B1235007F53E7 /* FunctionTools */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		DB3DD98F1F9B106B007F53E7 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				DB3DD9901F9B106B007F53E7 /* Assets.xcassets */,
+				DB6417C51F9F0C3F0060CE98 /* AppAssets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		DB3DD9911F9B106B007F53E7 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				DB6417EB1F9F31390060CE98 /* ScrollPageController */,
+				DB6417C71F9F0DF90060CE98 /* LLSegmentBar */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		DB3DD9921F9B106B007F53E7 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				DB6417DE1F9F22040060CE98 /* View */,
+				DB6417D81F9F1BC70060CE98 /* Protocol */,
+				DBCF030E1F9EE5E900D44188 /* Network */,
+				DB3DD9B51F9B2EE3007F53E7 /* Module */,
+				DB3DD9A81F9B2C15007F53E7 /* BaseViewController */,
+				DB3DD99C1F9B114A007F53E7 /* RootViewController */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		DB3DD9971F9B1128007F53E7 /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+		DB3DD99C1F9B114A007F53E7 /* RootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DB3DD99D1F9B1169007F53E7 /* TKRootTabBarController.h */,
+				DB3DD99E1F9B1169007F53E7 /* TKRootTabBarController.m */,
+				DB6417BE1F9EEB720060CE98 /* TKDiscountViewController.h */,
+				DB6417BF1F9EEB720060CE98 /* TKDiscountViewController.m */,
+				DB6417D51F9F14E10060CE98 /* TKAllCategoryViewController.h */,
+				DB6417D61F9F14E10060CE98 /* TKAllCategoryViewController.m */,
+			);
+			path = RootViewController;
+			sourceTree = "<group>";
+		};
+		DB3DD9A31F9B1235007F53E7 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				DB6417FC1F9F403C0060CE98 /* NSObject+TKExtension.h */,
+				DB6417FB1F9F403C0060CE98 /* NSObject+TKExtension.m */,
+				DB6417F91F9F401D0060CE98 /* NSString+TKExtension.h */,
+				DB6417F81F9F401D0060CE98 /* NSString+TKExtension.m */,
+				DB6417F51F9F35F50060CE98 /* SDCycleScrollView+TKIndexSetter.h */,
+				DB6417F61F9F35F50060CE98 /* SDCycleScrollView+TKIndexSetter.m */,
+				DB6417F21F9F31EC0060CE98 /* NSArray+TKExtension.h */,
+				DB6417F31F9F31ED0060CE98 /* NSArray+TKExtension.m */,
+				DB6417C21F9EF10C0060CE98 /* UIView+TKFrameChanged.h */,
+				DB6417C11F9EF10C0060CE98 /* UIView+TKFrameChanged.m */,
+				DB3DD9B31F9B2E69007F53E7 /* UIColor+ImageGenerate.h */,
+				DB3DD9B21F9B2E69007F53E7 /* UIColor+ImageGenerate.m */,
+				DB3DD9B81F9B3202007F53E7 /* UINavigationController+TKExtension.h */,
+				DB3DD9B91F9B3202007F53E7 /* UINavigationController+TKExtension.m */,
+				DB6418011F9F42EF0060CE98 /* NSDate+TKExtension.h */,
+				DB6418021F9F42EF0060CE98 /* NSDate+TKExtension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		DB3DD9A41F9B1235007F53E7 /* FunctionTools */ = {
+			isa = PBXGroup;
+			children = (
+				DB3DD9C01F9B3AB5007F53E7 /* TKArchiverManager.h */,
+				DB3DD9C31F9B3AB5007F53E7 /* TKArchiverManager.m */,
+				DB3DD9BF1F9B3AB5007F53E7 /* TKDictionaryProxy.h */,
+				DB3DD9BE1F9B3AB5007F53E7 /* TKDictionaryProxy.m */,
+				DB3DD9C11F9B3AB5007F53E7 /* TKRuntimeTool.h */,
+				DB3DD9C41F9B3AB5007F53E7 /* TKRuntimeTool.m */,
+				DB3DD9C51F9B3AB5007F53E7 /* TKTimer.h */,
+				DB3DD9C21F9B3AB5007F53E7 /* TKTimer.m */,
+			);
+			path = FunctionTools;
+			sourceTree = "<group>";
+		};
+		DB3DD9A81F9B2C15007F53E7 /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DB3DD9A91F9B2C15007F53E7 /* TKViewController.h */,
+				DB3DD9AA1F9B2C15007F53E7 /* TKViewController.m */,
+				DB3DD9AC1F9B2C3F007F53E7 /* TKCollectionViewController.h */,
+				DB3DD9AD1F9B2C3F007F53E7 /* TKCollectionViewController.m */,
+				DB3DD9AF1F9B2D1A007F53E7 /* TKTableViewController.h */,
+				DB3DD9B01F9B2D1A007F53E7 /* TKTableViewController.m */,
+			);
+			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		DB3DD9B51F9B2EE3007F53E7 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				DB3DD9B61F9B2EE3007F53E7 /* RootChoicenes */,
+				DB3DD9B71F9B2EE3007F53E7 /* RootDiscount */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		DB3DD9B61F9B2EE3007F53E7 /* RootChoicenes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RootChoicenes;
+			sourceTree = "<group>";
+		};
+		DB3DD9B71F9B2EE3007F53E7 /* RootDiscount */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RootDiscount;
+			sourceTree = "<group>";
+		};
+		DB4801731F9B0A76007C3864 = {
+			isa = PBXGroup;
+			children = (
+				DB48017E1F9B0A76007C3864 /* TaoKeClient */,
+				DB48017D1F9B0A76007C3864 /* Products */,
+				033E7CB31A278DE9DDCAD11A /* Pods */,
+				12B79976DA46904DAEEBC3E4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DB48017D1F9B0A76007C3864 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB48017C1F9B0A76007C3864 /* TaoKeClient.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB48017E1F9B0A76007C3864 /* TaoKeClient */ = {
+			isa = PBXGroup;
+			children = (
+				DB3DD98A1F9B106B007F53E7 /* AppDelegate */,
+				DB3DD9921F9B106B007F53E7 /* Class */,
+				DB3DD98D1F9B106B007F53E7 /* Config */,
+				DB3DD9911F9B106B007F53E7 /* Library */,
+				DB3DD98F1F9B106B007F53E7 /* Resource */,
+				DB3DD9871F9B106B007F53E7 /* Supporting Files */,
+				DB3DD98E1F9B106B007F53E7 /* Tools */,
+			);
+			path = TaoKeClient;
+			sourceTree = "<group>";
+		};
+		DB6417C71F9F0DF90060CE98 /* LLSegmentBar */ = {
+			isa = PBXGroup;
+			children = (
+				DB6417C81F9F0DF90060CE98 /* Classes */,
+			);
+			path = LLSegmentBar;
+			sourceTree = "<group>";
+		};
+		DB6417C81F9F0DF90060CE98 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DB6417C91F9F0DF90060CE98 /* LLSegmentBar.h */,
+				DB6417CA1F9F0DF90060CE98 /* LLSegmentBar.m */,
+				DB6417CB1F9F0DF90060CE98 /* LLSegmentBarConfig.h */,
+				DB6417CC1F9F0DF90060CE98 /* LLSegmentBarConfig.m */,
+				DB6417CD1F9F0DF90060CE98 /* LLSegmentBarVC.h */,
+				DB6417CE1F9F0DF90060CE98 /* LLSegmentBarVC.m */,
+				DB6417CF1F9F0DF90060CE98 /* UIView+LLSegmentBar.h */,
+				DB6417D01F9F0DF90060CE98 /* UIView+LLSegmentBar.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		DB6417D81F9F1BC70060CE98 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				DB6417D91F9F1CA30060CE98 /* NSDictionary+TKIdentifier.h */,
+				DB6417DA1F9F1CA30060CE98 /* NSDictionary+TKIdentifier.m */,
+				DB6417DC1F9F1DFE0060CE98 /* TKGood.h */,
+				DB6417DD1F9F210F0060CE98 /* TKCategoryTitle.h */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		DB6417DE1F9F22040060CE98 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DB6417E31F9F22A60060CE98 /* CycleView */,
+				DB6417DF1F9F22040060CE98 /* TableHeaderView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DB6417DF1F9F22040060CE98 /* TableHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				DB6417E01F9F22300060CE98 /* TKAllCategoryHeaderView.h */,
+				DB6417E11F9F22300060CE98 /* TKAllCategoryHeaderView.m */,
+			);
+			path = TableHeaderView;
+			sourceTree = "<group>";
+		};
+		DB6417E31F9F22A60060CE98 /* CycleView */ = {
+			isa = PBXGroup;
+			children = (
+				DB6417E41F9F22A60060CE98 /* CardCycleScrollView */,
+			);
+			path = CycleView;
+			sourceTree = "<group>";
+		};
+		DB6417E41F9F22A60060CE98 /* CardCycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				DB6417E51F9F22A60060CE98 /* TKCardCycleCollectionCell.h */,
+				DB6417E61F9F22A60060CE98 /* TKCardCycleCollectionCell.m */,
+				DB6417E71F9F22A60060CE98 /* TKCardCycleScrollView.h */,
+				DB6417E81F9F22A60060CE98 /* TKCardCycleScrollView.m */,
+			);
+			path = CardCycleScrollView;
+			sourceTree = "<group>";
+		};
+		DB6417EB1F9F31390060CE98 /* ScrollPageController */ = {
+			isa = PBXGroup;
+			children = (
+				DB6417EF1F9F31960060CE98 /* TKScrollPageViewController.h */,
+				DB6417F01F9F31960060CE98 /* TKScrollPageViewController.m */,
+			);
+			path = ScrollPageController;
+			sourceTree = "<group>";
+		};
+		DBCF030E1F9EE5E900D44188 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DBCF030F1F9EE5E900D44188 /* NetworkRequestManager */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		DBCF030F1F9EE5E900D44188 /* NetworkRequestManager */ = {
+			isa = PBXGroup;
+			children = (
+				DBCF03121F9EE5E900D44188 /* TKNetWorkingManager.h */,
+				DBCF03131F9EE5E900D44188 /* TKNetWorkingManager.m */,
+			);
+			path = NetworkRequestManager;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DB48017B1F9B0A76007C3864 /* TaoKeClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB4801921F9B0A76007C3864 /* Build configuration list for PBXNativeTarget "TaoKeClient" */;
+			buildPhases = (
+				02532667954CAA3BF048405B /* [CP] Check Pods Manifest.lock */,
+				DB4801781F9B0A76007C3864 /* Sources */,
+				DB4801791F9B0A76007C3864 /* Frameworks */,
+				DB48017A1F9B0A76007C3864 /* Resources */,
+				9B3514A0C92DA0867EE22714 /* [CP] Embed Pods Frameworks */,
+				F853F0CD4295BE235EDBDEA9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TaoKeClient;
+			productName = TaoKeClient;
+			productReference = DB48017C1F9B0A76007C3864 /* TaoKeClient.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB4801741F9B0A76007C3864 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TK;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = YueWen;
+				TargetAttributes = {
+					DB48017B1F9B0A76007C3864 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = DB4801771F9B0A76007C3864 /* Build configuration list for PBXProject "TaoKeClient" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DB4801731F9B0A76007C3864;
+			productRefGroup = DB48017D1F9B0A76007C3864 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB48017B1F9B0A76007C3864 /* TaoKeClient */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB48017A1F9B0A76007C3864 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB6417C61F9F0C3F0060CE98 /* AppAssets.xcassets in Resources */,
+				DB3DD99A1F9B1130007F53E7 /* Info.plist in Resources */,
+				DB3DD9961F9B106C007F53E7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02532667954CAA3BF048405B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TaoKeClient-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B3514A0C92DA0867EE22714 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TaoKeClient/Pods-TaoKeClient-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F853F0CD4295BE235EDBDEA9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TaoKeClient/Pods-TaoKeClient-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TaoKeClient/Pods-TaoKeClient-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB4801781F9B0A76007C3864 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB6417D11F9F0DF90060CE98 /* LLSegmentBar.m in Sources */,
+				DB3DD9BA1F9B3202007F53E7 /* UINavigationController+TKExtension.m in Sources */,
+				DB6417E21F9F22300060CE98 /* TKAllCategoryHeaderView.m in Sources */,
+				DB6417EA1F9F22A60060CE98 /* TKCardCycleScrollView.m in Sources */,
+				DB6417FD1F9F403C0060CE98 /* NSObject+TKExtension.m in Sources */,
+				DB3DD9C91F9B3AB5007F53E7 /* TKRuntimeTool.m in Sources */,
+				DB3DD9BD1F9B34B1007F53E7 /* TKUtility.m in Sources */,
+				DB6417D71F9F14E10060CE98 /* TKAllCategoryViewController.m in Sources */,
+				DB6417D41F9F0DF90060CE98 /* UIView+LLSegmentBar.m in Sources */,
+				DB3DD99F1F9B1169007F53E7 /* TKRootTabBarController.m in Sources */,
+				DB3DD99B1F9B1130007F53E7 /* main.m in Sources */,
+				DB6417F71F9F35F50060CE98 /* SDCycleScrollView+TKIndexSetter.m in Sources */,
+				DB3DD9B11F9B2D1A007F53E7 /* TKTableViewController.m in Sources */,
+				DB6417D31F9F0DF90060CE98 /* LLSegmentBarVC.m in Sources */,
+				DB6417C31F9EF10C0060CE98 /* UIView+TKFrameChanged.m in Sources */,
+				DB6417F11F9F31960060CE98 /* TKScrollPageViewController.m in Sources */,
+				DB6417C01F9EEB720060CE98 /* TKDiscountViewController.m in Sources */,
+				DB6417DB1F9F1CA30060CE98 /* NSDictionary+TKIdentifier.m in Sources */,
+				DBCF03151F9EE5E900D44188 /* TKNetWorkingManager.m in Sources */,
+				DB6417E91F9F22A60060CE98 /* TKCardCycleCollectionCell.m in Sources */,
+				DB6417FA1F9F401E0060CE98 /* NSString+TKExtension.m in Sources */,
+				DB3DD9951F9B106C007F53E7 /* TKAppDelegate.m in Sources */,
+				DB6417D21F9F0DF90060CE98 /* LLSegmentBarConfig.m in Sources */,
+				DB3DD9B41F9B2E69007F53E7 /* UIColor+ImageGenerate.m in Sources */,
+				DB3DD9C61F9B3AB5007F53E7 /* TKDictionaryProxy.m in Sources */,
+				DB6417F41F9F31ED0060CE98 /* NSArray+TKExtension.m in Sources */,
+				DB3DD9C81F9B3AB5007F53E7 /* TKArchiverManager.m in Sources */,
+				DB3DD9AE1F9B2C3F007F53E7 /* TKCollectionViewController.m in Sources */,
+				DB3DD9C71F9B3AB5007F53E7 /* TKTimer.m in Sources */,
+				DB3DD9AB1F9B2C15007F53E7 /* TKViewController.m in Sources */,
+				DB6418031F9F42EF0060CE98 /* NSDate+TKExtension.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		DB4801901F9B0A76007C3864 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DB4801911F9B0A76007C3864 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DB4801931F9B0A76007C3864 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF002C2BC19B4DD486EA8031 /* Pods-TaoKeClient.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREFIX_HEADER = "TaoKeClient/Config/TaoKe-Prefix.pch";
+				INFOPLIST_FILE = TaoKeClient/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tao.TaoKeClient;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		DB4801941F9B0A76007C3864 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADE388CD7C58A6A5D8FB33F1 /* Pods-TaoKeClient.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREFIX_HEADER = "TaoKeClient/Config/TaoKe-Prefix.pch";
+				INFOPLIST_FILE = TaoKeClient/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tao.TaoKeClient;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB4801771F9B0A76007C3864 /* Build configuration list for PBXProject "TaoKeClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB4801901F9B0A76007C3864 /* Debug */,
+				DB4801911F9B0A76007C3864 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB4801921F9B0A76007C3864 /* Build configuration list for PBXNativeTarget "TaoKeClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB4801931F9B0A76007C3864 /* Debug */,
+				DB4801941F9B0A76007C3864 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DB4801741F9B0A76007C3864 /* Project object */;
+}
