@@ -24,12 +24,13 @@
        
         UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         tableView.backgroundColor = UIColor.whiteColor;
+        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         
         tableView;
     });
     
-    
-    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
     
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -45,5 +46,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - UITableViewDatasource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [UITableViewCell new];
+}
 
 @end

@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /// 最基本的标题列表
-@interface TKNormalTitleHeaderView : UIView
+@interface TKNormalTitleHeaderView : UITableViewHeaderFooterView
 
 /// 显示标题的标签
 @property (nonatomic, strong) UILabel *titleLabel;

@@ -12,9 +12,9 @@
 @implementation TKNormalTitleHeaderView
 
 
-- (instancetype)initWithFrame:(CGRect)frame
+- (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier
 {
-    if (self = [super initWithFrame:frame]) {
+    if (self = [super initWithReuseIdentifier:reuseIdentifier]) {
         
         [self buildViews];
     }
@@ -38,6 +38,7 @@
         
         label.font = TKUtilityFont(@"PingFangSC-Medium", TKScale(16));
         label.textColor = TKColorFromRGB(0x666666);
+        label.backgroundColor = UIColor.whiteColor;
         
         label;
     });
@@ -47,11 +48,14 @@
 }
 
 
+
 - (void)buildLayouts
 {
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
        
-        make.edges.offset(0);
+        make.top.bottom.offset(0);
+        make.left.offset(TKScale(10));
+        make.right.offset(TKScale(-10));
     }];
 }
 

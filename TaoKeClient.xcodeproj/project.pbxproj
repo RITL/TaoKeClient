@@ -44,6 +44,7 @@
 		DB6417FD1F9F403C0060CE98 /* NSObject+TKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6417FB1F9F403C0060CE98 /* NSObject+TKExtension.m */; };
 		DB6418031F9F42EF0060CE98 /* NSDate+TKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6418021F9F42EF0060CE98 /* NSDate+TKExtension.m */; };
 		DB654E131FA076D10054A61F /* TKNormalTitleHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB654E121FA076D10054A61F /* TKNormalTitleHeaderView.m */; };
+		DB654E181FA07B930054A61F /* TKBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB654E171FA07B930054A61F /* TKBaseTableViewCell.m */; };
 		DBCF03151F9EE5E900D44188 /* TKNetWorkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCF03131F9EE5E900D44188 /* TKNetWorkingManager.m */; };
 /* End PBXBuildFile section */
 
@@ -124,6 +125,8 @@
 		DB6418021F9F42EF0060CE98 /* NSDate+TKExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TKExtension.m"; sourceTree = "<group>"; };
 		DB654E111FA076D10054A61F /* TKNormalTitleHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKNormalTitleHeaderView.h; sourceTree = "<group>"; };
 		DB654E121FA076D10054A61F /* TKNormalTitleHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKNormalTitleHeaderView.m; sourceTree = "<group>"; };
+		DB654E161FA07B930054A61F /* TKBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBaseTableViewCell.h; sourceTree = "<group>"; };
+		DB654E171FA07B930054A61F /* TKBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBaseTableViewCell.m; sourceTree = "<group>"; };
 		DBCF03121F9EE5E900D44188 /* TKNetWorkingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKNetWorkingManager.h; sourceTree = "<group>"; };
 		DBCF03131F9EE5E900D44188 /* TKNetWorkingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKNetWorkingManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -386,6 +389,7 @@
 		DB6417DE1F9F22040060CE98 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DB654E141FA07B930054A61F /* TableViewCell */,
 				DB6417E31F9F22A60060CE98 /* CycleView */,
 				DB6417DF1F9F22040060CE98 /* TableHeaderView */,
 			);
@@ -429,6 +433,23 @@
 				DB6417F01F9F31960060CE98 /* TKScrollPageViewController.m */,
 			);
 			path = ScrollPageController;
+			sourceTree = "<group>";
+		};
+		DB654E141FA07B930054A61F /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DB654E151FA07B930054A61F /* BaseCell */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		DB654E151FA07B930054A61F /* BaseCell */ = {
+			isa = PBXGroup;
+			children = (
+				DB654E161FA07B930054A61F /* TKBaseTableViewCell.h */,
+				DB654E171FA07B930054A61F /* TKBaseTableViewCell.m */,
+			);
+			path = BaseCell;
 			sourceTree = "<group>";
 		};
 		DBCF030E1F9EE5E900D44188 /* Network */ = {
@@ -601,6 +622,7 @@
 				DBCF03151F9EE5E900D44188 /* TKNetWorkingManager.m in Sources */,
 				DB6417E91F9F22A60060CE98 /* TKCardCycleCollectionCell.m in Sources */,
 				DB6417FA1F9F401E0060CE98 /* NSString+TKExtension.m in Sources */,
+				DB654E181FA07B930054A61F /* TKBaseTableViewCell.m in Sources */,
 				DB3DD9951F9B106C007F53E7 /* TKAppDelegate.m in Sources */,
 				DB6417D21F9F0DF90060CE98 /* LLSegmentBarConfig.m in Sources */,
 				DB3DD9B41F9B2E69007F53E7 /* UIColor+ImageGenerate.m in Sources */,
