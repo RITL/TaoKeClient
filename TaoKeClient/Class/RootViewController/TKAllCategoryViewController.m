@@ -28,21 +28,23 @@
     self.headerView = ({
        
         TKAllCategoryHeaderView *view = [TKAllCategoryHeaderView new];
+        view.backgroundColor = UIColor.whiteColor;
         view;
     });
     
     
-    self.headerView.frame = CGRectMake(0, 0, self.tk_width, 206);
+    self.headerView.frame = CGRectMake(0, 0, self.tk_width, TKScale(265));
     self.tableView.tableHeaderView = self.headerView;
     
     [self.tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
        
         make.left.top.and.right.offset(0);
-        make.height.mas_equalTo(400);
+        make.bottom.offset(0);
         
     }];
     
     [self requestBannerInfo];
+    [self requestCategory];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,13 +57,48 @@
 /// 请求轮播视图
 - (void)requestBannerInfo
 {
-    [TKNetWorkingManager requestWithUrlString:TKBaseUrlAppendTo(@"/api.php?m=Api&http://fulihot.lixiaopeng.top/api.php?m=Api&c=Index&a=getindex") Method:HTTP_GET Parameters:nil success:^(NSDictionary *data) {
+    [TKNetWorkingManager requestWithUrlString:TKBaseUrlAppendTo(@"/api.php?m=Api&c=Index&a=getindextui") Method:HTTP_GET Parameters:nil success:^(NSDictionary *data) {
         
-        NSInteger i = 0;
+        NSArray <NSDictionary *> *items = [data valueForKey:@"msg"];
+        
+        if (items) {
+            
+            NSArray <id <TKGood>> *tkGoods = [items tk_map:^id _Nonnull(NSDictionary * _Nonnull info) {
+                
+                return TKEnityCreateWithData(info);
+            }];
+            
+            //更新
+            [self.headerView updateCycleItems:tkGoods];
+        }
+        
         
     } failure:^(NSError *error) {
         
-        NSInteger i = 0;
+        
+    }];
+}
+
+
+/// 请求分类
+- (void)requestCategory
+{
+    [TKNetWorkingManager requestWithUrlString:TKBaseUrlAppendTo(@"/api.php?m=Api&c=Index&a=getTaokeCat&token=47ce3705d9eea09ae7addebdea25") Method:HTTP_GET Parameters:nil success:^(NSDictionary *data) {
+        
+        NSArray <NSDictionary *> *items = [data valueForKey:@"msg"];
+        
+        if (items) {
+            
+            NSArray <id <TKCategoryTitle>> *TKCategoryTitles = [items tk_map:^id _Nonnull(NSDictionary * _Nonnull info) {
+                
+                return TKEnityCreateWithData(info);
+            }];
+            
+            //更新
+            [self.headerView updateSegmentItems:TKCategoryTitles];
+        }
+        
+    } failure:^(NSError *error) {
         
     }];
 }

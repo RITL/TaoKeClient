@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UICollectionView *collectionView;
 
 /// 进行赋值
-@property (nonatomic, copy)NSArray <NSDictionary<TKGood> *> *items;
+@property (nonatomic, copy)NSArray <id <TKGood>> *items;
 
 @end
 

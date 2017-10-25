@@ -23,6 +23,8 @@
 		DB3DD9C71F9B3AB5007F53E7 /* TKTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3DD9C21F9B3AB5007F53E7 /* TKTimer.m */; };
 		DB3DD9C81F9B3AB5007F53E7 /* TKArchiverManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3DD9C31F9B3AB5007F53E7 /* TKArchiverManager.m */; };
 		DB3DD9C91F9B3AB5007F53E7 /* TKRuntimeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3DD9C41F9B3AB5007F53E7 /* TKRuntimeTool.m */; };
+		DB3F642A1FA0632F00C9601A /* CAGradientLayer+TKGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3F64291FA0632F00C9601A /* CAGradientLayer+TKGradientLayer.m */; };
+		DB3F642D1FA066BE00C9601A /* LLSegmentBar+TKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3F642C1FA066BE00C9601A /* LLSegmentBar+TKExtension.m */; };
 		DB6417C01F9EEB720060CE98 /* TKDiscountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6417BF1F9EEB720060CE98 /* TKDiscountViewController.m */; };
 		DB6417C31F9EF10C0060CE98 /* UIView+TKFrameChanged.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6417C11F9EF10C0060CE98 /* UIView+TKFrameChanged.m */; };
 		DB6417C61F9F0C3F0060CE98 /* AppAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB6417C51F9F0C3F0060CE98 /* AppAssets.xcassets */; };
@@ -41,6 +43,7 @@
 		DB6417FA1F9F401E0060CE98 /* NSString+TKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6417F81F9F401D0060CE98 /* NSString+TKExtension.m */; };
 		DB6417FD1F9F403C0060CE98 /* NSObject+TKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6417FB1F9F403C0060CE98 /* NSObject+TKExtension.m */; };
 		DB6418031F9F42EF0060CE98 /* NSDate+TKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6418021F9F42EF0060CE98 /* NSDate+TKExtension.m */; };
+		DB654E131FA076D10054A61F /* TKNormalTitleHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB654E121FA076D10054A61F /* TKNormalTitleHeaderView.m */; };
 		DBCF03151F9EE5E900D44188 /* TKNetWorkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCF03131F9EE5E900D44188 /* TKNetWorkingManager.m */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +80,10 @@
 		DB3DD9C31F9B3AB5007F53E7 /* TKArchiverManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKArchiverManager.m; sourceTree = "<group>"; };
 		DB3DD9C41F9B3AB5007F53E7 /* TKRuntimeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKRuntimeTool.m; sourceTree = "<group>"; };
 		DB3DD9C51F9B3AB5007F53E7 /* TKTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTimer.h; sourceTree = "<group>"; };
+		DB3F64281FA0632F00C9601A /* CAGradientLayer+TKGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAGradientLayer+TKGradientLayer.h"; sourceTree = "<group>"; };
+		DB3F64291FA0632F00C9601A /* CAGradientLayer+TKGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAGradientLayer+TKGradientLayer.m"; sourceTree = "<group>"; };
+		DB3F642B1FA066BE00C9601A /* LLSegmentBar+TKExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LLSegmentBar+TKExtension.h"; sourceTree = "<group>"; };
+		DB3F642C1FA066BE00C9601A /* LLSegmentBar+TKExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LLSegmentBar+TKExtension.m"; sourceTree = "<group>"; };
 		DB48017C1F9B0A76007C3864 /* TaoKeClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaoKeClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB6417BE1F9EEB720060CE98 /* TKDiscountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKDiscountViewController.h; sourceTree = "<group>"; };
 		DB6417BF1F9EEB720060CE98 /* TKDiscountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKDiscountViewController.m; sourceTree = "<group>"; };
@@ -115,6 +122,8 @@
 		DB6417FC1F9F403C0060CE98 /* NSObject+TKExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+TKExtension.h"; sourceTree = "<group>"; };
 		DB6418011F9F42EF0060CE98 /* NSDate+TKExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+TKExtension.h"; sourceTree = "<group>"; };
 		DB6418021F9F42EF0060CE98 /* NSDate+TKExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TKExtension.m"; sourceTree = "<group>"; };
+		DB654E111FA076D10054A61F /* TKNormalTitleHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKNormalTitleHeaderView.h; sourceTree = "<group>"; };
+		DB654E121FA076D10054A61F /* TKNormalTitleHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKNormalTitleHeaderView.m; sourceTree = "<group>"; };
 		DBCF03121F9EE5E900D44188 /* TKNetWorkingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKNetWorkingManager.h; sourceTree = "<group>"; };
 		DBCF03131F9EE5E900D44188 /* TKNetWorkingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKNetWorkingManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,7 +162,6 @@
 			children = (
 				DB3DD9981F9B1130007F53E7 /* Info.plist */,
 				DB3DD9991F9B1130007F53E7 /* main.m */,
-				DB3DD9971F9B1128007F53E7 /* Base.lproj */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -218,13 +226,6 @@
 			path = Class;
 			sourceTree = "<group>";
 		};
-		DB3DD9971F9B1128007F53E7 /* Base.lproj */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Base.lproj;
-			sourceTree = "<group>";
-		};
 		DB3DD99C1F9B114A007F53E7 /* RootViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +242,8 @@
 		DB3DD9A31F9B1235007F53E7 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				DB3F64281FA0632F00C9601A /* CAGradientLayer+TKGradientLayer.h */,
+				DB3F64291FA0632F00C9601A /* CAGradientLayer+TKGradientLayer.m */,
 				DB6417FC1F9F403C0060CE98 /* NSObject+TKExtension.h */,
 				DB6417FB1F9F403C0060CE98 /* NSObject+TKExtension.m */,
 				DB6417F91F9F401D0060CE98 /* NSString+TKExtension.h */,
@@ -257,6 +260,8 @@
 				DB3DD9B91F9B3202007F53E7 /* UINavigationController+TKExtension.m */,
 				DB6418011F9F42EF0060CE98 /* NSDate+TKExtension.h */,
 				DB6418021F9F42EF0060CE98 /* NSDate+TKExtension.m */,
+				DB3F642B1FA066BE00C9601A /* LLSegmentBar+TKExtension.h */,
+				DB3F642C1FA066BE00C9601A /* LLSegmentBar+TKExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -392,6 +397,8 @@
 			children = (
 				DB6417E01F9F22300060CE98 /* TKAllCategoryHeaderView.h */,
 				DB6417E11F9F22300060CE98 /* TKAllCategoryHeaderView.m */,
+				DB654E111FA076D10054A61F /* TKNormalTitleHeaderView.h */,
+				DB654E121FA076D10054A61F /* TKNormalTitleHeaderView.m */,
 			);
 			path = TableHeaderView;
 			sourceTree = "<group>";
@@ -571,12 +578,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB3F642D1FA066BE00C9601A /* LLSegmentBar+TKExtension.m in Sources */,
 				DB6417D11F9F0DF90060CE98 /* LLSegmentBar.m in Sources */,
 				DB3DD9BA1F9B3202007F53E7 /* UINavigationController+TKExtension.m in Sources */,
 				DB6417E21F9F22300060CE98 /* TKAllCategoryHeaderView.m in Sources */,
 				DB6417EA1F9F22A60060CE98 /* TKCardCycleScrollView.m in Sources */,
 				DB6417FD1F9F403C0060CE98 /* NSObject+TKExtension.m in Sources */,
 				DB3DD9C91F9B3AB5007F53E7 /* TKRuntimeTool.m in Sources */,
+				DB654E131FA076D10054A61F /* TKNormalTitleHeaderView.m in Sources */,
 				DB3DD9BD1F9B34B1007F53E7 /* TKUtility.m in Sources */,
 				DB6417D71F9F14E10060CE98 /* TKAllCategoryViewController.m in Sources */,
 				DB6417D41F9F0DF90060CE98 /* UIView+LLSegmentBar.m in Sources */,
@@ -599,6 +608,7 @@
 				DB6417F41F9F31ED0060CE98 /* NSArray+TKExtension.m in Sources */,
 				DB3DD9C81F9B3AB5007F53E7 /* TKArchiverManager.m in Sources */,
 				DB3DD9AE1F9B2C3F007F53E7 /* TKCollectionViewController.m in Sources */,
+				DB3F642A1FA0632F00C9601A /* CAGradientLayer+TKGradientLayer.m in Sources */,
 				DB3DD9C71F9B3AB5007F53E7 /* TKTimer.m in Sources */,
 				DB3DD9AB1F9B2C15007F53E7 /* TKViewController.m in Sources */,
 				DB6418031F9F42EF0060CE98 /* NSDate+TKExtension.m in Sources */,

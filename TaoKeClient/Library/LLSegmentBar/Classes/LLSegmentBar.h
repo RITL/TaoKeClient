@@ -73,6 +73,9 @@
 /// 第一个按钮距离边缘的最小边距，默认为23
 @property (nonatomic, assign) CGFloat buttonsMinMarginFromBorder;
 
+/// 按钮的拓展宽度，默认为0
+@property (nonatomic, assign) CGFloat buttonAddctionWidth;
+
 /// button间的边距，默认为23
 @property (nonatomic, assign) CGFloat buttonsMargin;
 

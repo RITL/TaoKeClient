@@ -12,5 +12,7 @@
 
 #define TKNavigationBarNormalColor (TKColorFromRGB(0xe41d22))
 #define TKTabBarTintNormalColor (TKColorFromRGB(0xe41d22))
+#define TKAllCategorySegmentBackgroundColor (TKColorFromRGB(0xebbc8f))
+
 
 #endif /* TKAppConfig_h */

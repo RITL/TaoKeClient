@@ -15,6 +15,8 @@
     config.sBBackColor = [UIColor clearColor];
     config.itemF = [UIFont systemFontOfSize:15];
     config.itemNC = [UIColor lightGrayColor];
+    config.itemBC = UIColor.clearColor;
+    config.itemRa = 0;
     config.itemSC = [UIColor redColor];
     config.indicatorC = [UIColor redColor];
     config.indicatorH = 2;
@@ -38,6 +40,16 @@
     };
 }
 
+
+- (LLSegmentBarConfig *(^)(CGFloat))itemRadius
+{
+    return ^(CGFloat r){
+      
+        self.itemRa = r;
+        return self;
+    };
+}
+
 - (LLSegmentBarConfig *(^)(UIColor *))itemNormalColor{
     return ^(UIColor *color){
         self.itemNC = color;
@@ -48,6 +60,15 @@
 - (LLSegmentBarConfig *(^)(UIColor *))itemSelectColor{
     return ^(UIColor *color){
         self.itemSC = color;
+        return self;
+    };
+}
+
+- (LLSegmentBarConfig *(^)(UIColor *))itemBackColor
+{
+    return ^(UIColor *color){
+      
+        self.itemBC = color;
         return self;
     };
 }

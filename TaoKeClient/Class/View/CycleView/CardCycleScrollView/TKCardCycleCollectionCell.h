@@ -22,6 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 显示大标题
 @property (nonatomic, strong) UILabel *titleLabel;
 
+/// 显示阴影的view
+@property (nonatomic, strong) UIView *shaowView;
+
 /// 显示细节标题
 @property (nonatomic, strong) UILabel *subTitleLabel;
 

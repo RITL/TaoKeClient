@@ -15,21 +15,29 @@
 @property (nonatomic, strong) UIColor *sBBackColor;
 @property (nonatomic, strong) UIColor *itemNC;
 @property (nonatomic, strong) UIColor *itemSC;
+@property (nonatomic, strong) UIColor *itemBC;
 @property (nonatomic, strong) UIFont *itemF;
+@property (nonatomic, assign) CGFloat itemRa;
 @property (nonatomic, strong) UIColor *indicatorC;
 @property (nonatomic, assign) CGFloat indicatorH;
 @property (nonatomic, assign) CGFloat indicatorW;
 @property (nonatomic, assign) CGFloat indicatorRadius;
 
 
+
+
 /**默认颜色*/
 @property (nonatomic, copy, readonly) LLSegmentBarConfig *(^itemNormalColor)(UIColor *color);
 /**选中颜色*/
 @property (nonatomic, copy, readonly) LLSegmentBarConfig *(^itemSelectColor)(UIColor *color);
+/**item的背景颜色*/
+@property (nonatomic, copy, readonly) LLSegmentBarConfig *(^itemBackColor)(UIColor *color);
 /**背景颜色*/
 @property (nonatomic, copy, readonly) LLSegmentBarConfig *(^segmentBarBackColor)(UIColor *color);
 /**文字字体大小*/
 @property (nonatomic, copy, readonly) LLSegmentBarConfig *(^itemFont)(UIFont *font);
+/**item的圆角*/
+@property (nonatomic, copy, readonly) LLSegmentBarConfig *(^itemRadius)(CGFloat r);
 /**指示器颜色*/
 @property (nonatomic, copy, readonly) LLSegmentBarConfig *(^indicatorColor)(UIColor *color);
 /**指示器高度*/

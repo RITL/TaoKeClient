@@ -43,6 +43,7 @@
         self.isSimpleView = false;
         self.indicatorFitTitle = true;
         self.indicatorConstWidth = 14;
+        self.buttonAddctionWidth = 0;
         self.indicatorMarginFromBottom = 0;
         self.buttonsMinMarginFromBorder = 23 * UIScreen.mainScreen.bounds.size.width / 375.0;
         self.buttonsMargin = self.buttonsMinMarginFromBorder;
@@ -62,6 +63,9 @@
     for (UIButton *btn in self.itemBtns) {
         [btn setTitleColor:self.config.itemNC forState:UIControlStateNormal];
         [btn setTitleColor:self.config.itemSC forState:UIControlStateSelected];
+        btn.backgroundColor = self.config.itemBC;
+        btn.layer.cornerRadius = self.config.itemRa;
+        btn.clipsToBounds = (self.config.itemRadius != 0);
         btn.titleLabel.font = self.config.itemF;
     }
     
@@ -95,7 +99,10 @@
         [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchDown];
         [btn setTitleColor:self.config.itemNC forState:UIControlStateNormal];
         [btn setTitleColor:self.config.itemSC forState:UIControlStateSelected];
+        btn.backgroundColor = self.config.itemBC;
         btn.titleLabel.font = self.config.itemF;
+        btn.layer.cornerRadius = self.config.itemRa;
+        btn.clipsToBounds = (self.config.itemRadius != 0);
         [btn setTitle:item forState:UIControlStateNormal];
         [self.contentView addSubview:btn];
         [self.itemBtns addObject:btn];
@@ -187,7 +194,8 @@
     CGFloat totalBtnWidth = 0;
     for (UIButton *btn in self.itemBtns) {
         [btn sizeToFit];
-        totalBtnWidth += btn.width;
+        btn.width = (btn.width + self.buttonAddctionWidth);
+        totalBtnWidth += (btn.width + self.buttonAddctionWidth);
     }
     
     CGFloat caculateMargin = (self.width - totalBtnWidth) / (self.items.count + 1);

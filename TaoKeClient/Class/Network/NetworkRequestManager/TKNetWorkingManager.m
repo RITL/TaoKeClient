@@ -34,7 +34,7 @@
     //添加统一的token & key
     NSString *key = NSString.tk_randowString;
     NSString *date = NSDate.tk_timeIntervalSince1970.tk_dayDate;
-    NSString *token = [NSString stringWithFormat:@"%@+adam+%@",date,key].tk_md5ForLower32Bate;
+    NSString *token = [NSString stringWithFormat:@"%@adam%@",date,key].tk_md5ForLower32Bate;
     //追加
     [parametersInfo addEntriesFromDictionary:@{@"key": key}];//app版本号
     [parametersInfo addEntriesFromDictionary:@{@"token":token}];//platform
@@ -42,7 +42,7 @@
     
     switch (httpMethod) {
         case HTTP_GET: {
-            return [manager GET:urlString parameters:parameters.mutableCopy progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            return [manager GET:urlString parameters:parametersInfo.mutableCopy progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 if (successBlock) {
                     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
                     successBlock(dict);
@@ -55,7 +55,7 @@
             break;
         }
         case HTTP_POST: {
-            return [manager POST:urlString parameters:parameters.mutableCopy progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            return [manager POST:urlString parameters:parametersInfo.mutableCopy progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 if (successBlock) {
                     
                     NSLog(@"%@",[[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding]);

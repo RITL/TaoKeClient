@@ -8,6 +8,7 @@
 
 #import "TKAllCategoryHeaderView.h"
 #import "TKCardCycleScrollView.h"
+#import "LLSegmentBar+TKExtension.h"
 #import <Masonry.h>
 
 @implementation TKAllCategoryHeaderView
@@ -35,11 +36,33 @@
     self.cycleView = ({
         
         TKCardCycleScrollView *scrollView = [TKCardCycleScrollView new];
+        scrollView.backgroundColor = [UIColor whiteColor];
         scrollView;
+    });
+    
+    self.segmentBar = ({
+       
+        LLSegmentBar *segmentBar = [LLSegmentBar new];
+        segmentBar.tk_map_indicatorView.hidden = true;
+        segmentBar.buttonAddctionWidth = TKScale(30);
+        
+        //设置属性
+        [segmentBar updateWithConfig:^(LLSegmentBarConfig *config) {
+           
+            config
+            .itemNormalColor(UIColor.whiteColor)
+            .itemSelectColor(UIColor.whiteColor)
+            .itemBackColor(TKAllCategorySegmentBackgroundColor)
+            .itemRadius(TKScale(30 / 2))
+            .segmentBarBackColor(UIColor.whiteColor);
+        }];
+        
+        segmentBar;
     });
     
     
     [self addSubview:self.cycleView];
+    [self addSubview:self.segmentBar];
     [self buildLayouts];
 }
 
@@ -48,17 +71,31 @@
 {
     [self.cycleView mas_makeConstraints:^(MASConstraintMaker *make) {
        
-        make.left.top.right.offset(0);
-        make.height.mas_equalTo(TKScale(206));
+        make.top.offset(TKScale(5));
+        make.left.right.offset(0);
+        make.height.mas_equalTo(TKScale(220));
         
+    }];
+    
+    [self.segmentBar mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.left.right.offset(0);
+        make.top.equalTo(self.cycleView.mas_bottom).offset(TKScale(2));
+        make.bottom.offset(0);
     }];
 }
 
 
 
-- (void)updateCycleItems:(NSArray<NSDictionary<TKGood> *> *)items
+- (void)updateCycleItems:(NSArray<id <TKGood>> *)items
 {
     self.cycleView.items = items;
+}
+
+
+- (void)updateSegmentItems:(NSArray<id<TKCategoryTitle>> *)titles
+{
+    self.segmentBar.titleItems = titles;
 }
 
 @end

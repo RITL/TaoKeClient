@@ -15,7 +15,7 @@
 
 static NSString *TKCardCycleScrollView_ID = @"TKCardCycleScrollView";
 
-@interface TKCardCycleScrollView()<UIScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
+@interface TKCardCycleScrollView()<UIScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
 @end
 
@@ -41,13 +41,16 @@ static NSString *TKCardCycleScrollView_ID = @"TKCardCycleScrollView";
 
 - (void)setupCardMainView
 {
+
     self.collectionView = ({
        
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-        flowLayout.minimumLineSpacing = 0;
+        flowLayout.minimumLineSpacing = TKScale(10);
+        flowLayout.minimumInteritemSpacing = TKScale(10);
         flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         
         UICollectionView *mainView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:flowLayout];
+        mainView.contentInset = UIEdgeInsetsMake(0, TKScale(15), 0, 0);
         mainView.backgroundColor = [UIColor clearColor];
         mainView.pagingEnabled = YES;
         mainView.showsHorizontalScrollIndicator = NO;
@@ -56,6 +59,11 @@ static NSString *TKCardCycleScrollView_ID = @"TKCardCycleScrollView";
         mainView.dataSource = self;
         mainView.delegate = self;
         mainView.scrollsToTop = NO;
+        
+        if (@available(iOS 11,*)) {
+            
+            mainView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        }
         
         mainView;
     });
@@ -69,12 +77,20 @@ static NSString *TKCardCycleScrollView_ID = @"TKCardCycleScrollView";
         button.userInteractionEnabled = false;
         
         [button setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
-        [button setBackgroundImage:[UIImage imageNamed:@"cycleView_card_pageBackground"] forState:UIControlStateNormal];
+//        [button setBackgroundImage:[UIImage imageNamed:@"cycleView_card_pageBackground"] forState:UIControlStateNormal];
         
         button;
     });
     
+    [self addSubview:self.collectionView];
     [self addSubview:self.pageLabel];
+    
+    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.left.top.right.offset(0);
+        make.height.mas_equalTo(TKScale(215));
+    }];
+    
     
     [self.pageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
        
@@ -104,6 +120,7 @@ static NSString *TKCardCycleScrollView_ID = @"TKCardCycleScrollView";
     
     //获得item
     id <TKGood> item = self.items[indexPath.row];
+    
 
     [cell.imageView sd_setImageWithURL:[NSURL URLWithString:item.product_main_image] placeholderImage:nil];
     cell.titleLabel.text = item.product_name;
@@ -155,12 +172,19 @@ static NSString *TKCardCycleScrollView_ID = @"TKCardCycleScrollView";
 
 
 #pragma mark - set
-- (void)setItems:(NSArray<NSDictionary<TKGood> *> *)items
+- (void)setItems:(NSArray<id <TKGood>> *)items
 {
     _items = items;
-    
-    [self.collectionView setContentOffset:CGPointZero animated:true];
+
     [self.collectionView reloadData];
+}
+
+
+#pragma mark - UICollectionViewDelegateFlowLayout
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(TKScale(330), TKScale(215));
 }
 
 
@@ -168,11 +192,11 @@ static NSString *TKCardCycleScrollView_ID = @"TKCardCycleScrollView";
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    if (!self.items.count) return; // 解决清除timer时偶尔会出现的问题
-    int itemIndex = ((int(*)(id,SEL))objc_msgSend)(self,sel_registerName("currentIndex"));
-    int indexOnPageControl = itemIndex % self.items.count;
+//    if (!self.items.count) return; // 解决清除timer时偶尔会出现的问题
+//    int itemIndex = ((int(*)(id,SEL))objc_msgSend)(self,sel_registerName("currentIndex"));
+//    int indexOnPageControl = itemIndex % self.items.count;
     
-    [self setCurrentPageIndex:(indexOnPageControl + 1) total:self.items.count];
+//    [self setCurrentPageIndex:(indexOnPageControl + 1) total:self.items.count];
 }
 
 @end

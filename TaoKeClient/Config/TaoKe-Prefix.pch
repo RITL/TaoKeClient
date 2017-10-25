@@ -14,6 +14,7 @@
 
 #import "TKUtility.h"
 #import "TKAppConfig.h"
+#import "TKDictionaryProxy.h"
 #import "NSDate+TKExtension.h"
 #import "NSArray+TKExtension.h"
 #import "NSObject+TKExtension.h"
