@@ -36,8 +36,8 @@
         
         UILabel *label = [UILabel new];
         
-        label.font = TKUtilityFont(@"PingFangSC-Medium", TKScale(16));
-        label.textColor = TKColorFromRGB(0x666666);
+        label.font = TKUtilityFont(TKFontPingFangSC_Medium, TKScale(16));
+        label.textColor = TKGrayColor;
         label.backgroundColor = UIColor.whiteColor;
         
         label;

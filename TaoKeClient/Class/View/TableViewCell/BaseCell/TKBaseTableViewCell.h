@@ -76,7 +76,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param indexPath cell的indexpath
  @param delegate 通过delegate定位VC
  */
-- (void)updateViewByData:(NSDictionary *)dataDict
+- (void)updateViewByData:(nullable NSDictionary *)dataDict
                indexPath:(NSIndexPath *)indexPath
             cellDelegate:(id)delegate;
 
@@ -88,7 +88,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param dataDict  当前Page的PageItems
  *  @param indexPath UITableViewCell的IndexPath
  */
-- (void)prepareHeightByDict:(NSDictionary *)dataDict
+- (CGFloat)prepareHeightByDict:(nullable NSDictionary *)dataDict
                   indexPath:(NSIndexPath *)indexPath;
 
 

@@ -15,6 +15,17 @@
 
 @implementation TKTableViewController
 
+- (instancetype)init
+{
+    if (self = [super init]) {
+        
+        self.currentPage = 0;
+    }
+    
+    return self;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -26,11 +37,17 @@
         tableView.backgroundColor = UIColor.whiteColor;
         tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         
+        tableView.showsVerticalScrollIndicator = false;
+        tableView.showsHorizontalScrollIndicator = false;
+        
         tableView;
     });
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.estimatedRowHeight = 0;
+    self.tableView.estimatedSectionHeaderHeight = 0;
+    self.tableView.estimatedSectionFooterHeight = 0;
     [self.view addSubview:self.tableView];
     
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -64,5 +81,189 @@
 {
     return [UITableViewCell new];
 }
+
+
+#pragma mark - 上拉下拉刷新
+#pragma mark - 刷新
+
+/// 添加刷新组件
+- (void)p_addRefreshComponent
+{
+    [self installAllRefresh];
+}
+
+
+-(void)installHeaderRefresh
+{
+    if (!self.tableView.mj_header && self.headerRefreshEnable) {
+        
+        self.tableView.mj_header = self.refreshHeader;
+        
+    }
+}
+
+
+-(void)installFooterRefresh
+{
+    if (!self.tableView.mj_footer && self.footerRefreshEnable) {
+        
+        self.tableView.mj_footer = self.refreshFooter;
+    }
+}
+
+
+-(void)installAllRefresh
+{
+    [self installHeaderRefresh];
+    [self installFooterRefresh];
+}
+
+
+-(void)unstallHeaderRefresh
+{
+    if (self.tableView.mj_header) {
+        
+        self.tableView.mj_header = nil;
+        [self.tableView.mj_header removeFromSuperview];
+    }
+}
+
+
+
+-(void)unstallFooterRefresh
+{
+    if (self.tableView.mj_footer) {
+        
+        self.tableView.mj_footer = nil;
+        [self.tableView.mj_footer removeFromSuperview];
+    }
+}
+
+
+-(void)unstallAllRefresh
+{
+    [self unstallHeaderRefresh];
+    [self unstallFooterRefresh];
+}
+
+
+
+- (BOOL)headerRefreshEnable
+{
+    return true;
+}
+
+
+- (BOOL)footerRefreshEnable
+{
+    return true;
+}
+
+
+- (Class)classForRefreshHeader
+{
+    return [MJRefreshNormalHeader class];
+}
+
+
+- (Class)classForRefreshFooter
+{
+    return [MJRefreshBackStateFooter class];
+}
+
+
+- (void)headerRefreshBeginHandler
+{
+    
+}
+
+
+- (void)footerRefreshBeginHandler
+{
+    
+}
+
+
+
+- (void)endHeaderRefreshing
+{
+    if (self.tableView.mj_header && self.tableView.mj_header.isRefreshing) {
+        
+        [self.refreshHeader endRefreshing];
+    }
+}
+
+
+
+- (void)endFooterRefreshing
+{
+    if (self.tableView.mj_footer && self.tableView.mj_footer.isRefreshing) {
+        
+        [self.refreshFooter endRefreshing];
+    }
+}
+
+
+
+-(MJRefreshGifHeader *)refreshHeader
+{
+    if (!_refreshHeader) {
+        
+        __weak typeof(self) weakSelf = self;
+        
+        //初始化
+        _refreshHeader = [MJRefreshGifHeader headerWithRefreshingBlock:^{
+            
+            [weakSelf headerRefreshBeginHandler];
+            
+        }];
+        
+        _refreshHeader.lastUpdatedTimeLabel.hidden = true;
+        _refreshHeader.stateLabel.hidden = true;
+        
+        [_refreshHeader setImages:@[[UIImage imageNamed:@"refresh_default"]] forState:MJRefreshStateIdle];
+        [_refreshHeader setImages:@[[UIImage imageNamed:@"refresh_default"]] forState:MJRefreshStatePulling];
+        [_refreshHeader setImages:@[[UIImage imageNamed:@"refresh_default"]] forState:MJRefreshStateRefreshing];
+        
+    }
+    return _refreshHeader;
+}
+
+
+
+
+-(MJRefreshBackStateFooter *)refreshFooter
+{
+    if (!_refreshFooter) {
+        
+        __weak typeof(self) weakSelf = self;
+        
+        _refreshFooter = [MJRefreshBackStateFooter footerWithRefreshingBlock:^{
+            
+            [weakSelf footerRefreshBeginHandler];
+            
+        }];
+        
+        _refreshFooter.stateLabel.font = [UIFont systemFontOfSize:12];
+        _refreshFooter.stateLabel.textColor = TKColorFromRGB(0xB9B9B9);
+        [_refreshFooter setTitle:self.titleForFooterRefreshWithNoMoreData forState:MJRefreshStateNoMoreData];
+    }
+    
+    return _refreshFooter;
+}
+
+
+
+
+-(NSString *)titleForFooterRefreshWithNoMoreData
+{
+    if (!_titleForFooterRefreshWithNoMoreData) {
+        
+        return @"-----更多内容，敬请期待-----";
+    }
+    
+    return _titleForFooterRefreshWithNoMoreData;
+}
+
 
 @end

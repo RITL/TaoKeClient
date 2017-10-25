@@ -70,10 +70,10 @@
 
 
 
-- (void)prepareHeightByDict:(NSDictionary *)dataDict indexPath:(NSIndexPath *)indexPath
+- (CGFloat)prepareHeightByDict:(NSDictionary *)dataDict indexPath:(NSIndexPath *)indexPath
 {
 
-    
+    return 0.01;
 }
 
 

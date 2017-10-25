@@ -263,7 +263,7 @@
         //进行设置
         [_segmentBar updateWithConfig:^(LLSegmentBarConfig *config) {
             
-            config.itemFont(TKUtilityFont(@"PingFang-SC-Regular", TKScale(14)))
+            config.itemFont(TKUtilityFont(TKFontPingFangSC_Regular, TKScale(14)))
             .itemNormalColor(TKColorFromIntRBG(77, 77, 77))
             .itemSelectColor(TKColorFromIntRBG(41, 195, 144))
             .indicatorColor(TKColorFromIntRBG(41, 195, 144))

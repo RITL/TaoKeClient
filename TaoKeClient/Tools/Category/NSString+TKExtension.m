@@ -123,6 +123,14 @@
     return string.mutableCopy;
 }
 
+
+- (NSAttributedString *)tk_middleLineStringWithColor:(UIColor *)lineColor font:(UIFont *)font
+{
+    NSMutableAttributedString *handlePrice = [[NSMutableAttributedString alloc]initWithString:self attributes:@{NSStrikethroughStyleAttributeName:@(NSUnderlineStyleSingle),NSBaselineOffsetAttributeName:@(0),NSForegroundColorAttributeName:lineColor,NSFontAttributeName:font}];
+    
+    return handlePrice.mutableCopy;
+}
+
 @end
 
 

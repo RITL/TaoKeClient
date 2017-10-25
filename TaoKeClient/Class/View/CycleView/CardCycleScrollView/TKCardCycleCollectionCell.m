@@ -69,7 +69,7 @@
         UILabel *label = [UILabel new];
         label.textColor = UIColor.whiteColor;
         label.textAlignment = NSTextAlignmentCenter;
-        label.font = TKUtilityFont(@"PingFang-SC-Medium", TKScale(15));
+        label.font = TKUtilityFont(TKFontPingFangSC_Medium, TKScale(16));
         
         label;
     });
@@ -80,7 +80,7 @@
         UILabel *label = [UILabel new];
         label.textColor = UIColor.whiteColor;
         label.textAlignment = NSTextAlignmentCenter;
-        label.font = TKUtilityFont(@"PingFang-SC-Regular", TKScale(12));
+        label.font = TKUtilityFont(TKFontPingFangSC_Regular, TKScale(13));
         label.numberOfLines = 2;
         
         label;

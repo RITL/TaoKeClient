@@ -9,7 +9,9 @@
 #import "TKAllCategoryViewController.h"
 #import "TKAllCategoryHeaderView.h"
 #import "TKNormalTitleHeaderView.h"
+#import "TKGeneralTableViewCell.h"
 #import "TKNetWorkingManager.h"
+#import "UITableView+TKCellRegister.h"
 #import <Masonry.h>
 
 @interface TKAllCategoryViewController ()
@@ -48,6 +50,7 @@
     //注册所有的信息
     [self.tableView registerClass:TKNormalTitleHeaderView.class forHeaderFooterViewReuseIdentifier:@"TKNormalTitleHeaderView"];
     
+    [self.tableView registerClass:TKGeneralTableViewCell.class forCellReuseIdentifier:@"TKGeneralTableViewCell"];
     
     [self requestBannerInfo];
     [self requestCategory];
@@ -126,7 +129,18 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [UITableViewCell new];
+    TKGeneralTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TKGeneralTableViewCell" forIndexPath:indexPath];
+    
+    
+    return cell;
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    TKGeneralTableViewCell *cell = [tableView tk_dequeueReusableCellWithIdentifier:@"TKGeneralTableViewCell" class:TKGeneralTableViewCell.class];
+    
+    return [cell prepareHeightByDict:nil indexPath:indexPath];
 }
 
 

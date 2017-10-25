@@ -51,6 +51,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 带下划线的字符串
 @property (nonatomic, copy, readonly)NSAttributedString *tk_underLineString;
 
+/// 带中划线的字符窜
+- (NSAttributedString *)tk_middleLineStringWithColor:(UIColor *)lineColor font:(UIFont *)font;
+
 @end
 
 

@@ -145,11 +145,11 @@ static NSString *TKCardCycleScrollView_ID = @"TKCardCycleScrollView";
                                       NSFontAttributeName : TKUtilityFont(@"PingFang-SC-Bold", TKScale(14.0)),
                                       NSForegroundColorAttributeName : [UIColor whiteColor]};
     
-    NSDictionary *signAttributes = @{NSFontAttributeName : TKUtilityFont(@"PingFang-SC-Regular", TKScale(10.0)),
+    NSDictionary *signAttributes = @{NSFontAttributeName : TKUtilityFont(TKFontPingFangSC_Regular, TKScale(10.0)),
                                      NSForegroundColorAttributeName : TKColorFromRGB(0xe5e5e5)};
     
     NSDictionary *totalAttributes = @{
-                                      NSFontAttributeName : TKUtilityFont(@"PingFang-SC-Regular", TKScale(10.0)),
+                                      NSFontAttributeName : TKUtilityFont(TKFontPingFangSC_Regular, TKScale(10.0)),
                                       NSForegroundColorAttributeName : TKColorFromRGB(0xe5e5e5)};
     
     
