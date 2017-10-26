@@ -22,6 +22,7 @@
 		DB223ECF1FA1854500FAA068 /* TKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB223ECC1FA1854500FAA068 /* TKWebViewController.m */; };
 		DB223ED21FA186D500FAA068 /* UIView+TKResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = DB223ED01FA186D500FAA068 /* UIView+TKResponse.m */; };
 		DB223ED51FA18A2C00FAA068 /* TKViewController+TKPageManagerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = DB223ED41FA18A2C00FAA068 /* TKViewController+TKPageManagerBridge.m */; };
+		DB223ED91FA1B70000FAA068 /* UINavigationBar+TKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DB223ED81FA1B70000FAA068 /* UINavigationBar+TKExtension.m */; };
 		DB3DD9951F9B106C007F53E7 /* TKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3DD98C1F9B106B007F53E7 /* TKAppDelegate.m */; };
 		DB3DD9961F9B106C007F53E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB3DD9901F9B106B007F53E7 /* Assets.xcassets */; };
 		DB3DD99A1F9B1130007F53E7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB3DD9981F9B1130007F53E7 /* Info.plist */; };
@@ -92,6 +93,8 @@
 		DB223ED31FA18A2C00FAA068 /* TKViewController+TKPageManagerBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TKViewController+TKPageManagerBridge.h"; sourceTree = "<group>"; };
 		DB223ED41FA18A2C00FAA068 /* TKViewController+TKPageManagerBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "TKViewController+TKPageManagerBridge.m"; sourceTree = "<group>"; };
 		DB223ED61FA18EE400FAA068 /* TKNavigationBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKNavigationBarController.h; sourceTree = "<group>"; };
+		DB223ED71FA1B70000FAA068 /* UINavigationBar+TKExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+TKExtension.h"; sourceTree = "<group>"; };
+		DB223ED81FA1B70000FAA068 /* UINavigationBar+TKExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+TKExtension.m"; sourceTree = "<group>"; };
 		DB3DD98B1F9B106B007F53E7 /* TKAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAppDelegate.h; sourceTree = "<group>"; };
 		DB3DD98C1F9B106B007F53E7 /* TKAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAppDelegate.m; sourceTree = "<group>"; };
 		DB3DD9901F9B106B007F53E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -371,6 +374,8 @@
 				DB654E2B1FA08D020054A61F /* UIView+TKExtension.m */,
 				DB223ED31FA18A2C00FAA068 /* TKViewController+TKPageManagerBridge.h */,
 				DB223ED41FA18A2C00FAA068 /* TKViewController+TKPageManagerBridge.m */,
+				DB223ED71FA1B70000FAA068 /* UINavigationBar+TKExtension.h */,
+				DB223ED81FA1B70000FAA068 /* UINavigationBar+TKExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -585,7 +590,7 @@
 				TargetAttributes = {
 					DB48017B1F9B0A76007C3864 = {
 						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -661,6 +666,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TaoKeClient/Pods-TaoKeClient-resources.sh",
+				"${PODS_ROOT}/JPNavigationController/JPNavigationController/JPNavigationController.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 				"${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialSDK/UMSocialSDKPromptResources.bundle",
@@ -720,6 +726,7 @@
 				DB223ED21FA186D500FAA068 /* UIView+TKResponse.m in Sources */,
 				DB3DD9B41F9B2E69007F53E7 /* UIColor+ImageGenerate.m in Sources */,
 				DB3DD9C61F9B3AB5007F53E7 /* TKDictionaryProxy.m in Sources */,
+				DB223ED91FA1B70000FAA068 /* UINavigationBar+TKExtension.m in Sources */,
 				DB223ED51FA18A2C00FAA068 /* TKViewController+TKPageManagerBridge.m in Sources */,
 				DB6417F41F9F31ED0060CE98 /* NSArray+TKExtension.m in Sources */,
 				DB3DD9C81F9B3AB5007F53E7 /* TKArchiverManager.m in Sources */,
@@ -843,14 +850,15 @@
 			baseConfigurationReference = AF002C2BC19B4DD486EA8031 /* Pods-TaoKeClient.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8S4NWFZC5J;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREFIX_HEADER = "TaoKeClient/Config/TaoKe-Prefix.pch";
 				INFOPLIST_FILE = TaoKeClient/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tao.TaoKeClient;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tao.TaoKeClient-yue";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -862,14 +870,15 @@
 			baseConfigurationReference = ADE388CD7C58A6A5D8FB33F1 /* Pods-TaoKeClient.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8S4NWFZC5J;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREFIX_HEADER = "TaoKeClient/Config/TaoKe-Prefix.pch";
 				INFOPLIST_FILE = TaoKeClient/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tao.TaoKeClient;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tao.TaoKeClient-yue";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;

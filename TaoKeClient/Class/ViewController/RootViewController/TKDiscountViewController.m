@@ -8,6 +8,7 @@
 
 #import "TKDiscountViewController.h"
 #import "LLSegmentBar.h"
+#import "UINavigationBar+TKExtension.h"
 #import "TKAllCategoryViewController.h"
 #import "TKGeneralTableViewController.h"
 #import "TKScrollPageViewController.h"
@@ -15,10 +16,19 @@
 
 #define TKDiscountViewController_Margin (10)
 
+@interface TKNavigationView : UIView
+
+@end
+
+@implementation TKNavigationView
+
+@end
+
+
 @interface TKDiscountViewController () <TKScrollHorizontalPageDelegate,LLSegmentBarDelegate>
 
 /// 放置在navigationBar上的view
-@property (nonatomic, strong) UIView * navigationBarView;
+@property (nonatomic, strong) TKNavigationView * navigationBarView;
 
 /// 底部的滚动视图
 @property (nonatomic, strong) TKScrollHorizontalPageViewController *pageController;
@@ -60,17 +70,38 @@
         make.top.left.right.offset(0);
         make.bottom.offset(-TK_DefaultTabBarHeight);
     }];
+    
+    if (TK_iOS_Version_GreaterThanOrEqualTo(11.0)) {
+        
+        [self.navigationBarView mas_makeConstraints:^(MASConstraintMaker *make) {
+           
+            make.left.bottom.offset(0);
+            make.right.offset(-60);
+            make.height.mas_equalTo(44);
+        }];
+    }
+}
+
+
+- (void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
 }
 
 
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    
-    //重置navigationBarView
-    self.navigationBarView.tk_originX = TKScale(10);
-    self.navigationBarView.tk_width = self.navigationController.navigationBar.tk_width - self.navigationBarView.tk_originY - 60;
-    self.navigationBarView.tk_originY = self.navigationController.navigationBar.tk_height - self.navigationBarView.tk_height;
+
+//    if (TK_iOS_Version_GreaterThanOrEqualTo(11.0)) {
+//        
+//        [self.navigationController.navigationBar tk_resetViewFrameInNavigationBar:CGRectMake(0, 0, UIScreen.mainScreen.tk_width - 60, 44) viewClass:self.navigationBarView.class];
+//        
+//    }else {
+//        
+//        [self.navigationController.navigationBar resetViewFrameInNavigationBar:CGRectMake(0, 0, UIScreen.mainScreen.tk_width - 60, 44) viewClass:self.navigationBarView.class];
+//    }
+
 }
 
 
@@ -98,11 +129,11 @@
 
 
 
-- (UIView *)navigationBarView
+- (TKNavigationView *)navigationBarView
 {
     if (!_navigationBarView) {
         
-        _navigationBarView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, 44)];
+        _navigationBarView = [[TKNavigationView alloc]initWithFrame:CGRectMake(0, 0, UIScreen.mainScreen.tk_width - 60, 44)];
         _navigationBarView.backgroundColor = TKNavigationBarNormalColor;
         
         [_navigationBarView addSubview:self.segmentBar];

@@ -160,6 +160,8 @@
     return true;
 }
 
+
+
 - (void)headerRefreshBeginHandler
 {
     __weak typeof(self) weakSelf = self;
@@ -175,10 +177,16 @@
     }];
 }
 
+
+
+
 - (BOOL)footerRefreshEnable
 {
     return true;
 }
+
+
+
 
 - (void)footerRefreshBeginHandler
 {

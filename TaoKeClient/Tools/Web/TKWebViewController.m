@@ -179,6 +179,7 @@
 
 -(void)dealloc
 {
+    [self.progressView removeFromSuperview];
     [self.webView.configuration.userContentController removeAllUserScripts];
     [self.webView removeObserver:self forKeyPath:@"estimatedProgress" context:@"webView_estimatedProgress"];
     [self.webView removeObserver:self forKeyPath:@"loading" context:@"webView_loading"];

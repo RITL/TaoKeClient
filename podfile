@@ -12,4 +12,5 @@ target 'TaoKeClient' do
  pod ‘UMengUShare/Social/ReducedWeChat'
  pod ‘UMengUShare/Social/ReducedQQ'
  pod ‘UMengUShare/Social/ReducedSina'
+ pod 'JPNavigationController', '~> 2.1.0'
  end
