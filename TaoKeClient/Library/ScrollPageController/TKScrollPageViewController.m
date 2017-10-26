@@ -58,6 +58,12 @@
 }
 
 
+- (void)dealloc
+{
+    [self.contentViewControllers makeObjectsPerformSelector:@selector(removeFromParentViewController)];
+}
+
+
 
 - (UIPageViewControllerNavigationOrientation)orientation
 {
@@ -80,12 +86,20 @@
 
 -(void)setContentViewControllers:(NSArray<UIViewController *> *)contentViewControllers
 {
+    [self.contentViewControllers makeObjectsPerformSelector:@selector(removeFromParentViewController)];
+    
     _contentViewControllers = contentViewControllers;
     
     if (contentViewControllers.count == 0) {
         
         return;
     }
+    
+    [contentViewControllers enumerateObjectsUsingBlock:^(UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+       
+        [self addChildViewController:obj];
+        
+    }];
     
     [self setViewControllers:@[contentViewControllers.firstObject] direction:UIPageViewControllerNavigationDirectionForward animated:false completion:nil];
     

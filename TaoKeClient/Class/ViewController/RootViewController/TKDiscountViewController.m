@@ -32,11 +32,12 @@
     [super viewDidLoad];
     
     [self.navigationController.navigationBar setTintColor:UIColor.whiteColor];
-    [self.navigationController.navigationBar addSubview:self.navigationBarView];;
+    self.navigationItem.titleView = self.navigationBarView;
     
     /// 右侧搜索
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"discount_search"] style:UIBarButtonItemStylePlain target:self action:@selector(doNothing)];
     
+    [self addChildViewController:self.pageController];
     [self.view addSubview:self.pageController.view];
     [self buildLayouts];
     
@@ -67,8 +68,15 @@
     [super viewDidLayoutSubviews];
     
     //重置navigationBarView
+    self.navigationBarView.tk_originX = TKScale(10);
     self.navigationBarView.tk_width = self.navigationController.navigationBar.tk_width - self.navigationBarView.tk_originY - 60;
     self.navigationBarView.tk_originY = self.navigationController.navigationBar.tk_height - self.navigationBarView.tk_height;
+}
+
+
+- (void)dealloc
+{
+    [self.pageController removeFromParentViewController];
 }
 
 

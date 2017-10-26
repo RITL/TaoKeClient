@@ -7,7 +7,9 @@
 //
 
 #import "TKPageManager.h"
+#import "TKWebViewController.h"
 #import <objc/message.h>
+
 
 NSString *TKPageManagerHandlerPlatformKey = @"platform";
 
@@ -95,7 +97,21 @@ NSString *TKPageManagerHandlerPlatformKey = @"platform";
 /// 根据info字典进行不同的处理方案
 + (void)p_infoHandlerFromObject:(id)fromObject info:(NSDictionary *)infoDict
 {
+    NSString *platform = infoDict[TKConstDictionaryKeyPlatform];
     
+    UIViewController *viewController = self.viewController;
+    
+    /// Web界面
+    if ([platform isEqualToString:TKConstDictionaryValueKeyWeb]) {
+        
+        [viewController tk_topNavigationPushViewController:[TKWebViewController viewController:^(__kindof TKWebViewController * _Nonnull viewController) {
+            
+            viewController.hidesBottomBarWhenPushed = true;
+            viewController.url = infoDict[TKConstDictionaryKeyUrl];
+            viewController.title = infoDict[TKConstDictionaryKeyTitle];
+            
+        }] animated:true];
+    }
 
     
 }

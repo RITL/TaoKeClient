@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TKNavigationBarController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -24,6 +25,14 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - *************** test ***************
 /// 默认不做任何操作，用于测试
 - (void)doNothing;
+
+@end
+
+
+@interface TKViewController (TKNavigationBarController) <TKNavigationBarController>
+
+/// 设置导航栏的属性
+- (void)tk_setCustomNavigationBarProperty;
 
 @end
 

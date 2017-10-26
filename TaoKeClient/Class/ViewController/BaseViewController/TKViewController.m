@@ -57,6 +57,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
+    [self.navigationController.navigationBar setTintColor:UIColor.whiteColor];
     
     if (@available(iOS 11.0,*)) {
         
@@ -68,10 +69,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    //设置导航
-    [self.navigationController.navigationBar setBackgroundImage:TKNavigationBarNormalColor.jp_image forBarMetrics:UIBarMetricsDefault];
-    
+    [self tk_setCustomNavigationBarProperty];
 }
 
 
@@ -85,5 +83,90 @@
 {
     return UIStatusBarStyleLightContent;
 }
+
+
+
+- (UIColor *)tk_customColorForNavigationShadow
+{
+    return TKNavigationBarNormalColor;
+}
+
+- (UIColor *)tk_customColorForNavigationBarText
+{
+    return UIColor.whiteColor;
+}
+
+- (UIImage *)tk_customBackIndicatorImage
+{
+    return [UIImage imageNamed:@"navigationbar_white_back"];
+}
+
+-(UIImage *)tk_customBackIndicatorTransitionMaskImage
+{
+    return [self tk_customBackIndicatorImage];
+}
+
+-(UIFont *)tk_customFontInNavigationBar
+{
+    return TKUtilityFont(TKFontPingFangSC_Medium, 18);
+}
+
+- (UIColor *)tk_customColorForNavigationBar
+{
+    return TKNavigationBarNormalColor;
+}
+
+@end
+
+
+
+
+
+@implementation TKViewController (TKNavigationBarController)
+
+/// 设置导航栏的属性
+- (void)tk_setCustomNavigationBarProperty
+{
+    //如果存在方法
+    if ([self respondsToSelector:@selector(tk_customColorForNavigationBar)]) {
+        
+        if (self.tk_customColorForNavigationBar) {
+            
+            // 导航栏的背景色
+            [self.navigationController.navigationBar setBackgroundImage:self.tk_customColorForNavigationBar.jp_image forBarMetrics:UIBarMetricsDefault];
+        }
+    }
+    
+    else {
+        
+        //获得拉伸图片
+        //        UIImage *image = [[UIImage imageNamed:@"navigationbar_backgroundImage"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+        
+        //        [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
+    }
+    
+    
+    [self.navigationController.navigationBar setShadowImage:self.tk_customColorForNavigationShadow.jp_image];
+    
+    
+    // 导航栏标题的文字颜色
+    [self.navigationController.navigationBar setTintColor:self.tk_customColorForNavigationBarText];
+    
+    
+    // 设置返回的图标
+    if (self.tk_customBackIndicatorImage)
+    {
+        [self.navigationController.navigationBar setBackIndicatorImage:self.tk_customBackIndicatorImage];
+    }
+    
+    if (self.tk_customBackIndicatorTransitionMaskImage)
+    {
+        [self.navigationController.navigationBar setBackIndicatorTransitionMaskImage:self.tk_customBackIndicatorTransitionMaskImage];
+    }
+    
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[self tk_customColorForNavigationBarText],NSFontAttributeName:[self tk_customFontInNavigationBar]}];
+}
+
 
 @end

@@ -219,6 +219,11 @@
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.leftGeneralItem = [TKGeneralItem new];
     self.rightGeneralItem = [TKGeneralItem new];
+    
+    //追加响应
+    [self.leftGeneralItem addUIControlHandlerTarget:self action:@selector(generalItemDidTap:)];
+    
+    [self.rightGeneralItem addUIControlHandlerTarget:self action:@selector(generalItemDidTap:)];
 }
 
 
@@ -247,6 +252,21 @@
         make.right.offset(TKScale(-5));
         make.width.equalTo(self.leftGeneralItem.mas_width);
     }];
+}
+
+
+- (void)generalItemDidTap:(TKGeneralItem *)sender
+{
+    if (!self.messageInfo) {  return; }
+    
+    NSInteger row = self.indexPath.row;
+    NSInteger currentIndex = row * 2 +([sender isEqual:self.leftGeneralItem] ? 0 : 1);
+    
+    //获得数据
+    id <TKGood> item = TKEnityCreateWithData(self.messageInfo[@"msg"][currentIndex]);
+    
+    //进行回调
+    [self actionDidSelectCellAtIndex:row Info:@{TKConstDictionaryKeyPlatform:TKConstDictionaryValueKeyWeb,TKConstDictionaryKeyTitle:item.product_name,TKConstDictionaryKeyUrl:item.product_url}];
 }
 
 

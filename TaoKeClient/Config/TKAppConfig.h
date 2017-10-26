@@ -42,5 +42,10 @@ static NSString *const TKFontPingFangSC_Bold = @"PingFangSC-Bold";
 
 //Platform
 static NSString *const TKConstDictionaryKeyPlatform = @"platform";
+static NSString *const TKConstDictionaryKeyTitle = @"title";
+static NSString *const TKConstDictionaryKeyUrl = @"url";
+
+//Value
+static NSString *const TKConstDictionaryValueKeyWeb = @"web";
 
 #endif /* TKAppConfig_h */

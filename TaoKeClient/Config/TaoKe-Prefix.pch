@@ -15,6 +15,7 @@
 #import "TKUtility.h"
 #import "TKAppConfig.h"
 #import "TKDictionaryProxy.h"
+#import "UIView+TKResponse.h"
 #import "NSDate+TKExtension.h"
 #import "NSArray+TKExtension.h"
 #import "NSObject+TKExtension.h"
@@ -22,5 +23,6 @@
 #import "UIView+TKFrameChanged.h"
 #import "UIViewController+TKExtension.h"
 #import "UINavigationController+TKExtension.h"
+#import "TKViewController+TKPageManagerBridge.h"
 
 #endif /* TaoKe_Prefix_pch */
