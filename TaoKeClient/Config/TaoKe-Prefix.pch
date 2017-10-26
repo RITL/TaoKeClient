@@ -20,6 +20,7 @@
 #import "NSObject+TKExtension.h"
 #import "NSString+TKExtension.h"
 #import "UIView+TKFrameChanged.h"
+#import "UIViewController+TKExtension.h"
 #import "UINavigationController+TKExtension.h"
 
 #endif /* TaoKe_Prefix_pch */

@@ -9,12 +9,13 @@
 #import "TKDiscountViewController.h"
 #import "LLSegmentBar.h"
 #import "TKAllCategoryViewController.h"
+#import "TKGeneralTableViewController.h"
 #import "TKScrollPageViewController.h"
 #import <Masonry.h>
 
 #define TKDiscountViewController_Margin (10)
 
-@interface TKDiscountViewController ()
+@interface TKDiscountViewController () <TKScrollHorizontalPageDelegate,LLSegmentBarDelegate>
 
 /// 放置在navigationBar上的view
 @property (nonatomic, strong) UIView * navigationBarView;
@@ -74,9 +75,17 @@
 - (void)addSubViewControllers
 {
     TKAllCategoryViewController *allCategoryController = [TKAllCategoryViewController new];
-    self.firstController = allCategoryController;
     
-    self.pageController.contentViewControllers = @[allCategoryController];
+    //9块9
+    TKGeneralTableViewController *nineController = [TKGeneralTableViewController new];
+    nineController.request_url = TKBaseUrlAppendTo(@"/api.php?m=Api&a=getnine");
+    
+    //一元购
+    TKGeneralTableViewController *oneController = [TKGeneralTableViewController new];
+    oneController.request_url = TKBaseUrlAppendTo(@"/api.php?m=Api&c=Index&a=getone");
+    
+    
+    self.pageController.contentViewControllers = @[allCategoryController,nineController,oneController];
 }
 
 
@@ -107,6 +116,7 @@
         _segmentBar.borderMargin = 23;
         _segmentBar.buttonsMargin = 15;
         _segmentBar.indicatorFitTitle = false;
+        _segmentBar.delegate = self;
         
         [_segmentBar updateWithConfig:^(LLSegmentBarConfig *config) {
             
@@ -130,6 +140,7 @@
         _pageController = [TKScrollHorizontalPageViewController new];
         _pageController.segmentBar.tk_height = 0;
         _pageController.segmentBar.hidden = true;
+        _pageController.tk_delegate = self;
 
     }
     
@@ -142,6 +153,23 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+#pragma mark - TKScrollHorizontalPageDelegate
+
+- (void)tk_scrollHorizontalPageViewController:(TKScrollHorizontalPageViewController *)viewController
+                                  willToIndex:(NSInteger)index
+{
+    [self.segmentBar changedSelectedOnlyWithIndex:index];
+}
+
+
+#pragma mark - LLSegmentBarDelegate
+
+- (void)segmentBar:(LLSegmentBar *)segmentBar didSelectIndex: (NSInteger)toIndex fromIndex: (NSInteger)fromIndex
+{
+    [self.pageController setCurrentViewController:self.pageController.contentViewControllers[toIndex]];
 }
 
 @end

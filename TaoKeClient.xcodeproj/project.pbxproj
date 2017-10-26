@@ -8,13 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		026FD94C86D7ADE6718D044A /* libPods-TaoKeClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C991403214A430B2EDC53D /* libPods-TaoKeClient.a */; };
+		DB223EB71FA1813C00FAA068 /* TKCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB223EA71FA1813C00FAA068 /* TKCollectionViewController.m */; };
+		DB223EB81FA1813C00FAA068 /* TKTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB223EA91FA1813C00FAA068 /* TKTableViewController.m */; };
+		DB223EB91FA1813C00FAA068 /* TKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB223EAB1FA1813C00FAA068 /* TKViewController.m */; };
+		DB223EBA1FA1813C00FAA068 /* TKGeneralTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB223EAE1FA1813C00FAA068 /* TKGeneralTableViewController.m */; };
+		DB223EBB1FA1813C00FAA068 /* TKAllCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB223EB11FA1813C00FAA068 /* TKAllCategoryViewController.m */; };
+		DB223EBC1FA1813C00FAA068 /* TKDiscountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB223EB31FA1813C00FAA068 /* TKDiscountViewController.m */; };
+		DB223EBD1FA1813C00FAA068 /* TKRootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB223EB51FA1813C00FAA068 /* TKRootTabBarController.m */; };
+		DB223EC21FA1818400FAA068 /* TKPageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB223EC01FA1818400FAA068 /* TKPageManager.m */; };
+		DB223EC51FA184E900FAA068 /* UIViewController+TKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DB223EC31FA184E800FAA068 /* UIViewController+TKExtension.m */; };
+		DB223ECD1FA1854500FAA068 /* TKScriptMessageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = DB223EC81FA1854500FAA068 /* TKScriptMessageHandler.m */; };
+		DB223ECE1FA1854500FAA068 /* TKWebScriptMessageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = DB223ECA1FA1854500FAA068 /* TKWebScriptMessageHandler.m */; };
+		DB223ECF1FA1854500FAA068 /* TKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB223ECC1FA1854500FAA068 /* TKWebViewController.m */; };
 		DB3DD9951F9B106C007F53E7 /* TKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3DD98C1F9B106B007F53E7 /* TKAppDelegate.m */; };
 		DB3DD9961F9B106C007F53E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB3DD9901F9B106B007F53E7 /* Assets.xcassets */; };
 		DB3DD99A1F9B1130007F53E7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB3DD9981F9B1130007F53E7 /* Info.plist */; };
 		DB3DD99B1F9B1130007F53E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3DD9991F9B1130007F53E7 /* main.m */; };
-		DB3DD9AB1F9B2C15007F53E7 /* TKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3DD9AA1F9B2C15007F53E7 /* TKViewController.m */; };
-		DB3DD9AE1F9B2C3F007F53E7 /* TKCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3DD9AD1F9B2C3F007F53E7 /* TKCollectionViewController.m */; };
-		DB3DD9B11F9B2D1A007F53E7 /* TKTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3DD9B01F9B2D1A007F53E7 /* TKTableViewController.m */; };
 		DB3DD9B41F9B2E69007F53E7 /* UIColor+ImageGenerate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3DD9B21F9B2E69007F53E7 /* UIColor+ImageGenerate.m */; };
 		DB3DD9BA1F9B3202007F53E7 /* UINavigationController+TKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3DD9B91F9B3202007F53E7 /* UINavigationController+TKExtension.m */; };
 		DB3DD9BD1F9B34B1007F53E7 /* TKUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3DD9BC1F9B34B1007F53E7 /* TKUtility.m */; };
@@ -43,12 +52,8 @@
 		DB654E131FA076D10054A61F /* TKNormalTitleHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB654E121FA076D10054A61F /* TKNormalTitleHeaderView.m */; };
 		DB654E181FA07B930054A61F /* TKBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB654E171FA07B930054A61F /* TKBaseTableViewCell.m */; };
 		DB654E1C1FA07E900054A61F /* TKGeneralTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB654E1B1FA07E900054A61F /* TKGeneralTableViewCell.m */; };
-		DB654E241FA087280054A61F /* TKAllCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB654E1F1FA087280054A61F /* TKAllCategoryViewController.m */; };
-		DB654E251FA087280054A61F /* TKDiscountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB654E211FA087280054A61F /* TKDiscountViewController.m */; };
-		DB654E261FA087280054A61F /* TKRootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB654E231FA087280054A61F /* TKRootTabBarController.m */; };
 		DB654E291FA087D10054A61F /* UITableView+TKCellRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = DB654E281FA087D10054A61F /* UITableView+TKCellRegister.m */; };
 		DB654E2C1FA08D020054A61F /* UIView+TKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DB654E2B1FA08D020054A61F /* UIView+TKExtension.m */; };
-		DB654E301FA094200054A61F /* TKGeneralTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB654E2F1FA094200054A61F /* TKGeneralTableViewController.m */; };
 		DBCF03151F9EE5E900D44188 /* TKNetWorkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCF03131F9EE5E900D44188 /* TKNetWorkingManager.m */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +61,30 @@
 		56C991403214A430B2EDC53D /* libPods-TaoKeClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TaoKeClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADE388CD7C58A6A5D8FB33F1 /* Pods-TaoKeClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaoKeClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-TaoKeClient/Pods-TaoKeClient.release.xcconfig"; sourceTree = "<group>"; };
 		AF002C2BC19B4DD486EA8031 /* Pods-TaoKeClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaoKeClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TaoKeClient/Pods-TaoKeClient.debug.xcconfig"; sourceTree = "<group>"; };
+		DB223EA61FA1813C00FAA068 /* TKCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCollectionViewController.h; sourceTree = "<group>"; };
+		DB223EA71FA1813C00FAA068 /* TKCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCollectionViewController.m; sourceTree = "<group>"; };
+		DB223EA81FA1813C00FAA068 /* TKTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTableViewController.h; sourceTree = "<group>"; };
+		DB223EA91FA1813C00FAA068 /* TKTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTableViewController.m; sourceTree = "<group>"; };
+		DB223EAA1FA1813C00FAA068 /* TKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKViewController.h; sourceTree = "<group>"; };
+		DB223EAB1FA1813C00FAA068 /* TKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKViewController.m; sourceTree = "<group>"; };
+		DB223EAD1FA1813C00FAA068 /* TKGeneralTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGeneralTableViewController.h; sourceTree = "<group>"; };
+		DB223EAE1FA1813C00FAA068 /* TKGeneralTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGeneralTableViewController.m; sourceTree = "<group>"; };
+		DB223EB01FA1813C00FAA068 /* TKAllCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAllCategoryViewController.h; sourceTree = "<group>"; };
+		DB223EB11FA1813C00FAA068 /* TKAllCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAllCategoryViewController.m; sourceTree = "<group>"; };
+		DB223EB21FA1813C00FAA068 /* TKDiscountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKDiscountViewController.h; sourceTree = "<group>"; };
+		DB223EB31FA1813C00FAA068 /* TKDiscountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKDiscountViewController.m; sourceTree = "<group>"; };
+		DB223EB41FA1813C00FAA068 /* TKRootTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKRootTabBarController.h; sourceTree = "<group>"; };
+		DB223EB51FA1813C00FAA068 /* TKRootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKRootTabBarController.m; sourceTree = "<group>"; };
+		DB223EC01FA1818400FAA068 /* TKPageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPageManager.m; sourceTree = "<group>"; };
+		DB223EC11FA1818400FAA068 /* TKPageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPageManager.h; sourceTree = "<group>"; };
+		DB223EC31FA184E800FAA068 /* UIViewController+TKExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TKExtension.m"; sourceTree = "<group>"; };
+		DB223EC41FA184E900FAA068 /* UIViewController+TKExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TKExtension.h"; sourceTree = "<group>"; };
+		DB223EC71FA1854500FAA068 /* TKScriptMessageHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKScriptMessageHandler.h; sourceTree = "<group>"; };
+		DB223EC81FA1854500FAA068 /* TKScriptMessageHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKScriptMessageHandler.m; sourceTree = "<group>"; };
+		DB223EC91FA1854500FAA068 /* TKWebScriptMessageHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKWebScriptMessageHandler.h; sourceTree = "<group>"; };
+		DB223ECA1FA1854500FAA068 /* TKWebScriptMessageHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKWebScriptMessageHandler.m; sourceTree = "<group>"; };
+		DB223ECB1FA1854500FAA068 /* TKWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKWebViewController.h; sourceTree = "<group>"; };
+		DB223ECC1FA1854500FAA068 /* TKWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKWebViewController.m; sourceTree = "<group>"; };
 		DB3DD98B1F9B106B007F53E7 /* TKAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAppDelegate.h; sourceTree = "<group>"; };
 		DB3DD98C1F9B106B007F53E7 /* TKAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAppDelegate.m; sourceTree = "<group>"; };
 		DB3DD9901F9B106B007F53E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,12 +92,6 @@
 		DB3DD9991F9B1130007F53E7 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = TaoKeClient/main.m; sourceTree = SOURCE_ROOT; };
 		DB3DD9A11F9B11E7007F53E7 /* TaoKe-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TaoKe-Prefix.pch"; sourceTree = "<group>"; };
 		DB3DD9A21F9B11FB007F53E7 /* TKAppConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKAppConfig.h; sourceTree = "<group>"; };
-		DB3DD9A91F9B2C15007F53E7 /* TKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKViewController.h; sourceTree = "<group>"; };
-		DB3DD9AA1F9B2C15007F53E7 /* TKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKViewController.m; sourceTree = "<group>"; };
-		DB3DD9AC1F9B2C3F007F53E7 /* TKCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKCollectionViewController.h; sourceTree = "<group>"; };
-		DB3DD9AD1F9B2C3F007F53E7 /* TKCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKCollectionViewController.m; sourceTree = "<group>"; };
-		DB3DD9AF1F9B2D1A007F53E7 /* TKTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKTableViewController.h; sourceTree = "<group>"; };
-		DB3DD9B01F9B2D1A007F53E7 /* TKTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKTableViewController.m; sourceTree = "<group>"; };
 		DB3DD9B21F9B2E69007F53E7 /* UIColor+ImageGenerate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ImageGenerate.m"; sourceTree = "<group>"; };
 		DB3DD9B31F9B2E69007F53E7 /* UIColor+ImageGenerate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ImageGenerate.h"; sourceTree = "<group>"; };
 		DB3DD9B81F9B3202007F53E7 /* UINavigationController+TKExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+TKExtension.h"; sourceTree = "<group>"; };
@@ -127,18 +150,10 @@
 		DB654E171FA07B930054A61F /* TKBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBaseTableViewCell.m; sourceTree = "<group>"; };
 		DB654E1A1FA07E900054A61F /* TKGeneralTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKGeneralTableViewCell.h; sourceTree = "<group>"; };
 		DB654E1B1FA07E900054A61F /* TKGeneralTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKGeneralTableViewCell.m; sourceTree = "<group>"; };
-		DB654E1E1FA087280054A61F /* TKAllCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAllCategoryViewController.h; sourceTree = "<group>"; };
-		DB654E1F1FA087280054A61F /* TKAllCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAllCategoryViewController.m; sourceTree = "<group>"; };
-		DB654E201FA087280054A61F /* TKDiscountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKDiscountViewController.h; sourceTree = "<group>"; };
-		DB654E211FA087280054A61F /* TKDiscountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKDiscountViewController.m; sourceTree = "<group>"; };
-		DB654E221FA087280054A61F /* TKRootTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKRootTabBarController.h; sourceTree = "<group>"; };
-		DB654E231FA087280054A61F /* TKRootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKRootTabBarController.m; sourceTree = "<group>"; };
 		DB654E271FA087D10054A61F /* UITableView+TKCellRegister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+TKCellRegister.h"; sourceTree = "<group>"; };
 		DB654E281FA087D10054A61F /* UITableView+TKCellRegister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+TKCellRegister.m"; sourceTree = "<group>"; };
 		DB654E2A1FA08D020054A61F /* UIView+TKExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+TKExtension.h"; sourceTree = "<group>"; };
 		DB654E2B1FA08D020054A61F /* UIView+TKExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+TKExtension.m"; sourceTree = "<group>"; };
-		DB654E2E1FA094200054A61F /* TKGeneralTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKGeneralTableViewController.h; sourceTree = "<group>"; };
-		DB654E2F1FA094200054A61F /* TKGeneralTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKGeneralTableViewController.m; sourceTree = "<group>"; };
 		DBCF03121F9EE5E900D44188 /* TKNetWorkingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKNetWorkingManager.h; sourceTree = "<group>"; };
 		DBCF03131F9EE5E900D44188 /* TKNetWorkingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKNetWorkingManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,6 +185,81 @@
 				56C991403214A430B2EDC53D /* libPods-TaoKeClient.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB223EA41FA1813C00FAA068 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DB223EA51FA1813C00FAA068 /* BaseViewController */,
+				DB223EAC1FA1813C00FAA068 /* GeneralTableController */,
+				DB223EAF1FA1813C00FAA068 /* RootViewController */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DB223EA51FA1813C00FAA068 /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DB223EA61FA1813C00FAA068 /* TKCollectionViewController.h */,
+				DB223EA71FA1813C00FAA068 /* TKCollectionViewController.m */,
+				DB223EA81FA1813C00FAA068 /* TKTableViewController.h */,
+				DB223EA91FA1813C00FAA068 /* TKTableViewController.m */,
+				DB223EAA1FA1813C00FAA068 /* TKViewController.h */,
+				DB223EAB1FA1813C00FAA068 /* TKViewController.m */,
+			);
+			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		DB223EAC1FA1813C00FAA068 /* GeneralTableController */ = {
+			isa = PBXGroup;
+			children = (
+				DB223EAD1FA1813C00FAA068 /* TKGeneralTableViewController.h */,
+				DB223EAE1FA1813C00FAA068 /* TKGeneralTableViewController.m */,
+			);
+			path = GeneralTableController;
+			sourceTree = "<group>";
+		};
+		DB223EAF1FA1813C00FAA068 /* RootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DB223EB01FA1813C00FAA068 /* TKAllCategoryViewController.h */,
+				DB223EB11FA1813C00FAA068 /* TKAllCategoryViewController.m */,
+				DB223EB21FA1813C00FAA068 /* TKDiscountViewController.h */,
+				DB223EB31FA1813C00FAA068 /* TKDiscountViewController.m */,
+				DB223EB41FA1813C00FAA068 /* TKRootTabBarController.h */,
+				DB223EB51FA1813C00FAA068 /* TKRootTabBarController.m */,
+			);
+			path = RootViewController;
+			sourceTree = "<group>";
+		};
+		DB223EB61FA1813C00FAA068 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				DB223EBF1FA1816B00FAA068 /* TKPageManager */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		DB223EBF1FA1816B00FAA068 /* TKPageManager */ = {
+			isa = PBXGroup;
+			children = (
+				DB223EC11FA1818400FAA068 /* TKPageManager.h */,
+				DB223EC01FA1818400FAA068 /* TKPageManager.m */,
+			);
+			path = TKPageManager;
+			sourceTree = "<group>";
+		};
+		DB223EC61FA1854500FAA068 /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				DB223EC71FA1854500FAA068 /* TKScriptMessageHandler.h */,
+				DB223EC81FA1854500FAA068 /* TKScriptMessageHandler.m */,
+				DB223EC91FA1854500FAA068 /* TKWebScriptMessageHandler.h */,
+				DB223ECA1FA1854500FAA068 /* TKWebScriptMessageHandler.m */,
+				DB223ECB1FA1854500FAA068 /* TKWebViewController.h */,
+				DB223ECC1FA1854500FAA068 /* TKWebViewController.m */,
+			);
+			path = Web;
 			sourceTree = "<group>";
 		};
 		DB3DD9871F9B106B007F53E7 /* Supporting Files */ = {
@@ -204,6 +294,7 @@
 		DB3DD98E1F9B106B007F53E7 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				DB223EC61FA1854500FAA068 /* Web */,
 				DB3DD9A31F9B1235007F53E7 /* Category */,
 				DB3DD9A41F9B1235007F53E7 /* FunctionTools */,
 			);
@@ -231,11 +322,11 @@
 		DB3DD9921F9B106B007F53E7 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				DB223EB61FA1813C00FAA068 /* Manager */,
+				DB223EA41FA1813C00FAA068 /* ViewController */,
 				DB6417DE1F9F22040060CE98 /* View */,
 				DB6417D81F9F1BC70060CE98 /* Protocol */,
 				DBCF030E1F9EE5E900D44188 /* Network */,
-				DB3DD9B51F9B2EE3007F53E7 /* Module */,
-				DB3DD9A81F9B2C15007F53E7 /* BaseViewController */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -243,6 +334,8 @@
 		DB3DD9A31F9B1235007F53E7 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				DB223EC41FA184E900FAA068 /* UIViewController+TKExtension.h */,
+				DB223EC31FA184E800FAA068 /* UIViewController+TKExtension.m */,
 				DB654E271FA087D10054A61F /* UITableView+TKCellRegister.h */,
 				DB654E281FA087D10054A61F /* UITableView+TKCellRegister.m */,
 				DB3F64281FA0632F00C9601A /* CAGradientLayer+TKGradientLayer.h */,
@@ -284,28 +377,6 @@
 				DB3DD9C21F9B3AB5007F53E7 /* TKTimer.m */,
 			);
 			path = FunctionTools;
-			sourceTree = "<group>";
-		};
-		DB3DD9A81F9B2C15007F53E7 /* BaseViewController */ = {
-			isa = PBXGroup;
-			children = (
-				DB3DD9A91F9B2C15007F53E7 /* TKViewController.h */,
-				DB3DD9AA1F9B2C15007F53E7 /* TKViewController.m */,
-				DB3DD9AC1F9B2C3F007F53E7 /* TKCollectionViewController.h */,
-				DB3DD9AD1F9B2C3F007F53E7 /* TKCollectionViewController.m */,
-				DB3DD9AF1F9B2D1A007F53E7 /* TKTableViewController.h */,
-				DB3DD9B01F9B2D1A007F53E7 /* TKTableViewController.m */,
-			);
-			path = BaseViewController;
-			sourceTree = "<group>";
-		};
-		DB3DD9B51F9B2EE3007F53E7 /* Module */ = {
-			isa = PBXGroup;
-			children = (
-				DB654E2D1FA093E10054A61F /* GeneralTableController */,
-				DB654E1D1FA087280054A61F /* RootViewController */,
-			);
-			path = Module;
 			sourceTree = "<group>";
 		};
 		DB4801731F9B0A76007C3864 = {
@@ -448,28 +519,6 @@
 				DB654E1B1FA07E900054A61F /* TKGeneralTableViewCell.m */,
 			);
 			path = GeneralCell;
-			sourceTree = "<group>";
-		};
-		DB654E1D1FA087280054A61F /* RootViewController */ = {
-			isa = PBXGroup;
-			children = (
-				DB654E1E1FA087280054A61F /* TKAllCategoryViewController.h */,
-				DB654E1F1FA087280054A61F /* TKAllCategoryViewController.m */,
-				DB654E201FA087280054A61F /* TKDiscountViewController.h */,
-				DB654E211FA087280054A61F /* TKDiscountViewController.m */,
-				DB654E221FA087280054A61F /* TKRootTabBarController.h */,
-				DB654E231FA087280054A61F /* TKRootTabBarController.m */,
-			);
-			path = RootViewController;
-			sourceTree = "<group>";
-		};
-		DB654E2D1FA093E10054A61F /* GeneralTableController */ = {
-			isa = PBXGroup;
-			children = (
-				DB654E2E1FA094200054A61F /* TKGeneralTableViewController.h */,
-				DB654E2F1FA094200054A61F /* TKGeneralTableViewController.m */,
-			);
-			path = GeneralTableController;
 			sourceTree = "<group>";
 		};
 		DBCF030E1F9EE5E900D44188 /* Network */ = {
@@ -625,20 +674,24 @@
 				DB654E291FA087D10054A61F /* UITableView+TKCellRegister.m in Sources */,
 				DB6417E21F9F22300060CE98 /* TKAllCategoryHeaderView.m in Sources */,
 				DB6417EA1F9F22A60060CE98 /* TKCardCycleScrollView.m in Sources */,
+				DB223EBD1FA1813C00FAA068 /* TKRootTabBarController.m in Sources */,
 				DB6417FD1F9F403C0060CE98 /* NSObject+TKExtension.m in Sources */,
-				DB654E261FA087280054A61F /* TKRootTabBarController.m in Sources */,
-				DB654E251FA087280054A61F /* TKDiscountViewController.m in Sources */,
+				DB223EC51FA184E900FAA068 /* UIViewController+TKExtension.m in Sources */,
 				DB3DD9C91F9B3AB5007F53E7 /* TKRuntimeTool.m in Sources */,
+				DB223EB71FA1813C00FAA068 /* TKCollectionViewController.m in Sources */,
 				DB654E131FA076D10054A61F /* TKNormalTitleHeaderView.m in Sources */,
+				DB223EBB1FA1813C00FAA068 /* TKAllCategoryViewController.m in Sources */,
 				DB3DD9BD1F9B34B1007F53E7 /* TKUtility.m in Sources */,
+				DB223ECD1FA1854500FAA068 /* TKScriptMessageHandler.m in Sources */,
 				DB6417D41F9F0DF90060CE98 /* UIView+LLSegmentBar.m in Sources */,
+				DB223ECF1FA1854500FAA068 /* TKWebViewController.m in Sources */,
+				DB223EB81FA1813C00FAA068 /* TKTableViewController.m in Sources */,
 				DB3DD99B1F9B1130007F53E7 /* main.m in Sources */,
 				DB6417F71F9F35F50060CE98 /* SDCycleScrollView+TKIndexSetter.m in Sources */,
-				DB3DD9B11F9B2D1A007F53E7 /* TKTableViewController.m in Sources */,
 				DB654E1C1FA07E900054A61F /* TKGeneralTableViewCell.m in Sources */,
 				DB6417D31F9F0DF90060CE98 /* LLSegmentBarVC.m in Sources */,
-				DB654E241FA087280054A61F /* TKAllCategoryViewController.m in Sources */,
 				DB6417C31F9EF10C0060CE98 /* UIView+TKFrameChanged.m in Sources */,
+				DB223ECE1FA1854500FAA068 /* TKWebScriptMessageHandler.m in Sources */,
 				DB6417F11F9F31960060CE98 /* TKScrollPageViewController.m in Sources */,
 				DB6417DB1F9F1CA30060CE98 /* NSDictionary+TKIdentifier.m in Sources */,
 				DBCF03151F9EE5E900D44188 /* TKNetWorkingManager.m in Sources */,
@@ -646,17 +699,18 @@
 				DB6417FA1F9F401E0060CE98 /* NSString+TKExtension.m in Sources */,
 				DB654E181FA07B930054A61F /* TKBaseTableViewCell.m in Sources */,
 				DB3DD9951F9B106C007F53E7 /* TKAppDelegate.m in Sources */,
+				DB223EBA1FA1813C00FAA068 /* TKGeneralTableViewController.m in Sources */,
 				DB6417D21F9F0DF90060CE98 /* LLSegmentBarConfig.m in Sources */,
+				DB223EC21FA1818400FAA068 /* TKPageManager.m in Sources */,
+				DB223EBC1FA1813C00FAA068 /* TKDiscountViewController.m in Sources */,
 				DB3DD9B41F9B2E69007F53E7 /* UIColor+ImageGenerate.m in Sources */,
 				DB3DD9C61F9B3AB5007F53E7 /* TKDictionaryProxy.m in Sources */,
 				DB6417F41F9F31ED0060CE98 /* NSArray+TKExtension.m in Sources */,
 				DB3DD9C81F9B3AB5007F53E7 /* TKArchiverManager.m in Sources */,
-				DB3DD9AE1F9B2C3F007F53E7 /* TKCollectionViewController.m in Sources */,
 				DB3F642A1FA0632F00C9601A /* CAGradientLayer+TKGradientLayer.m in Sources */,
+				DB223EB91FA1813C00FAA068 /* TKViewController.m in Sources */,
 				DB3DD9C71F9B3AB5007F53E7 /* TKTimer.m in Sources */,
 				DB654E2C1FA08D020054A61F /* UIView+TKExtension.m in Sources */,
-				DB3DD9AB1F9B2C15007F53E7 /* TKViewController.m in Sources */,
-				DB654E301FA094200054A61F /* TKGeneralTableViewController.m in Sources */,
 				DB6418031F9F42EF0060CE98 /* NSDate+TKExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

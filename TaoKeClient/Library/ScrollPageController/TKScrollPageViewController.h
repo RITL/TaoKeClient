@@ -28,7 +28,32 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
+
+@class TKScrollHorizontalPageViewController;
+
+@protocol TKScrollHorizontalPageDelegate <NSObject>
+
+@optional
+
+
+/**
+ TKScrollHorizontalPageViewController 将要变为第几个控制器
+
+ @param viewController TKScrollHorizontalPageViewController
+ @param index 当前控制器的index
+ */
+- (void)tk_scrollHorizontalPageViewController:(TKScrollHorizontalPageViewController *)viewController
+                                  willToIndex:(NSInteger)index;
+
+
+@end
+
+
+
 @interface TKScrollHorizontalPageViewController : TKScrollPageViewController <LLSegmentBarDelegate>
+
+/// 代理
+@property (nonatomic, weak, nullable) id<TKScrollHorizontalPageDelegate> tk_delegate;
 
 /// 控制器
 @property (nonatomic, strong) LLSegmentBar * segmentBar;

@@ -39,6 +39,20 @@
 }
 
 
+ - (void)actionBackItemInNavigationBar
+{
+    if (self.navigationController) {
+        
+        [self.navigationController popViewControllerAnimated:true];
+        
+    }else {
+        
+        [self dismissViewControllerAnimated:true completion:nil];
+    }
+    
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

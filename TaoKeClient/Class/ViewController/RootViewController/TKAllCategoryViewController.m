@@ -19,6 +19,11 @@
 /// 顶部的视图
 @property (nonatomic, strong) TKAllCategoryHeaderView * headerView;
 
+/// 请求的数据
+@property (nonatomic, strong) NSMutableArray <NSDictionary *> *infos;
+/// 进行包壳的字典数据
+@property (nonatomic, copy, readonly)NSDictionary *infoMessage;
+
 @end
 
 @implementation TKAllCategoryViewController
@@ -27,6 +32,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.infos = [NSMutableArray arrayWithCapacity:100];
     
     self.headerView = ({
        
@@ -54,6 +60,7 @@
     
     [self requestBannerInfo];
     [self requestCategory];
+    [self requestMessageComplete:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -113,6 +120,78 @@
 }
 
 
+/// 请求
+- (void)requestMessageComplete:(void(^)(void))completeHandler
+{
+    [TKNetWorkingManager requestWithUrlString:TKBaseUrlAppendTo(@"/api.php?m=Api&c=Index&a=getdataoke") Method:HTTP_GET Parameters:@{@"limit":@"8",@"p":@(self.currentPage)} success:^(NSDictionary *data) {
+        
+        NSArray <NSDictionary *> *items = [data valueForKey:@"msg"];
+        
+        if (items) {
+            
+            self.currentPage ++;//当前页码追加
+            
+            if (completeHandler) { completeHandler(); }
+            
+            [self.infos addObjectsFromArray:items];
+            
+            [self.tableView reloadData];
+        }
+        
+    } failure:^(NSError *error) {
+        
+         if (completeHandler) { completeHandler(); }
+    }];
+}
+
+
+#pragma mark - getter
+
+- (NSDictionary *)infoMessage
+{
+    return @{@"msg":self.infos};
+}
+
+
+#pragma mark - refresh
+
+- (BOOL)headerRefreshEnable
+{
+    return true;
+}
+
+- (void)headerRefreshBeginHandler
+{
+    __weak typeof(self) weakSelf = self;
+    
+    [self requestBannerInfo];
+    
+    //清空当前数组
+    [self.infos removeAllObjects];
+    self.currentPage = 1;
+    [self requestMessageComplete:^{
+       
+        [weakSelf endHeaderRefreshing];
+    }];
+}
+
+- (BOOL)footerRefreshEnable
+{
+    return true;
+}
+
+- (void)footerRefreshBeginHandler
+{
+    __weak typeof(self) weakSelf = self;
+    
+    [self requestMessageComplete:^{
+        
+        [weakSelf endFooterRefreshing];
+        
+    }];
+}
+
+
 #pragma mark - tableView dataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -123,13 +202,18 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    NSInteger numberOfRows = (self.infos.count % 2 == 0) ? self.infos.count / 2 : self.infos.count / 2 + 1;
+    
+    return numberOfRows;
 }
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TKGeneralTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TKGeneralTableViewCell" forIndexPath:indexPath];
+    
+    //获得当前的数据
+    [cell updateViewByData:self.infoMessage indexPath:indexPath cellDelegate:self];
     
     
     return cell;

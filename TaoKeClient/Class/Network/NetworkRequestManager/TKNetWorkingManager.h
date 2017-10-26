@@ -10,7 +10,7 @@
 #import <AFNetworking/AFHTTPSessionManager.h>
 
 typedef enum : NSUInteger {
-    HTTP_GET,
+    HTTP_GET = 0,
     HTTP_POST,
     HTTP_PUT,
     HTTP_DELETE

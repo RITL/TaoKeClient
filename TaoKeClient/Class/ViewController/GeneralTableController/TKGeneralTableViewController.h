@@ -7,11 +7,18 @@
 //
 
 #import "TKTableViewController.h"
+#import "TKNetWorkingManager.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// 通用的全局tableViewController
+/// 通用的上下拉刷新全局tableViewController,符合某个固定数据结构的固定控制器
 @interface TKGeneralTableViewController : TKTableViewController
+
+/// 请求的url,默认为nil
+@property (nonatomic, copy)NSString *request_url;
+
+/// 请求的方式,默认为GET
+@property (nonatomic, assign)HTTPMethod method;
 
 @end
 

@@ -9,7 +9,6 @@
 #import "TKViewController.h"
 
 @class LLSegmentBar;
-@class TKAllCategoryViewController;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,9 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 导航栏顶部的
 @property (nonatomic, strong) LLSegmentBar *segmentBar;
-
-
-@property (nonatomic, weak) TKAllCategoryViewController *firstController;
 
 @end
 

@@ -246,9 +246,17 @@
     
     [super setCurrentViewController:currentViewController];
     
+    if (self.tk_delegate && [self.tk_delegate respondsToSelector:@selector(tk_scrollHorizontalPageViewController:willToIndex:)]) {
+        
+        [self.tk_delegate tk_scrollHorizontalPageViewController:self willToIndex:self.currentIndex];
+    }
+    
+    
     //变化segment
     [self.segmentBar changedSelectedOnlyWithIndex:self.currentIndex];
 }
+
+
 
 
 #pragma mark - getter
@@ -296,6 +304,11 @@
 {
     
     [super pageViewController:pageViewController didFinishAnimating:finished previousViewControllers:previousViewControllers transitionCompleted:completed];
+    
+    if (self.tk_delegate && [self.tk_delegate respondsToSelector:@selector(tk_scrollHorizontalPageViewController:willToIndex:)]) {
+        
+        [self.tk_delegate tk_scrollHorizontalPageViewController:self willToIndex:self.currentIndex];
+    }
     
     //进行设置
     [self.segmentBar changedSelectedOnlyWithIndex:self.currentIndex];

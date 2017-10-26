@@ -17,6 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)loadPropertysAtInitialization NS_REQUIRES_SUPER;
 
 
+#pragma mark - childViewControllers
+- (void)actionBackItemInNavigationBar;
+
+
 #pragma mark - *************** test ***************
 /// 默认不做任何操作，用于测试
 - (void)doNothing;

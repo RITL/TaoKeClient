@@ -23,13 +23,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, nullable) NSString *procuct_category;
 /// 商品的url
 @property (nonatomic, copy, nullable) NSString *product_url;
-/// 产品的省份id
+/// 原价
 @property (nonatomic, copy, nullable) NSString *product_pure_provice;
 /// 折扣
 @property (nonatomic, copy, nullable) NSString *coupon_denomination;
 /// 折扣限制
 @property (nonatomic, copy, nullable) NSString *coupon_limit;
-/// 省份id
+/// 折后价
 @property (nonatomic, copy, nullable) NSString *pure_provice;
 /// 结束时间的时间戳
 @property (nonatomic, copy, nullable) NSString *coupon_end;

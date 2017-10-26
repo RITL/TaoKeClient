@@ -49,7 +49,7 @@
        
         UIImageView *imageview = [UIImageView new];
         imageview.contentMode = UIViewContentModeScaleAspectFill;
-        imageview.backgroundColor = UIColor.redColor;
+        imageview.backgroundColor = TKImageViewPlaceHolderColor;
         
         imageview;
     });
@@ -191,10 +191,20 @@
 {
     if (!good) { return; }
     
-    //seting
+    //setting
     [self.imageView sd_setImageWithURL:good.product_main_image.tk_url placeholderImage:nil];
+    
+    //名称
     self.titleLabel.text = good.product_name;
-
+    
+    // 原价
+    self.priceLabel.attributedText = [[NSString stringWithFormat:@"￥%@",good.product_pure_provice] tk_middleLineStringWithColor:self.priceLabel.textColor font:self.priceLabel.font];
+    
+    //优惠券
+    self.discountLabel.text = [NSString stringWithFormat:@"%@元优惠券",good.coupon_denomination];
+    
+    //折后价
+    self.discountNumberLabel.text = [NSString stringWithFormat:@"(%@元)",good.pure_provice];
 }
 
 @end
@@ -243,7 +253,30 @@
 - (void)updateViewByData:(NSDictionary *)dataDict indexPath:(NSIndexPath *)indexPath cellDelegate:(id)delegate
 {
     //获得当前的数据
+    self.delegate = delegate;
+    self.indexPath = indexPath;
+    self.messageInfo = dataDict;
     
+    NSArray <NSDictionary *> *datas = [[dataDict valueForKey:@"msg"] copy];
+    
+    //获得row
+    NSInteger row = indexPath.row;
+    NSInteger currentIndex = row * 2;
+    
+    NSInteger count = currentIndex + 2 > datas.count ? 1 : 2;
+    
+    // 隐藏right
+    self.rightGeneralItem.hidden = (count == 1);
+    
+    //获得当前第一个item
+    id <TKGood> good1 = TKEnityCreateWithData(datas[currentIndex]);
+    [self.leftGeneralItem updateMessInfo:good1];
+    
+    if (count == 2) {
+        
+        id <TKGood> good2 = TKEnityCreateWithData(datas[currentIndex + 1]);
+        [self.rightGeneralItem updateMessInfo:good2];
+    }
 }
 
 
