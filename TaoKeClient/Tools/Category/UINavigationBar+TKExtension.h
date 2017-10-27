@@ -33,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param frame 需要设置的frame
  @param viewClass 视图的类
  */
-- (void)tk_resetViewFrameInNavigationBar:(CGRect)frame viewClass:(Class)viewClass;
+//- (void)tk_resetViewFrameInNavigationBar:(CGRect)frame viewClass:(Class)viewClass;
 
 
 @end

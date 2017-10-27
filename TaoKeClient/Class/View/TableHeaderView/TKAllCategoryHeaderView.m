@@ -11,6 +11,11 @@
 #import "LLSegmentBar+TKExtension.h"
 #import <Masonry.h>
 
+@interface TKAllCategoryHeaderView ()<LLSegmentBarDelegate>
+
+
+@end
+
 @implementation TKAllCategoryHeaderView
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -47,6 +52,8 @@
         segmentBar.buttonAddctionWidth = TKScale(30);
         segmentBar.borderMargin = TKScale(10);
         segmentBar.buttonsMargin = TKScale(15);
+        segmentBar.delegate = self;
+        segmentBar.repetPrevent = false;//不进行连点阻隔
         
         //设置属性
         [segmentBar updateWithConfig:^(LLSegmentBarConfig *config) {
@@ -98,6 +105,23 @@
 - (void)updateSegmentItems:(NSArray<id<TKCategoryTitle>> *)titles
 {
     self.segmentBar.titleItems = titles;
+}
+
+
+
+#pragma mark - LLSegmentBarDelegate
+
+- (void)segmentBar:(LLSegmentBar *)segmentBar didSelectIndex:(NSInteger)toIndex fromIndex: (NSInteger)fromIndex
+{
+    //获得category对象
+    id <TKCategoryTitle> title = self.segmentBar.titleItems[toIndex];
+    
+    //进行回调
+    if (self.delegate && [self.delegate respondsToSelector:@selector(tk_allCategoryHeaderView:type:info:)]) {
+        
+        //进行回调
+        [self.delegate tk_allCategoryHeaderView:self type:TKAllCategoryHeaderViewActionTypeSegment info:@{TKConstDictionaryKeyPlatform : TKConstDictionaryValueKeyCategory,TKConstDictionaryKeyCategoryTitle : title}];
+    }
 }
 
 @end

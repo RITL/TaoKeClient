@@ -8,6 +8,7 @@
 
 #import "TKPageManager.h"
 #import "TKShareWebViewController.h"
+#import "TKCategoryViewController.h"
 #import <JPNavigationControllerKit.h>
 #import <PYSearch.h>
 #import <objc/message.h>
@@ -131,9 +132,22 @@ NSString *TKPageManagerHandlerPlatformKey = @"platform";
             viewController.searchBar.placeholder = TKConstSearchPlaceHolder;
             
         }]] animated:false completion:nil];
-        
     }
-
+    
+#pragma mark - 分类界面
+    else if([platform isEqualToString:TKConstDictionaryValueKeyCategory]) {
+        
+        id <TKCategoryTitle>item = infoDict[TKConstDictionaryKeyCategoryTitle];
+        
+        //进行视图弹出
+        [viewController tk_topNavigationPushViewController:[TKCategoryViewController viewController:^(__kindof TKCategoryViewController * _Nonnull viewController) {
+            
+            //设置属性
+            viewController.category = item;
+            viewController.hidesBottomBarWhenPushed = true;
+            
+        }] animated:true];
+    }
     
 }
 

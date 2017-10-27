@@ -243,24 +243,22 @@
                   searchText:(NSString *)searchText
 {
     if ([searchText isEqualToString:@""]) {//如果没有相关信息
-        
-//        //获得控制器
-//        if (self.childViewControllers.count > 0) {
-//
-//
-//            TKSearchDetailedViewController *viewController = [[self.childViewControllers tk_filter:^BOOL(UIViewController * _Nonnull item) {
-//
-//                return [item isKindOfClass:[TKSearchDetailedViewController class]];
-//
-//            }] tk_safeObjectAtIndex:0];
-//
-//
-//            if (viewController) {
-//
-//                [viewController.view removeFromSuperview];
-//                [viewController removeFromParentViewController];
-//            }
-//        }
+        //获得控制器
+        if (self.childViewControllers.count > 0) {
+
+            TKGeneralTableViewController *viewController = [[self.childViewControllers tk_filter:^BOOL(UIViewController * _Nonnull item) {
+
+                return [item isKindOfClass:[TKGeneralTableViewController class]];
+
+            }] tk_safeObjectAtIndex:0];
+
+
+            if (viewController) {
+
+                [viewController.view removeFromSuperview];
+                [viewController removeFromParentViewController];
+            }
+        }
     }
 }
 

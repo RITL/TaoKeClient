@@ -30,17 +30,17 @@
 
 @end
 
-@implementation UINavigationController (TKPreferredStatusBarStyle)
-
-
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
-    UIViewController *viewController = self.visibleViewController;
-    
-    return viewController.preferredStatusBarStyle;
-}
-
-@end
+//@implementation UINavigationController (TKPreferredStatusBarStyle)
+//
+//
+//- (UIStatusBarStyle)preferredStatusBarStyle
+//{
+//    UIViewController *viewController = self.visibleViewController;
+//    
+//    return viewController.preferredStatusBarStyle;
+//}
+//
+//@end
 
 
 @implementation JPNavigationController (TKVisableViewController)

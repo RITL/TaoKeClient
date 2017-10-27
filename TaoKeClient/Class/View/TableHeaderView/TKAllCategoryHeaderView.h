@@ -12,8 +12,38 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class TKCardCycleScrollView;
 @class LLSegmentBar;
+@class TKCardCycleScrollView;
+@class TKAllCategoryHeaderView;
+
+
+
+/**
+ 响应的类型
+
+ - TKAllCategoryHeaderViewActionTypeCycle: 轮播响应
+ - TKAllCategoryHeaderViewActionTypeSegment: 分类seg响应
+ - strong:
+ */
+typedef NS_ENUM(NSInteger,TKAllCategoryHeaderViewActionType){
+    
+    TKAllCategoryHeaderViewActionTypeCycle = 0,
+    TKAllCategoryHeaderViewActionTypeSegment
+    
+};
+
+
+@protocol TKAllCategoryHeaderDelegate <NSObject>
+
+@optional
+
+- (void)tk_allCategoryHeaderView:(TKAllCategoryHeaderView *)headerView
+                            type:(TKAllCategoryHeaderViewActionType)type
+                            info:(NSDictionary *)info;
+
+
+@end
+
 
 @interface TKAllCategoryHeaderView : UIView
 
@@ -22,6 +52,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 推荐
 @property (nonatomic, strong) LLSegmentBar *segmentBar;
+
+/// 代理对象
+@property (nonatomic, weak, nullable) id<TKAllCategoryHeaderDelegate> delegate;
 
 /// 更新banner
 - (void)updateCycleItems:(NSArray<id<TKGood>>*)items;

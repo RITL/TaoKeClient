@@ -27,41 +27,41 @@
 }
 
 
-- (void)tk_resetViewFrameInNavigationBar:(CGRect)frame viewClass:(Class)viewClass
-{
-    if (UIDevice.currentDevice.systemVersion.floatValue < 11.0) {  return; }//iOS11之前不进行操作
-
-    __block UIView *navigationBarContentView = nil;
-
-    [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-       
-        if ([obj isKindOfClass:NSClassFromString(@"_UINavigationBarContentView")]) {
-            
-            navigationBarContentView = obj;
-            *stop = true;
-        }
-    }];
-    
-    UIView *buttonBarStackView = nil;
-    UIView *customView = nil;
-    
-    //再度遍历
-    [navigationBarContentView.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-       
-//        if (obj isKindOfClass:NSClassFromString(@"")) {
-//            <#statements#>
+//- (void)tk_resetViewFrameInNavigationBar:(CGRect)frame viewClass:(Class)viewClass
+//{
+//    if (UIDevice.currentDevice.systemVersion.floatValue < 11.0) {  return; }//iOS11之前不进行操作
+//
+//    __block UIView *navigationBarContentView = nil;
+//
+//    [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//       
+//        if ([obj isKindOfClass:NSClassFromString(@"_UINavigationBarContentView")]) {
+//            
+//            navigationBarContentView = obj;
+//            *stop = true;
 //        }
-        
-        
-        if ([obj isKindOfClass:viewClass]) {
-            
-//            obj.frame = frame;
-            //删除所有的
-            
-            
-            *stop = true;
-        }
-    }];
-}
+//    }];
+//    
+//    UIView *buttonBarStackView = nil;
+//    UIView *customView = nil;
+//    
+//    //再度遍历
+//    [navigationBarContentView.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//       
+////        if (obj isKindOfClass:NSClassFromString(@"")) {
+////            <#statements#>
+////        }
+//        
+//        
+//        if ([obj isKindOfClass:viewClass]) {
+//            
+////            obj.frame = frame;
+//            //删除所有的
+//            
+//            
+//            *stop = true;
+//        }
+//    }];
+//}
 
 @end

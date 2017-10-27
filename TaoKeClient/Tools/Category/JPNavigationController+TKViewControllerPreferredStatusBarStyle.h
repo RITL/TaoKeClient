@@ -15,9 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
-@interface UINavigationController (TKPreferredStatusBarStyle)
-
-@end
 
 
 @interface JPNavigationController (TKVisableViewController)

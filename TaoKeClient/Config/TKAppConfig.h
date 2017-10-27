@@ -47,11 +47,14 @@ static NSString *const TKFontPingFangSC_Bold = @"PingFangSC-Bold";
 static NSString *const TKConstDictionaryKeyPlatform = @"platform";
 static NSString *const TKConstDictionaryKeyTitle = @"title";
 static NSString *const TKConstDictionaryKeyUrl = @"url";
+static NSString *const TKConstDictionaryKeyIdentifier = @"id";
+static NSString *const TKConstDictionaryKeyCategoryTitle = @"object";
 
 // Platform Value
 static NSString *const TKConstDictionaryValueKeyWeb = @"web";
 static NSString *const TKConstDictionaryValueKeyShare = @"share";
 static NSString *const TKConstDictionaryValueKeySearch = @"search";
+static NSString *const TKConstDictionaryValueKeyCategory = @"category";
 
 
 

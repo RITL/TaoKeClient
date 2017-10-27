@@ -8,11 +8,12 @@
 
 #import "TKViewController.h"
 #import "TKBaseTableViewCell.h"
+#import "TKAllCategoryHeaderView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 /// 履行各种跳转协议
-@interface TKViewController (TKPageManagerBridge) <TKBaseTableViewCellDelegate>
+@interface TKViewController (TKPageManagerBridge) <TKBaseTableViewCellDelegate,TKAllCategoryHeaderDelegate>
 
 
 

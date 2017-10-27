@@ -44,6 +44,7 @@ CGFloat LLSegmentBarButtonsMarginDefault = -1;
         self.borderMargin = 0.0;
         self.isSimpleView = false;
         self.indicatorFitTitle = true;
+        self.repetPrevent = true;
         self.indicatorConstWidth = 14;
         self.buttonAddctionWidth = 0;
         self.indicatorMarginFromBottom = 0;
@@ -137,12 +138,19 @@ CGFloat LLSegmentBarButtonsMarginDefault = -1;
     
     UIButton *sender = self.itemBtns[index];
     
-    //如果连续点击，不作用
-    if (sender.tag != _lastBtn.tag && action) {
+    //检测是否进行连点阻止
+    if (self.useRepetPrevent) {
+        
+        if (sender.tag != _lastBtn.tag && action && [self.delegate respondsToSelector:@selector(segmentBar:didSelectIndex:fromIndex:)]) {
+
+            [self.delegate segmentBar:self didSelectIndex:sender.tag fromIndex:_lastBtn.tag];
+        }
+        
+    } else {
         
         if ([self.delegate respondsToSelector:@selector(segmentBar:didSelectIndex:fromIndex:)]) {
             
-            [self.delegate segmentBar:self didSelectIndex:sender.tag fromIndex:_lastBtn.tag];
+             [self.delegate segmentBar:self didSelectIndex:sender.tag fromIndex:_lastBtn.tag];
         }
     }
     

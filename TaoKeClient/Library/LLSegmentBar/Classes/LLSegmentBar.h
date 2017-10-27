@@ -60,6 +60,9 @@ extern CGFloat LLSegmentBarButtonsMarginDefault;
 /// 两边的边距,默认为0
 @property (nonatomic, assign) CGFloat borderMargin;
 
+/// 是否进行重复点击同一个button的阻隔信号，默认为true
+@property (nonatomic, assign,getter=useRepetPrevent) BOOL repetPrevent;
+
 
 /**
  *  指示条是否自动根据 item 的 title 的宽度自适应

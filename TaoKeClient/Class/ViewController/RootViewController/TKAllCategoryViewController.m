@@ -11,6 +11,7 @@
 #import "TKNormalTitleHeaderView.h"
 #import "TKGeneralTableViewCell.h"
 #import "TKNetWorkingManager.h"
+#import "TKCategoryManager.h"
 #import "UITableView+TKCellRegister.h"
 #import <Masonry.h>
 
@@ -41,7 +42,7 @@
         view;
     });
     
-    
+    self.headerView.delegate = self;
     self.headerView.frame = CGRectMake(0, 0, self.tk_width, TKScale(265));
     self.tableView.tableHeaderView = self.headerView;
     
@@ -86,6 +87,7 @@
             
             //更新
             [self.headerView updateCycleItems:tkGoods];
+            
         }
         
         
@@ -112,6 +114,9 @@
             
             //更新
             [self.headerView updateSegmentItems:TKCategoryTitles];
+            
+            //进行存储
+            [TKCategoryManager saveCategorys:TKCategoryTitles];
         }
         
     } failure:^(NSError *error) {
@@ -258,6 +263,9 @@
 {
     return TKScale(40);
 }
+
+
+#pragma mark - TKAllCategoryHeaderDelegate
 
 
 @end

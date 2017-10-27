@@ -18,6 +18,8 @@
 }
 
 
+#pragma mark - TKBaseTableViewCellDelegate
+
 - (void)tk_baseTableViewCell:(TKBaseTableViewCell *)cell
         didSelectItemAtIndex:(NSInteger)index
                    indexPath:(NSIndexPath * _Nullable)indexPath
@@ -33,6 +35,16 @@
                     linkInfo:(NSDictionary * _Nullable)linkInfo
 {
     [TKPageManager pageManagerFromObject:cell info:linkInfo];
+}
+
+
+#pragma mark - TKAllCategoryHeaderDelegate
+
+- (void)tk_allCategoryHeaderView:(TKAllCategoryHeaderView *)headerView
+                            type:(TKAllCategoryHeaderViewActionType)type
+                            info:(NSDictionary *)info
+{
+     [TKPageManager pageManagerFromObject:headerView info:info];
 }
 
 @end

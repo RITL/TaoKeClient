@@ -65,6 +65,8 @@
 		DBD021AD1FA2D0E300CA0A3A /* UISearchBar+TKCustomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD021AC1FA2D0E300CA0A3A /* UISearchBar+TKCustomColor.m */; };
 		DBD021B11FA2D29500CA0A3A /* TKGeneralPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD021B01FA2D29500CA0A3A /* TKGeneralPageViewController.m */; };
 		DBD021B41FA2DA0900CA0A3A /* TKSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD021B31FA2DA0900CA0A3A /* TKSelectionViewController.m */; };
+		DBD021B81FA311F400CA0A3A /* TKCategoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD021B71FA311F400CA0A3A /* TKCategoryManager.m */; };
+		DBD87F9E1FA3168A00A659B7 /* TKCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD87F9D1FA3168A00A659B7 /* TKCategoryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -187,6 +189,10 @@
 		DBD021B01FA2D29500CA0A3A /* TKGeneralPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKGeneralPageViewController.m; sourceTree = "<group>"; };
 		DBD021B21FA2DA0900CA0A3A /* TKSelectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKSelectionViewController.h; sourceTree = "<group>"; };
 		DBD021B31FA2DA0900CA0A3A /* TKSelectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKSelectionViewController.m; sourceTree = "<group>"; };
+		DBD021B61FA311F400CA0A3A /* TKCategoryManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKCategoryManager.h; sourceTree = "<group>"; };
+		DBD021B71FA311F400CA0A3A /* TKCategoryManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKCategoryManager.m; sourceTree = "<group>"; };
+		DBD87F9C1FA3168A00A659B7 /* TKCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCategoryViewController.h; sourceTree = "<group>"; };
+		DBD87F9D1FA3168A00A659B7 /* TKCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCategoryViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +227,7 @@
 		DB223EA41FA1813C00FAA068 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				DBD87F9B1FA3168A00A659B7 /* TKCategoryViewController */,
 				DBD021AE1FA2D28000CA0A3A /* GeneralPageController */,
 				DB8888CD1FA2C341005FF631 /* ShareWebController */,
 				DB223EA51FA1813C00FAA068 /* BaseViewController */,
@@ -270,6 +277,7 @@
 		DB223EB61FA1813C00FAA068 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				DBD021B51FA311CC00CA0A3A /* TKCategoryManager */,
 				DB223EBF1FA1816B00FAA068 /* TKPageManager */,
 			);
 			path = Manager;
@@ -614,6 +622,24 @@
 			path = GeneralPageController;
 			sourceTree = "<group>";
 		};
+		DBD021B51FA311CC00CA0A3A /* TKCategoryManager */ = {
+			isa = PBXGroup;
+			children = (
+				DBD021B61FA311F400CA0A3A /* TKCategoryManager.h */,
+				DBD021B71FA311F400CA0A3A /* TKCategoryManager.m */,
+			);
+			path = TKCategoryManager;
+			sourceTree = "<group>";
+		};
+		DBD87F9B1FA3168A00A659B7 /* TKCategoryViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DBD87F9C1FA3168A00A659B7 /* TKCategoryViewController.h */,
+				DBD87F9D1FA3168A00A659B7 /* TKCategoryViewController.m */,
+			);
+			path = TKCategoryViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -770,6 +796,7 @@
 				DB223EB81FA1813C00FAA068 /* TKTableViewController.m in Sources */,
 				DB3DD99B1F9B1130007F53E7 /* main.m in Sources */,
 				DB6417F71F9F35F50060CE98 /* SDCycleScrollView+TKIndexSetter.m in Sources */,
+				DBD021B81FA311F400CA0A3A /* TKCategoryManager.m in Sources */,
 				DB654E1C1FA07E900054A61F /* TKGeneralTableViewCell.m in Sources */,
 				DB223EDE1FA1C93A00FAA068 /* JPNavigationController+TKViewControllerPreferredStatusBarStyle.m in Sources */,
 				DB6417D31F9F0DF90060CE98 /* LLSegmentBarVC.m in Sources */,
@@ -796,6 +823,7 @@
 				DB6417F41F9F31ED0060CE98 /* NSArray+TKExtension.m in Sources */,
 				DB3DD9C81F9B3AB5007F53E7 /* TKArchiverManager.m in Sources */,
 				DB3F642A1FA0632F00C9601A /* CAGradientLayer+TKGradientLayer.m in Sources */,
+				DBD87F9E1FA3168A00A659B7 /* TKCategoryViewController.m in Sources */,
 				DBD021B11FA2D29500CA0A3A /* TKGeneralPageViewController.m in Sources */,
 				DB223EB91FA1813C00FAA068 /* TKViewController.m in Sources */,
 				DB3DD9C71F9B3AB5007F53E7 /* TKTimer.m in Sources */,

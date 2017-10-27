@@ -167,10 +167,7 @@ static NSString const * ConstTextField;
 
 
 - (void)tk_setSearchFieldBackgroundChangedSize:(CGSize)size
-{
-    //获得高度
-    CGFloat height = size.height;
-    
+{    
     UITextField *textField = self.searchBarTextField;
     
     if (!textField) {
