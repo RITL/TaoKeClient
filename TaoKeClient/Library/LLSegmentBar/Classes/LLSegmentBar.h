@@ -24,6 +24,9 @@
 
 @end
 
+/// 默认的宽度
+extern CGFloat LLSegmentBarButtonsMarginDefault;
+
 
 @interface LLSegmentBar : UIView
 
@@ -76,7 +79,7 @@
 /// 按钮的拓展宽度，默认为0
 @property (nonatomic, assign) CGFloat buttonAddctionWidth;
 
-/// button间的边距，默认为23
+/// button间的边距，默认为LLSegmentBarButtonsMarginDefault
 @property (nonatomic, assign) CGFloat buttonsMargin;
 
 

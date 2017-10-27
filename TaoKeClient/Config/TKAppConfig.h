@@ -40,13 +40,20 @@ static NSString *const TKFontPingFangSC_Bold = @"PingFangSC-Bold";
 
 ///Const DictionaryKey
 
-//Platform
+//Key
 static NSString *const TKConstDictionaryKeyPlatform = @"platform";
 static NSString *const TKConstDictionaryKeyTitle = @"title";
 static NSString *const TKConstDictionaryKeyUrl = @"url";
 
-//Value
+// Platform Value
 static NSString *const TKConstDictionaryValueKeyWeb = @"web";
 static NSString *const TKConstDictionaryValueKeyShare = @"share";
+static NSString *const TKConstDictionaryValueKeySearch = @"search";
+
+
+
+/// Custom
+
+static NSString *const TKConstSearchPlaceHolder = @"请输入搜索内容";
 
 #endif /* TKAppConfig_h */

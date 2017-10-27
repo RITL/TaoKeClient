@@ -45,6 +45,8 @@
         LLSegmentBar *segmentBar = [LLSegmentBar new];
         segmentBar.tk_map_indicatorView.hidden = true;
         segmentBar.buttonAddctionWidth = TKScale(30);
+        segmentBar.borderMargin = TKScale(10);
+        segmentBar.buttonsMargin = TKScale(15);
         
         //设置属性
         [segmentBar updateWithConfig:^(LLSegmentBarConfig *config) {

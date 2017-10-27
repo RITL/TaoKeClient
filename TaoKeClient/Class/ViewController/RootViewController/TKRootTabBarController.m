@@ -8,7 +8,7 @@
 
 #import "TKRootTabBarController.h"
 #import "TKDiscountViewController.h"
-#import "TKViewController.h"
+#import "TKSelectionViewController.h"
 #import <JPNavigationControllerKit.h>
 
 @interface TKRootTabBarController ()
@@ -31,7 +31,7 @@
     
     
     //初始化精选
-    TKViewController *rootChoicenes = [TKViewController new];
+    TKViewController *rootChoicenes = [TKSelectionViewController new];
     JPNavigationController *choicenes = [[JPNavigationController alloc]initWithRootViewController:rootChoicenes];
     choicenes.tabBarItem.title = @"精选";
     

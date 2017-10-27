@@ -8,6 +8,8 @@
 
 #import "TKPageManager.h"
 #import "TKShareWebViewController.h"
+#import <JPNavigationControllerKit.h>
+#import <PYSearch.h>
 #import <objc/message.h>
 
 
@@ -118,7 +120,19 @@ NSString *TKPageManagerHandlerPlatformKey = @"platform";
         
         
         
-    };
+    }
+    
+    
+#pragma mark - 搜索界面
+    else if([platform isEqualToString:TKConstDictionaryValueKeySearch]){
+        
+        [viewController presentViewController:[[JPNavigationController alloc] initWithRootViewController:[PYSearchViewController viewController:^(__kindof PYSearchViewController * _Nonnull viewController) {
+            
+            viewController.searchBar.placeholder = TKConstSearchPlaceHolder;
+            
+        }]] animated:false completion:nil];
+        
+    }
 
     
 }

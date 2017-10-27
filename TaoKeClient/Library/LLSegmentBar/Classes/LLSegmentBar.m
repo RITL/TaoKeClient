@@ -11,6 +11,8 @@
 
 #define KMinMargin (/*TKScale(23)*/self.buttonsMargin)
 
+CGFloat LLSegmentBarButtonsMarginDefault = -1;
+
 @interface LLSegmentBar ()
 
 /** 内容承载视图 */
@@ -46,7 +48,7 @@
         self.buttonAddctionWidth = 0;
         self.indicatorMarginFromBottom = 0;
         self.buttonsMinMarginFromBorder = 23 * UIScreen.mainScreen.bounds.size.width / 375.0;
-        self.buttonsMargin = self.buttonsMinMarginFromBorder;
+        self.buttonsMargin = LLSegmentBarButtonsMarginDefault;
     }
     return self;
 }
@@ -210,9 +212,18 @@
         
         caculateMargin = (self.width - totalBtnWidth - self.borderMargin * 2) / (self.items.count - 1);
         lastX = self.borderMargin;//使用自定义边距
-        
     }
-
+    
+   if(self.buttonsMargin != LLSegmentBarButtonsMarginDefault){//不是默认的平分
+        
+        caculateMargin = self.buttonsMargin;
+        lastX = self.borderMargin;
+       
+   }else {
+       
+       caculateMargin = 23;
+       lastX = self.borderMargin;
+   }
     
     for (UIButton *btn in self.itemBtns) {
 
