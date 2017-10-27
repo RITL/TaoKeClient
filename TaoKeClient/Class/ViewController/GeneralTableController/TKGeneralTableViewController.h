@@ -15,10 +15,13 @@ NS_ASSUME_NONNULL_BEGIN
 @interface TKGeneralTableViewController : TKTableViewController
 
 /// 请求的url,默认为nil
-@property (nonatomic, copy)NSString *request_url;
+@property (nonatomic, copy, nullable)NSString *request_url;
 
 /// 请求的方式,默认为GET
 @property (nonatomic, assign)HTTPMethod method;
+
+/// 请求的附加参数，默认为nil
+@property (nonatomic, copy, nullable)NSDictionary *additionInfo;
 
 @end
 

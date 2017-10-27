@@ -32,7 +32,7 @@
     [self.tableView registerClass:TKGeneralTableViewCell.class forCellReuseIdentifier:@"TKGeneralTableViewCell"];
     
     //进行网络请求
-    [self requestMessageComplete:nil];
+    [self requestMessageComplete:nil dataComplete:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,12 +41,19 @@
 }
 
 
-- (void)requestMessageComplete:(void(^)(void))completeHandler
+- (void)requestMessageComplete:(void(^)(void))completeHandler dataComplete:(void(^)(void))dataComplete
 {
     if (!self.request_url) {  return;  }
     
+    NSMutableDictionary *constInfo = [NSMutableDictionary dictionaryWithDictionary: @{@"limit":@"8",@"p":@(self.currentPage)}];
+    
+    if (self.additionInfo) {
+        
+        [constInfo addEntriesFromDictionary:self.additionInfo];
+    }
+    
     //进行请求
-    [TKNetWorkingManager requestWithUrlString:self.request_url Method:self.method Parameters:@{@"limit":@"8",@"p":@(self.currentPage)} success:^(NSDictionary *data) {
+    [TKNetWorkingManager requestWithUrlString:self.request_url Method:self.method Parameters:constInfo.mutableCopy success:^(NSDictionary *data) {
         
         NSArray <NSDictionary *> *items = [data valueForKey:@"msg"];
         
@@ -55,6 +62,7 @@
             self.currentPage ++;//当前页码追加
             
             if (completeHandler) { completeHandler(); }
+            if (dataComplete) { dataComplete(); }
             
             [self.infos addObjectsFromArray:items];
             
@@ -82,11 +90,15 @@
     __weak typeof(self) weakSelf = self;
     
     //清空当前数组
-    [self.infos removeAllObjects];
+    
     self.currentPage = 1;
     [self requestMessageComplete:^{
         
         [weakSelf endHeaderRefreshing];
+        
+    } dataComplete:^{
+        
+        [self.infos removeAllObjects];
     }];
 }
 
@@ -105,9 +117,9 @@
     
     [self requestMessageComplete:^{
         
-        [weakSelf endFooterRefreshing];
+          [weakSelf endFooterRefreshing];
         
-    }];
+    } dataComplete:nil];
 }
 
 

@@ -7,10 +7,10 @@
 //
 
 #import "TK_PYSearchViewModel.h"
-#import "UISearchBar+TKCustomColor.h"
-//#import "TKSearchDetailedViewController.h"
-#import "TKNetWorkingManager.h"
 #import "TKRuntimeTool.h"
+#import "TKNetWorkingManager.h"
+#import "TKGeneralTableViewController.h"
+#import "UISearchBar+TKCustomColor.h"
 #import <UIColor+ImageGenerate.h>
 #import <objc/runtime.h>
 
@@ -18,23 +18,7 @@
 
 -(void)requestHotSearchMessage
 {
-//    [TKNetWorkingManager requestHotSearchMessageComplete:^(NSDictionary * _Nonnull info, NSString * _Nullable placeholder, NSDictionary * _Nonnull data) {
-//
-//        //获得数据数组
-//        NSArray <NSDictionary *> *datas = [info valueForKey:@"data"];
-//
-//        //获得源数据
-//        NSArray <NSString *> *names = [datas tk_map:^id _Nonnull(id _Nonnull dictionary) {
-//
-//            return [dictionary valueForKey:@"name"];
-//        }];
-//
-//        //设置
-////        ((PYSearchViewController *)self.viewController).hotSearches = names;
-//
-//    } failture:^(NSString * _Nonnull status, NSError * _Nullable error, NSString * _Nonnull errorMessage) {
-//
-//    }];
+
 }
 
 @end
@@ -50,9 +34,9 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
 
-        TK_swizzledInstanceSelector([PYSearchViewController class], NSSelectorFromString(@"tagDidCLick:"), NSSelectorFromString(@"tk_tagDidCLick:"));
+//        TK_swizzledInstanceSelector([PYSearchViewController class], NSSelectorFromString(@"tagDidCLick:"), NSSelectorFromString(@"tk_tagDidCLick:"));
         
-        TK_swizzledInstanceSelector([PYSearchViewController class], sel_registerName("tableView:didSelectRowAtIndexPath:"), sel_registerName("tk_tableView:didSelectRowAtIndexPath:"));
+//        TK_swizzledInstanceSelector([PYSearchViewController class], sel_registerName("tableView:didSelectRowAtIndexPath:"), sel_registerName("tk_tableView:didSelectRowAtIndexPath:"));
         
         TK_swizzledInstanceSelector([PYSearchViewController class], NSSelectorFromString(@"dealloc"), NSSelectorFromString(@"tk_dealloc"));
         
@@ -70,63 +54,43 @@
 - (void)viewDidLoad
 {
     self.view.backgroundColor = [UIColor orangeColor];
-//    self.navigationController.navigationBar.translucent = false;
     
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 110000
-    if (@available(iOS 11,*)) {
+
+    if (TK_iOS_Version_GreaterThanOrEqualTo(11.0)) {
         
-        self.navigationItem.largeTitleDisplayMode = UINavigationItemLargeTitleDisplayModeNever;
+        if (@available(iOS 11,*)) {
+            
+            self.navigationItem.largeTitleDisplayMode = UINavigationItemLargeTitleDisplayModeNever;
+        }
+        
     }
-#endif
+
     
     self.delegate = self;
-//    self.viewModel = [TK_PYSearchViewModel viewModelBindViewController:self];
-//    [self.viewModel requestHotSearchMessage];
 }
 
 
 - (void)tk_viewWillAppear:(BOOL)animated
 {
-    if (TK_iOS_Version_GreaterThanOrEqualTo(11.0)) {
-        
-        //重新布置
-        [super viewWillAppear:animated];
-        
-        // Adjust the view according to the `navigationBar.translucent`
-        if (NO == self.navigationController.navigationBar.translucent) {
-            
-            //获得tableView
-            UITableView *baseSearchTableView = [self valueForKey:@"baseSearchTableView"];
-            
-            //获得结果控制器
-            UIViewController *searchSuggestionVC = [self valueForKey:@"searchSuggestionVC"];
-            
-            baseSearchTableView.contentInset = UIEdgeInsetsMake(0, 0, self.view.tk_originY, 0);
-            searchSuggestionVC.view.frame = CGRectMake(0, 64 - self.view.tk_originY, self.view.tk_width, self.view.tk_height  + self.view.tk_originY);
+    [self tk_viewWillAppear:animated];
 
-            if (!objc_getAssociatedObject(self, _cmd)) {
-                [self.navigationController.navigationBar setBackgroundImage:PYSEARCH_COLOR(249, 249, 249).jp_image forBarMetrics:UIBarMetricsDefault];
-                objc_setAssociatedObject(self, _cmd, @"1", OBJC_ASSOCIATION_COPY_NONATOMIC);
-            }
-        }
-        
-    }else {
-        
-        [self tk_viewWillAppear:animated];
+    if (!objc_getAssociatedObject(self, _cmd)) {
+
+        [self.navigationController.navigationBar setBackgroundImage:TKNavigationBarSearchBackgroundColor.jp_image forBarMetrics:UIBarMetricsDefault];
+
+        objc_setAssociatedObject(self, _cmd, @"1", OBJC_ASSOCIATION_COPY_NONATOMIC);
     }
 }
+
+
 
 - (void)tk_setup
 {
     [self tk_setup];
     
-    if (TK_iOS_Version_GreaterThanOrEqualTo(11.0)) {
-        
-        [self.searchBar tk_setSearchFont: TKUtilityFont(@"PingFangSC-Regular", 14)];
-        [self.searchBar tk_setPlaceHolderFont:TKUtilityFont(@"PingFangSC-Regular", 14)];
-    }
-    
-    
+    [self.searchBar tk_setSearchFont: TKUtilityFont(@"PingFangSC-Regular", 14)];
+    [self.searchBar tk_setPlaceHolderFont:TKUtilityFont(@"PingFangSC-Regular", 14)];
+
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     /**
      *  设置frame只能控制按钮的大小
@@ -134,7 +98,7 @@
     btn.frame= CGRectMake(0, 0, 40, 44);
     [btn addTarget:self action:NSSelectorFromString(@"cancelDidClick") forControlEvents:UIControlEventTouchUpInside];
     [btn setTitle:@"取消" forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor colorWithRed:144.0/255.0 green:144.0/255.0 blue:144.0/255.0 alpha:1] forState:UIControlStateNormal];
+    [btn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
     UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
 
     //设置取消的样式
@@ -142,32 +106,29 @@
 }
 
 
-- (void)tk_tagDidCLick:(UITapGestureRecognizer *)gr
-{
-    [self tk_tagDidCLick:gr];
-    
-    UILabel *label = (UILabel *)gr.view;
-    NSInteger index = [self.hotSearches indexOfObject:label.text] + 1;
-    
-//    if (1 == label.tag) {//热门搜索
+//- (void)tk_tagDidCLick:(UITapGestureRecognizer *)gr
+//{
+//    [self tk_tagDidCLick:gr];
 //
-////        TKStatisticManagerClick(@"search_hot_click", @{@"index":@(index),@"text":label.text});
-//    }
-}
+//    UILabel *label = (UILabel *)gr.view;
+//    NSInteger index = [self.hotSearches indexOfObject:label.text] + 1;
+//
+//
+//}
 
 
 
-- (void)tk_tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [self tk_tableView:tableView didSelectRowAtIndexPath:indexPath];
-    
-    //进行统计
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    NSString *text = cell.textLabel.text;
-    
-    //进行统计
-//    TKStatisticManagerClick(@"search_history_click", @{@"index":@(indexPath.row + 1),@"text":text});
-}
+//- (void)tk_tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    [self tk_tableView:tableView didSelectRowAtIndexPath:indexPath];
+//
+//    //进行统计
+//    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+//    NSString *text = cell.textLabel.text;
+//
+//    //进行统计
+////    TKStatisticManagerClick(@"search_history_click", @{@"index":@(indexPath.row + 1),@"text":text});
+//}
 
 
 
@@ -183,16 +144,21 @@
 {
     [self tk_searchBar:searchBar textDidChange:searchText];
     
-//    if (TK_iOS_Version_GreaterThanOrEqualTo(11.0)) {
-//
-//        [searchBar tk_setSearchFont: TKUtilityFont(@"PingFangSC-Regular", 14)];
-//    }
+    if (TK_iOS_Version_GreaterThanOrEqualTo(11.0)) {
+
+        [searchBar tk_setSearchFont: TKUtilityFont(@"PingFangSC-Regular", 14)];
+    }
 }
 
 
 
 -(TK_PYSearchViewModel *)viewModel
 {
+    if (!objc_getAssociatedObject(self, _cmd)) {
+        
+        self.viewModel = [TK_PYSearchViewModel new];
+    }
+    
     return objc_getAssociatedObject(self, _cmd);
 }
 
@@ -207,7 +173,7 @@
 
 -(UIStatusBarStyle)preferredStatusBarStyle
 {
-    return UIStatusBarStyleDefault;
+    return UIStatusBarStyleLightContent;
 }
 
 
@@ -221,57 +187,49 @@
     
     return ^(PYSearchViewController *searchViewController, UISearchBar *searchBar, NSString *searchText){
         
+        TKGeneralTableViewController *viewController = [[self.childViewControllers tk_filter:^BOOL(UIViewController * _Nonnull item) {
+
+            return [item isKindOfClass:[TKGeneralTableViewController class]];
+
+        }] tk_safeObjectAtIndex:0];
+
         
-//        TKSearchDetailedViewController *viewController = [[self.childViewControllers tk_filter:^BOOL(UIViewController * _Nonnull item) {
-//
-//            return [item isKindOfClass:[TKSearchDetailedViewController class]];
-//
-//        }] tk_safeObjectAtIndex:0];
-//
-//
-//        if (!viewController) {
-//
-//            //初始化vc
-//            viewController = [TKSearchDetailedViewController viewController:^(__kindof TKSearchDetailedViewController * _Nonnull viewController) {
-//
-//#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 110000
-//
-//                if (@available(iOS 11.0, *)) {
-//
-//                    CGFloat bottom = TK_iPhoneX ? 34 : 0;
-//
-//                    viewController.additionalSafeAreaInsets = UIEdgeInsetsMake(0, 0, bottom, 0);
-//
-//                };
-//#endif
-//
-//                [viewController setValue:searchText forKeyPath:@"viewModel.keywords"];
-//            }];
-//
-//
-//            //添加到当前视图
-//            [weakSelf addChildViewController:viewController];
-//            [weakSelf.view addSubview:viewController.view];
-//            [weakSelf.view bringSubviewToFront:viewController.view];
-//
-//            viewController.view.frame =  CGRectMake(0, 0, searchViewController.view.py_width, searchViewController.view.py_height);
-//        }
-//
-//        else {
-//
-//            //获得search
-//            NSString *keywords = [viewController valueForKeyPath:@"viewModel.keywords"];
-//
-//            if ([keywords isEqualToString:searchText]) {
-//
-//                return ;//重复
-//            }
-//
-//            viewController.tableViewModel.currentPage = 1;//重置数据源
-//            [viewController setValue:searchText forKeyPath:@"viewModel.keywords"];
-//            [viewController.mainTableView scrollsToTop];//滚动到顶部
-//            [viewController.tableViewModel startRequestBaseMessage];//开始请求
-//        }
+        if (!viewController) {
+
+            //初始化vc
+            viewController = [TKGeneralTableViewController viewController:^(__kindof TKGeneralTableViewController * _Nonnull viewController) {
+                
+                viewController.request_url = TKBaseUrlAppendTo(@"/api.php?m=Api&c=Index&a=c=Index&a=searchTaoKe");
+                viewController.additionInfo = @{@"keyword":searchText,@"cid":@(-1)};
+                
+            }];
+
+            weakSelf.viewModel.keywords = searchText;
+            
+            //添加到当前视图
+            [weakSelf addChildViewController:viewController];
+            [weakSelf.view addSubview:viewController.view];
+            [weakSelf.view bringSubviewToFront:viewController.view];
+
+            viewController.view.frame =  CGRectMake(0, 0, searchViewController.view.py_width, searchViewController.view.py_height);
+
+        }
+
+        else {
+
+            //获得search
+            NSString *keywords = self.viewModel.keywords;
+
+            if ([keywords isEqualToString:searchText]) {
+
+                return ;//重复
+            }
+
+            weakSelf.viewModel.keywords = searchText;
+            [viewController.tableView setContentOffset:CGPointMake(0, 0)];//滚动到顶部
+            viewController.additionInfo = @{@"keyword":weakSelf.viewModel.keywords,@"cid":@(-1)};//重新设置搜索关键词
+            [viewController headerRefreshBeginHandler];//开始请求
+        }
 
     };
 }

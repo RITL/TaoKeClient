@@ -25,6 +25,9 @@
 /// 导航栏bar的正常色
 #define TKNavigationBarNormalColor (TKColorFromRGB(0xe41d22))
 
+/// 搜索栏bar的正常色
+#define TKNavigationBarSearchBackgroundColor (TKColorFromRGB(0xe41d22))
+
 /// imageView的占位背景色
 #define TKImageViewPlaceHolderColor (TKColorFromRGB(0xedefee))
 

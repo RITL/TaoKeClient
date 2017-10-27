@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 嵌入PYSearchViewController的viewModel
 @interface TK_PYSearchViewModel : NSObject
 
+/// 搜索的关键词
+@property (nonatomic, copy)NSString *keywords;
+
 /// 请求热搜
 - (void)requestHotSearchMessage;
 
