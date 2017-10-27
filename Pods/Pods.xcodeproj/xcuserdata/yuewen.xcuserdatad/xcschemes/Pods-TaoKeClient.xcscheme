@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '3F8318EB00E19C65ADB5EB4F0E87DCE4'
+               BlueprintIdentifier = '4DA15F58136D69DE7256F4EFA7AB8F98'
                BlueprintName = 'Pods-TaoKeClient'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-TaoKeClient.a'>

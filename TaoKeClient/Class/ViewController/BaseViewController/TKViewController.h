@@ -14,7 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// 淘客的基础控制器
 @interface TKViewController : UIViewController
 
-/// 在init方法中加载自己的属性
+
+/**
+ 在init方法中加载自己的属性
+ */
 - (void)loadPropertysAtInitialization NS_REQUIRES_SUPER;
 
 
@@ -22,16 +25,23 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)actionBackItemInNavigationBar;
 
 
-#pragma mark - *************** test ***************
-/// 默认不做任何操作，用于测试
+#pragma mark - TEST
+
+/**
+ 默认不做任何操作，用于测试
+ */
 - (void)doNothing;
+
 
 @end
 
 
 @interface TKViewController (TKNavigationBarController) <TKNavigationBarController>
 
-/// 设置导航栏的属性
+
+/**
+ 设置导航栏的属性
+ */
 - (void)tk_setCustomNavigationBarProperty;
 
 @end

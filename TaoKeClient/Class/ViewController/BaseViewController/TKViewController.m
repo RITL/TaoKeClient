@@ -108,7 +108,7 @@
 
 -(UIFont *)tk_customFontInNavigationBar
 {
-    return TKUtilityFont(TKFontPingFangSC_Medium, 18);
+    return TKUtilityFont(TKFontPingFangSC_Medium, 16);
 }
 
 - (UIColor *)tk_customColorForNavigationBar

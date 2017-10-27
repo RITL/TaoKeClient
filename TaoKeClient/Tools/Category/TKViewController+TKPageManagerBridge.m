@@ -12,6 +12,12 @@
 @implementation TKViewController (TKPageManagerBridge)
 
 
+- (void)sendMessageToPageManager:(NSDictionary *)info
+{
+    [TKPageManager pageManagerFromObject:self info:info];
+}
+
+
 - (void)tk_baseTableViewCell:(TKBaseTableViewCell *)cell
         didSelectItemAtIndex:(NSInteger)index
                    indexPath:(NSIndexPath * _Nullable)indexPath

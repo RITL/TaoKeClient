@@ -17,6 +17,7 @@ PODS:
   - JPNavigationController (2.1.0)
   - Masonry (1.0.2)
   - MJRefresh (3.1.14.1)
+  - PYSearch (0.8.5)
   - SDCycleScrollView (1.65):
     - SDWebImage (~> 3.7)
   - SDWebImage (3.8.2):
@@ -40,6 +41,7 @@ DEPENDENCIES:
   - JPNavigationController (~> 2.1.0)
   - Masonry (~> 1.0.2)
   - MJRefresh
+  - PYSearch
   - SDCycleScrollView (~> 1.64)
   - SDWebImage (~> 3.8)
   - SVProgressHUD
@@ -53,11 +55,12 @@ SPEC CHECKSUMS:
   JPNavigationController: 47ab9e9881e3ca3232e654aed963585fe11e43eb
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MJRefresh: 238e6a37e2dba12160ee3b79f6d2a2b26abcab42
+  PYSearch: 3eca6a4736700076565cd7d3a64343aff8397eea
   SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
   UMengUShare: fdbbf86353976727af26a66e9a84314ecb59c816
 
-PODFILE CHECKSUM: ed2634d9589d3be91b817ab870db26547fea67f6
+PODFILE CHECKSUM: 68f7c952feb163afd8c7af30bc557ed0d47365a7
 
 COCOAPODS: 1.3.1

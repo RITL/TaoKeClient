@@ -14,6 +14,16 @@ NS_ASSUME_NONNULL_BEGIN
 /// 履行各种跳转协议
 @interface TKViewController (TKPageManagerBridge) <TKBaseTableViewCellDelegate>
 
+
+
+/**
+ 使用PageManager进行数据操作
+
+ @param info 所涵盖的数据信息
+ */
+- (void)sendMessageToPageManager:(NSDictionary *)info;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

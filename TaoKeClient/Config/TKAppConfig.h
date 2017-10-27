@@ -47,5 +47,6 @@ static NSString *const TKConstDictionaryKeyUrl = @"url";
 
 //Value
 static NSString *const TKConstDictionaryValueKeyWeb = @"web";
+static NSString *const TKConstDictionaryValueKeyShare = @"share";
 
 #endif /* TKAppConfig_h */

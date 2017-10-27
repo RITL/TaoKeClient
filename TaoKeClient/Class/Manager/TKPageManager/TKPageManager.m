@@ -7,7 +7,7 @@
 //
 
 #import "TKPageManager.h"
-#import "TKWebViewController.h"
+#import "TKShareWebViewController.h"
 #import <objc/message.h>
 
 
@@ -101,10 +101,10 @@ NSString *TKPageManagerHandlerPlatformKey = @"platform";
     
     UIViewController *viewController = self.viewController;
     
-    /// Web界面
+#pragma mark - Web界面
     if ([platform isEqualToString:TKConstDictionaryValueKeyWeb]) {
         
-        [viewController tk_topNavigationPushViewController:[TKWebViewController viewController:^(__kindof TKWebViewController * _Nonnull viewController) {
+        [viewController tk_topNavigationPushViewController:[TKShareWebViewController viewController:^(__kindof TKShareWebViewController * _Nonnull viewController) {
             
             viewController.hidesBottomBarWhenPushed = true;
             viewController.url = infoDict[TKConstDictionaryKeyUrl];
@@ -112,6 +112,13 @@ NSString *TKPageManagerHandlerPlatformKey = @"platform";
             
         }] animated:true];
     }
+    
+#pragma mark - Share(分享操作)
+    else if([platform isEqualToString:TKConstDictionaryValueKeyShare]){
+        
+        
+        
+    };
 
     
 }
