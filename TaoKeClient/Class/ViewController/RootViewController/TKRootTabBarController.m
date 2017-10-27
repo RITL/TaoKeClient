@@ -7,8 +7,8 @@
 //
 
 #import "TKRootTabBarController.h"
-#import "TKDiscountViewController.h"
-#import "TKSelectionViewController.h"
+#import "TKDiscountPageViewController.h"
+#import "TKSelectionPageViewController.h"
 #import <JPNavigationControllerKit.h>
 
 @interface TKRootTabBarController ()
@@ -25,13 +25,13 @@
     
     
     //初始化优惠券
-    TKViewController *rootDiscount = [TKDiscountViewController new];
+    TKViewController *rootDiscount = [TKDiscountPageViewController new];
     JPNavigationController *discount = [[JPNavigationController alloc]initWithRootViewController:rootDiscount];
     discount.tabBarItem.title = @"优惠券";
     
     
     //初始化精选
-    TKViewController *rootChoicenes = [TKSelectionViewController new];
+    TKViewController *rootChoicenes = [TKSelectionPageViewController new];
     JPNavigationController *choicenes = [[JPNavigationController alloc]initWithRootViewController:rootChoicenes];
     choicenes.tabBarItem.title = @"精选";
     

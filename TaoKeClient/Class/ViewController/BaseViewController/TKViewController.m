@@ -7,6 +7,7 @@
 //
 
 #import "TKViewController.h"
+#import "TKPageManager.h"
 #import "UIColor+ImageGenerate.h"
 
 @interface TKViewController ()
@@ -69,6 +70,10 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    /// 追踪
+    [TKPageManager sharedInstance].currentViewController = self;
+
     [self tk_setCustomNavigationBarProperty];
 }
 

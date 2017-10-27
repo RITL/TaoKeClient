@@ -1,19 +1,20 @@
 //
-//  TKSelectionViewController.m
+//  TKSelectionPageViewController.m
 //  TaoKeClient
 //
 //  Created by YueWen on 2017/10/27.
 //  Copyright © 2017年 YueWen. All rights reserved.
 //
 
-#import "TKSelectionViewController.h"
+#import "TKSelectionPageViewController.h"
+#import "TKSelectionTableController.h"
 #import "LLSegmentBar.h"
 
-@interface TKSelectionViewController ()
+@interface TKSelectionPageViewController ()
 
 @end
 
-@implementation TKSelectionViewController
+@implementation TKSelectionPageViewController
 
 - (void)viewDidLoad
 {
@@ -36,12 +37,12 @@
 - (void)addSubViewControllers
 {
     //精选
-    UIViewController *selectionController = [UIViewController new];
-    selectionController.view.backgroundColor = UIColor.yellowColor;
+    TKSelectionTableController *selectionController = [TKSelectionTableController new];
+
     
     //福利
-    UIViewController *welfareController = [UIViewController new];
-    welfareController.view.backgroundColor = UIColor.orangeColor;
+    TKGeneralTableViewController *welfareController = [TKGeneralTableViewController new];
+    welfareController.request_url = TKBaseUrlAppendTo(@"/api.php?m=Api&c=Lp&a=getFubaonew");
     
     
     self.contentViewControllers = @[selectionController,welfareController];

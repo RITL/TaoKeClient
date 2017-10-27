@@ -1,8 +1,8 @@
 //
-//  TKDiscountViewController.h
+//  TKSelectionPageViewController.h
 //  TaoKeClient
 //
-//  Created by YueWen on 2017/10/24.
+//  Created by YueWen on 2017/10/27.
 //  Copyright © 2017年 YueWen. All rights reserved.
 //
 
@@ -10,12 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// 主页优惠券控制器
-@interface TKDiscountViewController : TKGeneralPageViewController
+/// 主页精选控制器
+@interface TKSelectionPageViewController : TKGeneralPageViewController
 
 @end
-
-
-
 
 NS_ASSUME_NONNULL_END

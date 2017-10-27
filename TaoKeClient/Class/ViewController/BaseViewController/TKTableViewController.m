@@ -16,33 +16,10 @@
 
 @implementation TKTableViewController
 
-- (instancetype)init
-{
-    if (self = [super init]) {
-        
-        self.currentPage = 1;
-    }
-    
-    return self;
-}
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    
-    self.tableView = ({
-       
-        UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-        tableView.backgroundColor = UIColor.whiteColor;
-        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        
-        tableView.showsVerticalScrollIndicator = false;
-        tableView.showsHorizontalScrollIndicator = false;
-        
-        tableView;
-    });
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -62,18 +39,33 @@
 }
 
 
+- (void)loadPropertysAtInitialization
+{
+    [super loadPropertysAtInitialization];
+    
+    self.currentPage = 1;
+    
+    self.tableView = ({
+        
+        UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+        tableView.backgroundColor = UIColor.whiteColor;
+        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        
+        tableView.showsVerticalScrollIndicator = false;
+        tableView.showsHorizontalScrollIndicator = false;
+        
+        tableView;
+    });
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    [TKPageManager sharedInstance].currentViewController = self;
-}
+
 
 #pragma mark - UITableViewDatasource
 

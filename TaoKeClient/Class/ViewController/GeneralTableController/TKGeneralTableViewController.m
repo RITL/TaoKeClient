@@ -14,13 +14,21 @@
 @interface TKGeneralTableViewController ()
 
 /// 请求的数据
-@property (nonatomic, strong) NSMutableArray <NSDictionary *> *infos;
-/// 进行包壳的字典数据
-@property (nonatomic, copy, readonly)NSDictionary *infoMessage;
+@property (nonatomic, strong, readwrite) NSMutableArray <NSDictionary *> *infos;
+
 
 @end
 
 @implementation TKGeneralTableViewController
+
+- (void)loadPropertysAtInitialization
+{
+    [super loadPropertysAtInitialization];
+ 
+    //注册cell
+    [self.tableView registerClass:TKGeneralTableViewCell.class forCellReuseIdentifier:@"TKGeneralTableViewCell"];
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,8 +36,7 @@
     
     self.infos = [NSMutableArray arrayWithCapacity:100];
     
-    //注册cell
-    [self.tableView registerClass:TKGeneralTableViewCell.class forCellReuseIdentifier:@"TKGeneralTableViewCell"];
+
     
     //进行网络请求
     [self requestMessageComplete:nil dataComplete:nil];

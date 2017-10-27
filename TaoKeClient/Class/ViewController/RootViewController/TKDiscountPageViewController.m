@@ -1,12 +1,12 @@
 //
-//  TKDiscountViewController.m
+//  TKDiscountPageViewController.m
 //  TaoKeClient
 //
 //  Created by YueWen on 2017/10/24.
 //  Copyright © 2017年 YueWen. All rights reserved.
 //
 
-#import "TKDiscountViewController.h"
+#import "TKDiscountPageViewController.h"
 #import "LLSegmentBar.h"
 #import "UINavigationBar+TKExtension.h"
 #import "TKAllCategoryViewController.h"
@@ -14,12 +14,12 @@
 #import <Masonry.h>
 
 
-@interface TKDiscountViewController ()
+@interface TKDiscountPageViewController ()
 
 
 @end
 
-@implementation TKDiscountViewController
+@implementation TKDiscountPageViewController
 
 - (void)viewDidLoad
 {

@@ -14,6 +14,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// 通用的上下拉刷新全局tableViewController,符合某个固定数据结构的固定控制器
 @interface TKGeneralTableViewController : TKTableViewController
 
+/// 请求的数据
+@property (nonatomic, strong, readonly) NSMutableArray <NSDictionary *> *infos;
+
+/// 进行包壳的字典数据
+@property (nonatomic, copy, readonly)NSDictionary *infoMessage;
+
 /// 请求的url,默认为nil
 @property (nonatomic, copy, nullable)NSString *request_url;
 
