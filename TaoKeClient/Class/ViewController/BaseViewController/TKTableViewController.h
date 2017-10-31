@@ -7,7 +7,7 @@
 //
 
 #import "TKViewController.h"
-#import <MJRefresh.h>
+#import "TKRefreshGifHeader.h"
 
 NS_ASSUME_NONNULL_BEGIN
 /// 淘客的基础列表控制器
@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger currentPage;
 
 /// 下拉组件
-@property (nonatomic, strong) MJRefreshGifHeader *refreshHeader;
+@property (nonatomic, strong) TKRefreshGifHeader *refreshHeader;
 /// 上拉加载组件
 @property (nonatomic, strong) MJRefreshBackStateFooter *refreshFooter;
 

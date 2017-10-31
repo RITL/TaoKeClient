@@ -69,7 +69,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param size 新的大小，默认值操作height
  */
-- (void)tk_setSearchFieldBackgroundChangedSize:(CGSize)size NS_AVAILABLE_IOS(11.0);
+//- (void)tk_setSearchFieldBackgroundChangedSize:(CGSize)size NS_AVAILABLE_IOS(11.0);
 
 @end
 

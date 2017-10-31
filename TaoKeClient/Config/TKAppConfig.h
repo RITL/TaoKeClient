@@ -49,9 +49,11 @@ static NSString *const TKConstDictionaryKeyTitle = @"title";
 static NSString *const TKConstDictionaryKeyUrl = @"url";
 static NSString *const TKConstDictionaryKeyIdentifier = @"id";
 static NSString *const TKConstDictionaryKeyCategoryTitle = @"object";
+static NSString *const TKConstDictionaryKeyCategoryInfo = @"info";
 
 // Platform Value
 static NSString *const TKConstDictionaryValueKeyWeb = @"web";
+static NSString *const TKConstDictionaryValueKeyLocalWeb = @"localWeb";
 static NSString *const TKConstDictionaryValueKeyShare = @"share";
 static NSString *const TKConstDictionaryValueKeySearch = @"search";
 static NSString *const TKConstDictionaryValueKeyCategory = @"category";

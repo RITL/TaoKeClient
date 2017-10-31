@@ -1,0 +1,26 @@
+@font-face {
+    font-family: lapin_wap_iconfont;
+    src: url(/content/wap/css/fonts/lapin_wap_iconfont.ttf?xq0t3r) format('truetype'), url(/content/wap/css/fonts/lapin_wap_iconfont.woff?xq0t3r) format('woff'), url(/content/wap/css/fonts/lapin_wap_iconfont.svg?xq0t3r#lapin_wap_iconfont) format('svg');
+    font-weight: 400;
+    font-style: normal
+}
+
+[class^=icon-], [class*=" icon-"] {
+    font-family: lapin_wap_iconfont !important;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.icon-duihao:before {
+    content: "\e900"
+}
+
+.icon-yaoshi:before {
+    content: "\e901"
+}

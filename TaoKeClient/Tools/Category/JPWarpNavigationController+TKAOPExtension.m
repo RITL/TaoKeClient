@@ -45,7 +45,7 @@
     UIImage *backImg = [[UIImage imageNamed:@"JPNavigationController.bundle/backImage"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:backImg style:UIBarButtonItemStylePlain target:self action:NSSelectorFromString(@"didTapBackButton")];
     
-#pragma mark - 小农丁自定义
+#pragma mark - 淘客自定义
     
     //如果该控制器有自定义的方法tk_customBackIndicatorImage
     if ([viewController respondsToSelector:NSSelectorFromString(@"tk_customBackIndicatorImage")]) {

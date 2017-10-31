@@ -233,25 +233,21 @@
 
 
 
--(MJRefreshGifHeader *)refreshHeader
+-(TKRefreshGifHeader *)refreshHeader
 {
     if (!_refreshHeader) {
         
         __weak typeof(self) weakSelf = self;
         
         //初始化
-        _refreshHeader = [MJRefreshGifHeader headerWithRefreshingBlock:^{
+        _refreshHeader = [TKRefreshGifHeader headerWithRefreshingBlock:^{
             
             [weakSelf headerRefreshBeginHandler];
             
         }];
         
         _refreshHeader.lastUpdatedTimeLabel.hidden = true;
-        _refreshHeader.stateLabel.hidden = false;
-        
-//        [_refreshHeader setImages:@[[UIImage imageNamed:@"refresh_default"]] forState:MJRefreshStateIdle];
-//        [_refreshHeader setImages:@[[UIImage imageNamed:@"refresh_default"]] forState:MJRefreshStatePulling];
-//        [_refreshHeader setImages:@[[UIImage imageNamed:@"refresh_default"]] forState:MJRefreshStateRefreshing];
+        _refreshHeader.stateLabel.hidden = true;
         
     }
     return _refreshHeader;

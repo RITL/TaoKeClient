@@ -36,8 +36,6 @@
     
     self.infos = [NSMutableArray arrayWithCapacity:100];
     
-
-    
     //进行网络请求
     [self requestMessageComplete:nil dataComplete:nil];
 }

@@ -7,6 +7,7 @@
 //
 
 #import "TKViewController.h"
+@import WebKit;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -28,10 +29,14 @@ typedef void(^TKWebControllerConfigHandler)(TKWebViewController *viewController)
 
 
 /// 网页加载控制器
-@interface TKWebViewController : TKViewController
+@interface TKWebViewController : TKViewController <WKNavigationDelegate>
+
 
 /// 信息交互的handler
 @property (nonatomic, copy, nullable)NSArray<id <WKScriptMessageHandler,TKScriptMessageHandler> > * scriptMessageHandlers;
+
+/// 加载的控制器
+@property (nonatomic, strong, readonly) WKWebView *webView;
 
 /// 设置独立的代理
 @property (nonatomic, weak, nullable)id <WKNavigationDelegate> navigationDelegate;
@@ -59,6 +64,14 @@ typedef void(^TKWebControllerConfigHandler)(TKWebViewController *viewController)
  @return TKWebViewController对象
  */
 + (instancetype)tkWebControllerHandler:(TKWebControllerConfigHandler)configHandler;
+
+
+
+/// 是否在初始化时自动加载url信息，默认为true
+- (BOOL)autoRequestUrlAtViewDidLoad;
+
+/// 加载url
+- (void)requestUrl;
 
 @end
 

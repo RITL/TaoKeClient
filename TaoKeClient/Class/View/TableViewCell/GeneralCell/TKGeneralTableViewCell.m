@@ -24,8 +24,10 @@
     
     //追加响应
     [self.leftGeneralItem addUIControlHandlerTarget:self action:@selector(generalItemDidTap:)];
+    [self.leftGeneralItem.getDiscountButton addTarget:self action:@selector(generalItemDidTap:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.rightGeneralItem addUIControlHandlerTarget:self action:@selector(generalItemDidTap:)];
+    [self.rightGeneralItem.getDiscountButton addTarget:self action:@selector(generalItemDidTap:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 
@@ -62,13 +64,13 @@
     if (!self.messageInfo) {  return; }
     
     NSInteger row = self.indexPath.row;
-    NSInteger currentIndex = row * 2 +([sender isEqual:self.leftGeneralItem] ? 0 : 1);
+    NSInteger currentIndex = row * 2 +(([sender isEqual:self.leftGeneralItem] || [sender isEqual:self.leftGeneralItem.getDiscountButton]) ? 0 : 1);
     
     //获得数据
-    id <TKGood> item = TKEnityCreateWithData(self.messageInfo[@"msg"][currentIndex]);
+//    id <TKGood> item = TKEnityCreateWithData(self.messageInfo[@"msg"][currentIndex]);
     
     //进行回调
-    [self actionDidSelectCellAtIndex:row Info:@{TKConstDictionaryKeyPlatform:TKConstDictionaryValueKeyWeb,TKConstDictionaryKeyTitle:item.product_name,TKConstDictionaryKeyUrl:item.product_url}];
+    [self actionDidSelectCellAtIndex:row Info:@{TKConstDictionaryKeyPlatform:TKConstDictionaryValueKeyLocalWeb,TKConstDictionaryKeyCategoryInfo:self.messageInfo[@"msg"][currentIndex]}];
 }
 
 

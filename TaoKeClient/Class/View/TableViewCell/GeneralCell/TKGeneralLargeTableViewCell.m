@@ -42,10 +42,10 @@
     if (!self.messageInfo) {  return; }
     
     //获得数据
-    id <TKGood> item = TKEnityCreateWithData(self.messageInfo[@"msg"][self.indexPath.row]);
+//    id <TKGood> item = TKEnityCreateWithData(self.messageInfo[@"msg"][self.indexPath.row]);
     
     //进行回调
-    [self actionDidSelectCellAtIndex:self.indexPath.row Info:@{TKConstDictionaryKeyPlatform:TKConstDictionaryValueKeyWeb,TKConstDictionaryKeyTitle:item.product_name,TKConstDictionaryKeyUrl:item.product_url}];
+    [self actionDidSelectCellAtIndex:self.indexPath.row Info:@{TKConstDictionaryKeyPlatform:TKConstDictionaryValueKeyLocalWeb,TKConstDictionaryKeyCategoryInfo:self.messageInfo[@"msg"][self.indexPath.row]}];
 }
 
 

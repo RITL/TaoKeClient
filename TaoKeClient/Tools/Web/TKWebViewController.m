@@ -14,10 +14,8 @@
 
 @import WebKit;
 
-@interface TKWebViewController ()<WKNavigationDelegate>
-
-/// 加载的控制器
-@property (nonatomic, strong) WKWebView *webView;
+@interface TKWebViewController ()
+@property (nonatomic, strong, readwrite) WKWebView *webView;
 
 @end
 
@@ -101,9 +99,9 @@
     
     
     //进行加载
-    if (self.url) {
+    if (self.url && self.autoRequestUrlAtViewDidLoad) {
         
-        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.url]]];
+        [self requestUrl];
     }
 
 }
@@ -143,6 +141,19 @@
         self.webView.tk_height = self.tk_height - 1 + height;
     }
 }
+
+
+- (BOOL)autoRequestUrlAtViewDidLoad
+{
+    return true;
+}
+
+
+- (void)requestUrl
+{
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.url]]];
+}
+
 
 
 - (void)actionBackItemInNavigationBar
