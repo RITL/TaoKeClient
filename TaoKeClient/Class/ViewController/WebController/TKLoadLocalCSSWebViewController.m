@@ -7,9 +7,31 @@
 //
 
 #import "TKLoadLocalCSSWebViewController.h"
+#import "TKNetWorkingManager.h"
 #import "NSString+TKLoadLocalCSSWebViewController.h"
 
+@interface TKLoadLocalCSSWebViewController()
+
+/// 存储所有原本数据的信息
+@property (nonatomic, copy)NSArray <NSDictionary *> *infos;
+
+/// 进行转型的数据
+@property (nonatomic, copy)NSArray <id<TKGood>> *goods;
+
+@end
+
 @implementation TKLoadLocalCSSWebViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.autoTitle = false;
+    self.navigationItem.title = self.good.product_name;
+    
+    //请求
+    [self requestRecommendInfo];
+}
 
 
 - (NSString *)url
@@ -23,23 +45,53 @@
 {
     if (!self.good) {  return; }
     
-    NSString *path = [[NSBundle mainBundle] bundlePath];
-    
-    NSString *test = [[NSBundle mainBundle] pathForResource:@"detailindex" ofType:@"css"];
-    NSURL *testURL = test.tk_url;
-    
-    //获得基础的baseURL
-    NSURL *baseURL = [NSURL fileURLWithPath:path];
-    
     //获得Path
     NSString *html = [NSString tk_localHTML:self.good];
     
     //开始加载
-    [self.webView loadHTMLString:html baseURL:baseURL];
+    [self.webView loadHTMLString:html baseURL:NSBundle.mainBundle.bundleURL];
 }
 
 
+- (void)setInfos:(NSArray<NSDictionary *> *)infos
+{
+    _infos = infos.copy;
+    
+    //进行转型
+    self.goods = [infos tk_map:^id _Nonnull(NSDictionary * _Nonnull item) {
+        
+        return TKEnityCreateWithData(item);
+        
+    }];
+}
 
+
+/// 请求猜你喜欢的信息
+- (void)requestRecommendInfo
+{
+    if (!self.good) {  return; }
+    
+    //参数拼接
+    NSDictionary *paramters = @{@"cid":self.good.cid,
+                                @"goodid":self.good.goodid,
+                                @"limit":@"8"
+                                };
+    
+    //开始请求
+    [TKNetWorkingManager requestWithUrlString:TKBaseUrlAppendTo(@"/api.php?m=Api&c=Index&a=m=api&c=index&a=getrelatedgoods&cid=1") Method:HTTP_GET Parameters:paramters success:^(NSDictionary *data) {
+        
+        self.infos = [data valueForKey:@"msg"];
+        
+        //获得html
+        NSString *html = [self.goods tk_localHTML:self.good];
+        
+        //重新加载
+        [self.webView loadHTMLString:html baseURL:NSBundle.mainBundle.bundleURL];
+        
+    } failure:^(NSError *error) {
+
+    }];
+}
 
 
 @end

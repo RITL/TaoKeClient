@@ -62,6 +62,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// 格式 yyyy-MM-dd 格式的日期 - (本身为时间戳)
 @property (nonatomic, copy, readonly, nullable) NSString *tk_dayDate;
 
+/// 格式 yyyy-MM-dd HH:mm:ss
+@property (nonatomic, copy, readonly, nullable) NSString *tk_detailDate;
+
+/// 自动识别"今天"的格式 格式：yyyy-MM-dd HH:mm 如果日期为今天，表现为"今天 HH:mm"
+@property (nonatomic, copy, readonly, nullable) NSString *tk_AutoDiscriminatingTodayDate;
+
 @end
 
 

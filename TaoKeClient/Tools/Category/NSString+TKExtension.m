@@ -156,6 +156,62 @@
     return [formatter stringFromDate:date];
 }
 
+
+- (NSString *)tk_detailDate
+{
+    if (self.integerValue == 0) {
+        
+        return self;
+    }
+    
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:self.integerValue];
+    
+    NSDateFormatter *formatter = [NSDateFormatter tk_object:^(__kindof NSDateFormatter *  _Nonnull object) {
+        
+        object.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    }];
+    
+    
+    //设置转换
+    return [formatter stringFromDate:date];
+}
+
+
+- (NSString *)tk_AutoDiscriminatingTodayDate
+{
+    if (self.integerValue == 0) {
+        
+        return self;
+    }
+    
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:self.integerValue];
+    
+    NSDateFormatter *formatter1 = [NSDateFormatter tk_object:^(__kindof NSDateFormatter *  _Nonnull object) {
+        
+        object.dateFormat = @"yyyy-MM-dd HH:mm";
+        
+    }];
+    
+    NSDateFormatter *formatter2 = [NSDateFormatter tk_object:^(__kindof NSDateFormatter *  _Nonnull object) {
+        
+        object.dateFormat = @"yyyy-MM-dd";
+        
+    }];
+    
+    //获得字符串
+    NSString *date1 = [formatter1 stringFromDate:date];
+    NSString *date2 = [formatter2 stringFromDate:date];
+    
+    //如果包含
+    if ([date1 hasPrefix:date2]) {
+        
+        //进行替换
+        return [date1 stringByReplacingOccurrencesOfString:date2 withString:@"今天 "];
+    }
+    
+    return date1;
+}
+
 @end
 
 
