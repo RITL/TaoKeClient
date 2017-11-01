@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		026FD94C86D7ADE6718D044A /* libPods-TaoKeClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C991403214A430B2EDC53D /* libPods-TaoKeClient.a */; };
 		DB1FEB1C1FA97A2700E1D05B /* TKShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1FEB1B1FA97A2700E1D05B /* TKShareManager.m */; };
+		DB1FEB1F1FA9A53600E1D05B /* UMSocialUIManager+TKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1FEB1E1FA9A53600E1D05B /* UMSocialUIManager+TKExtension.m */; };
 		DB223EB71FA1813C00FAA068 /* TKCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB223EA71FA1813C00FAA068 /* TKCollectionViewController.m */; };
 		DB223EB81FA1813C00FAA068 /* TKTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB223EA91FA1813C00FAA068 /* TKTableViewController.m */; };
 		DB223EB91FA1813C00FAA068 /* TKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB223EAB1FA1813C00FAA068 /* TKViewController.m */; };
@@ -83,6 +84,8 @@
 		AF002C2BC19B4DD486EA8031 /* Pods-TaoKeClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaoKeClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TaoKeClient/Pods-TaoKeClient.debug.xcconfig"; sourceTree = "<group>"; };
 		DB1FEB1A1FA97A2700E1D05B /* TKShareManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKShareManager.h; sourceTree = "<group>"; };
 		DB1FEB1B1FA97A2700E1D05B /* TKShareManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKShareManager.m; sourceTree = "<group>"; };
+		DB1FEB1D1FA9A53600E1D05B /* UMSocialUIManager+TKExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UMSocialUIManager+TKExtension.h"; sourceTree = "<group>"; };
+		DB1FEB1E1FA9A53600E1D05B /* UMSocialUIManager+TKExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UMSocialUIManager+TKExtension.m"; sourceTree = "<group>"; };
 		DB223EA61FA1813C00FAA068 /* TKCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCollectionViewController.h; sourceTree = "<group>"; };
 		DB223EA71FA1813C00FAA068 /* TKCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCollectionViewController.m; sourceTree = "<group>"; };
 		DB223EA81FA1813C00FAA068 /* TKTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTableViewController.h; sourceTree = "<group>"; };
@@ -452,6 +455,8 @@
 				DB223ED41FA18A2C00FAA068 /* TKViewController+TKPageManagerBridge.m */,
 				DB223ED71FA1B70000FAA068 /* UINavigationBar+TKExtension.h */,
 				DB223ED81FA1B70000FAA068 /* UINavigationBar+TKExtension.m */,
+				DB1FEB1D1FA9A53600E1D05B /* UMSocialUIManager+TKExtension.h */,
+				DB1FEB1E1FA9A53600E1D05B /* UMSocialUIManager+TKExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -838,6 +843,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB1FEB1F1FA9A53600E1D05B /* UMSocialUIManager+TKExtension.m in Sources */,
 				DB3F642D1FA066BE00C9601A /* LLSegmentBar+TKExtension.m in Sources */,
 				DB6417D11F9F0DF90060CE98 /* LLSegmentBar.m in Sources */,
 				DBC994D01FA84A8200126866 /* TKLoadLocalCSSWebViewController.m in Sources */,

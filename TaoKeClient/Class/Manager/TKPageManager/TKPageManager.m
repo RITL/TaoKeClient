@@ -7,9 +7,11 @@
 //
 
 #import "TKPageManager.h"
+#import "TKShareManager.h"
 #import "TKShareWebViewController.h"
 #import "TKCategoryViewController.h"
 #import "TKLoadLocalCSSWebViewController.h"
+
 #import <JPNavigationControllerKit.h>
 #import <PYSearch.h>
 #import <objc/message.h>
@@ -122,6 +124,7 @@ NSString *TKPageManagerHandlerPlatformKey = @"platform";
         
         [viewController tk_topNavigationPushViewController:[TKLoadLocalCSSWebViewController viewController:^(__kindof TKLoadLocalCSSWebViewController * _Nonnull viewController) {
             
+            viewController.hidesBottomBarWhenPushed = true;
             viewController.good = TKEnityCreateWithData(infoDict[TKConstDictionaryKeyCategoryInfo]);
             
         }] animated:true];
@@ -131,7 +134,7 @@ NSString *TKPageManagerHandlerPlatformKey = @"platform";
 #pragma mark - Share(分享操作)
     else if([platform isEqualToString:TKConstDictionaryValueKeyShare]){
         
-        
+        [TKShareManager sharedWebMessage:infoDict atViewController:viewController];
         
     }
     

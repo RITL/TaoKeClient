@@ -16,7 +16,11 @@
 
 
 #define TK_iPhoneX ((SCREEN_WIDTH == 375) && (SCREEN_HEIGHT == 812))
-#define TK_DefaultTabBarHeight (TK_iPhoneX ? 83 : 49)
+#define TK_NormalTabBarHeight (49)
+#define TK_iPhoneXTabBarHeight (83)
+#define TK_iPhoneXSafeDistance (34)
+#define TK_iPhoneXDistance (TK_iPhoneXTabBarHeight - TK_NormalTabBarHeight)
+#define TK_DefaultTabBarHeight (TK_iPhoneX ? TK_iPhoneXTabBarHeight : TK_NormalTabBarHeight)
 
 
 #define tk_dispatch_main_sync_safe(block)\
