@@ -7,6 +7,7 @@
 //
 
 #import "TKLoadLocalCSSWebViewController.h"
+#import "TKPageManager.h"
 #import "TKNetWorkingManager.h"
 #import "NSString+TKLoadLocalCSSWebViewController.h"
 
@@ -26,7 +27,14 @@
 
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message
 {
-    NSInteger i = 0;
+    //获得index
+    NSInteger index = [message.body integerValue];
+    
+    //获取真实数据
+    NSDictionary *info = [self.viewController valueForKey:@"infos"][index];
+    
+    //进行数据传输
+    [TKPageManager pageManagerFromObject:self.viewController info:@{TKPageManagerHandlerPlatformKey:TKConstDictionaryValueKeyLocalWeb,TKConstDictionaryKeyCategoryInfo:info}];
 }
 
 @end
@@ -49,7 +57,10 @@
 {
     [super loadPropertysAtInitialization];
     
-    self.scriptMessageHandlers = @[[TKLoadLocalScriptHandler new]];
+    TKLoadLocalScriptHandler *scriptHandler = [TKLoadLocalScriptHandler new];
+    scriptHandler.viewController = self;
+    
+    self.scriptMessageHandlers = @[scriptHandler];
 }
 
 
@@ -59,7 +70,6 @@
     
     self.autoTitle = false;
     self.navigationItem.title = self.good.product_name;
-//    self.webView.UIDelegate = self;
     
     //请求
     [self requestRecommendInfo];
@@ -126,13 +136,8 @@
 }
 
 
-- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler
-{
-    NSInteger i = 0;
-    
-    
-    completionHandler();
-}
+
+
 
 
 @end

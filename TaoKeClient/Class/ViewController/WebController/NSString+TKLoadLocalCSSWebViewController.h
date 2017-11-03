@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /// 获得猜你喜欢格式的div字符串
-+ (nullable NSString *)tk_localHTMLSimilarRecommend:(nullable id <TKGood>)good;
++ (nullable NSString *)tk_localHTMLSimilarRecommend:(nullable id <TKGood>)good index:(NSInteger)index;
 
 @end
 

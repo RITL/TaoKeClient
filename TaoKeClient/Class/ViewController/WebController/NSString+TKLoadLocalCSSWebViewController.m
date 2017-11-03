@@ -71,31 +71,14 @@
 
 
 
-+ (NSString *)tk_localHTMLSimilarRecommend:(id<TKGood>)good
++ (NSString *)tk_localHTMLSimilarRecommend:(id<TKGood>)good index:(NSInteger)index
 {
     if (!good) {    return @"";  }
     
-    //转成字符串
-    NSDictionary *infoMessage = good.proxy_real_enity;
-    
-    NSDictionary *testDict = @{
-        @"serverId" : @"108",
-        @"roleId" : @"1001",
-        @"roleVip" : @"A",
-        @"appUId" : @"100702140113",
-        @"roleName" : @"洪荒之剑",
-        @"roleLevel" : @"A",
-        @"serverName" : @"展游服务器"
-        };
-    
-    //进行
-    NSString *jsonString = testDict.tk_javascript_json;
-    
-//    infoMessage.tk_javascript_json;
-    
+
     id object = [NSString stringWithFormat:@"\
             <li>\
-            <a class=\"DisBlock\" style=\"text-decoration: none; \" href=\"javascript:;\" onclick=\"tk_nativeDidClick('%@')\" title=\"%@\">\
+                 <a class=\"DisBlock\" style=\"text-decoration: none; \" href=\"javascript:;\" onclick=\"tk_nativeDidClick('%@')\"  title=\"%@\">\
             <div class=\"relatepic\">\
             <img src=\"%@\">\
             </div>\
@@ -128,7 +111,7 @@
             </a>\
             </li>\
             ",
-            [NSString stringWithFormat:@"%@",@"去你的"],
+            @(index),
             good.product_name,
             good.product_main_image,
             good.product_name,
@@ -237,7 +220,7 @@
     //进行循环拼接
     [self enumerateObjectsUsingBlock:^(id <TKGood>  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
-        [result appendString:[NSString tk_localHTMLSimilarRecommend:obj]];
+        [result appendString:[NSString tk_localHTMLSimilarRecommend:obj index:idx]];
         
     }];
     
