@@ -10,6 +10,29 @@
 #import "TKNetWorkingManager.h"
 #import "NSString+TKLoadLocalCSSWebViewController.h"
 
+@implementation TKLoadLocalScriptHandler
+
+- (instancetype)init
+{
+    if (self = [super init]) {
+        
+        self.name = @"tk_nativeTransTKGoodInfo";
+    }
+    
+    return self;
+}
+
+
+
+- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message
+{
+    NSInteger i = 0;
+}
+
+@end
+
+
+
 @interface TKLoadLocalCSSWebViewController()
 
 /// 存储所有原本数据的信息
@@ -22,12 +45,21 @@
 
 @implementation TKLoadLocalCSSWebViewController
 
+- (void)loadPropertysAtInitialization
+{
+    [super loadPropertysAtInitialization];
+    
+    self.scriptMessageHandlers = @[[TKLoadLocalScriptHandler new]];
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     self.autoTitle = false;
     self.navigationItem.title = self.good.product_name;
+//    self.webView.UIDelegate = self;
     
     //请求
     [self requestRecommendInfo];
@@ -49,7 +81,7 @@
     NSString *html = [NSString tk_localHTML:self.good];
     
     //开始加载
-    [self.webView loadHTMLString:html baseURL:NSBundle.mainBundle.bundleURL];
+    [self.webView loadHTMLString:html baseURL:NSBundle.mainBundle.resourceURL];
 }
 
 
@@ -86,11 +118,20 @@
         NSString *html = [self.goods tk_localHTML:self.good];
         
         //重新加载
-        [self.webView loadHTMLString:html baseURL:NSBundle.mainBundle.bundleURL];
+        [self.webView loadHTMLString:html baseURL:NSBundle.mainBundle.resourceURL];
         
     } failure:^(NSError *error) {
 
     }];
+}
+
+
+- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler
+{
+    NSInteger i = 0;
+    
+    
+    completionHandler();
 }
 
 

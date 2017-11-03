@@ -23,18 +23,17 @@
             <meta charset=\"utf-8\">\
             <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0\">\
             \
-            <script type=\"text/javascript\" src=\"iconfont.css\"></script>\
-            <script type=\"text/javascript\" src=\"detailindex.css\"></script>\
             <script src=\"https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js\"></script>\
-            <link rel=\"stylesheet\" href=\"http://oypuu0gxs.bkt.clouddn.com/detailindex.css\">\
-            <link rel=\"stylesheet\" href=\"http://oypuu0gxs.bkt.clouddn.com/iconfont.css \">\
+            <script src=\"tk_nativeTrans.js\" type=\"text/javascript\"></script>\
+            <link href=\"detailindex.css\" rel=\"stylesheet\" type=\"text/css\" />\
+            <link href=\"iconfont.css\" rel=\"stylesheet\" type=\"text/css\" />\
             <body class=\"notop\">\
             \
             \
             <section class=\"block info\">\
             <div class=\"litercoloum\"></div>\
             <h1 class=\"row\">%@</h1>\
-            <span class=\"pricetext\" style=\"color:gray;\">原价<s>¥76</s></span>\
+            <span class=\"pricetext\" style=\"color:gray;\">原价<s>¥%@</s></span>\
             <span class=\"pricetext\">%@元券（券后%@元）</span>\
             <div class=\"row\">\
             <ul class=\"collect\"></ul>\
@@ -59,6 +58,7 @@
             </html>\
             \
             ",good.product_name,
+            good.product_pure_provice,
             good.coupon_denomination,
             good.pure_provice,
             good.coupon_end.tk_AutoDiscriminatingTodayDate,
@@ -75,9 +75,27 @@
 {
     if (!good) {    return @"";  }
     
-    return [NSString stringWithFormat:@"\
+    //转成字符串
+    NSDictionary *infoMessage = good.proxy_real_enity;
+    
+    NSDictionary *testDict = @{
+        @"serverId" : @"108",
+        @"roleId" : @"1001",
+        @"roleVip" : @"A",
+        @"appUId" : @"100702140113",
+        @"roleName" : @"洪荒之剑",
+        @"roleLevel" : @"A",
+        @"serverName" : @"展游服务器"
+        };
+    
+    //进行
+    NSString *jsonString = testDict.tk_javascript_json;
+    
+//    infoMessage.tk_javascript_json;
+    
+    id object = [NSString stringWithFormat:@"\
             <li>\
-            <a class=\"DisBlock\" style=\"text-decoration: none; \" href=\"app:good:2918654:5\" title=\"%@\">\
+            <a class=\"DisBlock\" style=\"text-decoration: none; \" href=\"javascript:;\" onclick=\"tk_nativeDidClick('%@')\" title=\"%@\">\
             <div class=\"relatepic\">\
             <img src=\"%@\">\
             </div>\
@@ -97,7 +115,7 @@
             margin: 0;\
             padding: 0;\
             vertical-align: baseline;\">\
-            <li class=\"left\">截止%@</li>\
+            <li class=\"left\">截止 %@</li>\
             <li class=\"right\">\
             </li>\
             </ul>\
@@ -110,18 +128,20 @@
             </a>\
             </li>\
             ",
+            [NSString stringWithFormat:@"%@",@"去你的"],
             good.product_name,
             good.product_main_image,
             good.product_name,
             good.coupon_denomination,
             good.coupon_end.tk_AutoDiscriminatingTodayDate];
+    
+    return object;
 }
 
 @end
 
 
 @implementation NSArray (TKLoadLocalCSSWebViewController)
-
 
 
 - (NSString *)tk_localHTML:(id<TKGood>)good
@@ -140,18 +160,17 @@
             <meta charset=\"utf-8\">\
             <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0\">\
             \
-            <script type=\"text/javascript\" src=\"iconfont.css\"></script>\
-            <script type=\"text/javascript\" src=\"detailindex.css\"></script>\
             <script src=\"https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js\"></script>\
-            <link rel=\"stylesheet\" href=\"http://oypuu0gxs.bkt.clouddn.com/detailindex.css\">\
-            <link rel=\"stylesheet\" href=\"http://oypuu0gxs.bkt.clouddn.com/iconfont.css \">\
+            <script type=\"text/javascript\" src=\"tk_nativeTrans.js\"></script>\
+            <link href=\"detailindex.css\" rel=\"stylesheet\" type=\"text/css\" />\
+            <link href=\"iconfont.css\" rel=\"stylesheet\" type=\"text/css\" />\
             <body class=\"notop\">\
             \
             \
             <section class=\"block info\">\
             <div class=\"litercoloum\"></div>\
             <h1 class=\"row\">%@</h1>\
-            <span class=\"pricetext\" style=\"color:gray;\">原价<s>¥76</s></span>\
+            <span class=\"pricetext\" style=\"color:gray;\">原价<s>¥%@</s></span>\
             <span class=\"pricetext\">%@元券（券后%@元）</span>\
             <div class=\"row\">\
             <ul class=\"collect\"></ul>\
@@ -172,7 +191,9 @@
             \
             </section>\
             \
-            ",good.product_name,
+            ",
+            good.product_name,
+            good.product_pure_provice,
             good.coupon_denomination,
             good.pure_provice,
             good.coupon_end.tk_AutoDiscriminatingTodayDate,

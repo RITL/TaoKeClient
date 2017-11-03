@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TKEnity.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 /// 主页推荐object
-@protocol TKGood <NSObject>
+@protocol TKGood <NSObject,TKEnity>
 
 /// 商品id
 @property (nonatomic, copy, nullable) NSString *identifer;

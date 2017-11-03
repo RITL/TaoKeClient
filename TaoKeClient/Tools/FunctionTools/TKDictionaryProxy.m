@@ -8,7 +8,28 @@
 
 #import "TKDictionaryProxy.h"
 #import <Foundation/Foundation.h>
+#import "TKEnity.h"
 #import "NSDictionary+TKIdentifier.h"
+
+
+@interface NSDictionary (TKDictionaryProxy)
+
+- (NSDictionary *)proxy_real_enity;
+
+@end
+
+
+@implementation NSDictionary(TKDictionaryProxy)
+
+- (NSDictionary *)proxy_real_enity
+{
+    return  self.copy;
+}
+
+@end
+
+
+
 
 /// 使用字典模拟进行的去Model化
 @interface TKDictionaryProxy : NSProxy
@@ -49,7 +70,13 @@
 {
     SEL changedSelector = sel;
     
-    if ([self propertyNameScanFromGetterSelector:sel])
+    //如果读取自身实体
+    if ([NSStringFromSelector(sel) isEqualToString:@"proxy_real_enity"]) {
+        
+        sel = @selector(proxy_real_enity);
+    }
+    
+    else if ([self propertyNameScanFromGetterSelector:sel])
     {
         changedSelector = @selector(objectForKey:);
     }
@@ -68,6 +95,18 @@
 - (void)forwardInvocation:(NSInvocation *)invocation
 {
     NSString *propertyName = nil;
+  
+    ///copy
+    propertyName = NSStringFromSelector(invocation.selector);
+    
+    if ([propertyName isEqualToString:@"proxy_real_enity"]) {
+        
+        invocation.selector = @selector(proxy_real_enity);
+        [invocation invokeWithTarget:self.innerDictionary];
+        return;
+    }
+    
+    
     // getter
     propertyName = [self propertyNameScanFromGetterSelector:invocation.selector];
     
@@ -90,6 +129,8 @@
         [invocation invokeWithTarget:self.innerDictionary];
         return;
     }
+    
+
     
     [super forwardInvocation:invocation];
 }
@@ -133,7 +174,6 @@
 }
 
 @end
-
 
 
 

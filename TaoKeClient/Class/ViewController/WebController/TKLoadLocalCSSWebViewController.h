@@ -11,6 +11,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@interface TKLoadLocalScriptHandler : NSObject <WKScriptMessageHandler,TKScriptMessageHandler>
+
+@property (nonatomic, copy) NSString *name;
+
+@end
+
+
 /// 加载本地CSS的webView
 @interface TKLoadLocalCSSWebViewController : TKShareWebViewController
 

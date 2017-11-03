@@ -10,6 +10,9 @@
 		026FD94C86D7ADE6718D044A /* libPods-TaoKeClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C991403214A430B2EDC53D /* libPods-TaoKeClient.a */; };
 		DB1FEB1C1FA97A2700E1D05B /* TKShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1FEB1B1FA97A2700E1D05B /* TKShareManager.m */; };
 		DB1FEB1F1FA9A53600E1D05B /* UMSocialUIManager+TKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1FEB1E1FA9A53600E1D05B /* UMSocialUIManager+TKExtension.m */; };
+		DB1FEB261FA9BE6F00E1D05B /* detailindex.css in Resources */ = {isa = PBXBuildFile; fileRef = DB1FEB221FA9BE6F00E1D05B /* detailindex.css */; };
+		DB1FEB271FA9BE6F00E1D05B /* iconfont.css in Resources */ = {isa = PBXBuildFile; fileRef = DB1FEB231FA9BE6F00E1D05B /* iconfont.css */; };
+		DB1FEB2B1FA9C4E100E1D05B /* tk_nativeTrans.js in Resources */ = {isa = PBXBuildFile; fileRef = DB1FEB2A1FA9C4E000E1D05B /* tk_nativeTrans.js */; };
 		DB223EB71FA1813C00FAA068 /* TKCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB223EA71FA1813C00FAA068 /* TKCollectionViewController.m */; };
 		DB223EB81FA1813C00FAA068 /* TKTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB223EA91FA1813C00FAA068 /* TKTableViewController.m */; };
 		DB223EB91FA1813C00FAA068 /* TKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB223EAB1FA1813C00FAA068 /* TKViewController.m */; };
@@ -65,6 +68,7 @@
 		DBC994CD1FA84A4C00126866 /* TKShareWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBC994CC1FA84A4C00126866 /* TKShareWebViewController.m */; };
 		DBC994D01FA84A8200126866 /* TKLoadLocalCSSWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBC994CF1FA84A8200126866 /* TKLoadLocalCSSWebViewController.m */; };
 		DBC994D31FA8578000126866 /* NSString+TKLoadLocalCSSWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBC994D21FA8578000126866 /* NSString+TKLoadLocalCSSWebViewController.m */; };
+		DBCEE2591FAAC0A1000DEBEA /* NSDictionary+TKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCEE2581FAAC0A1000DEBEA /* NSDictionary+TKExtension.m */; };
 		DBCF03151F9EE5E900D44188 /* TKNetWorkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCF03131F9EE5E900D44188 /* TKNetWorkingManager.m */; };
 		DBD021AA1FA2D01700CA0A3A /* TK_PYSearchViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD021A81FA2D01700CA0A3A /* TK_PYSearchViewModel.m */; };
 		DBD021AD1FA2D0E300CA0A3A /* UISearchBar+TKCustomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD021AC1FA2D0E300CA0A3A /* UISearchBar+TKCustomColor.m */; };
@@ -86,6 +90,10 @@
 		DB1FEB1B1FA97A2700E1D05B /* TKShareManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKShareManager.m; sourceTree = "<group>"; };
 		DB1FEB1D1FA9A53600E1D05B /* UMSocialUIManager+TKExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UMSocialUIManager+TKExtension.h"; sourceTree = "<group>"; };
 		DB1FEB1E1FA9A53600E1D05B /* UMSocialUIManager+TKExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UMSocialUIManager+TKExtension.m"; sourceTree = "<group>"; };
+		DB1FEB201FA9B41A00E1D05B /* TKEnity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKEnity.h; sourceTree = "<group>"; };
+		DB1FEB221FA9BE6F00E1D05B /* detailindex.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = detailindex.css; sourceTree = "<group>"; };
+		DB1FEB231FA9BE6F00E1D05B /* iconfont.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = iconfont.css; sourceTree = "<group>"; };
+		DB1FEB2A1FA9C4E000E1D05B /* tk_nativeTrans.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = tk_nativeTrans.js; sourceTree = "<group>"; };
 		DB223EA61FA1813C00FAA068 /* TKCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCollectionViewController.h; sourceTree = "<group>"; };
 		DB223EA71FA1813C00FAA068 /* TKCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCollectionViewController.m; sourceTree = "<group>"; };
 		DB223EA81FA1813C00FAA068 /* TKTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTableViewController.h; sourceTree = "<group>"; };
@@ -198,6 +206,8 @@
 		DBC994CF1FA84A8200126866 /* TKLoadLocalCSSWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKLoadLocalCSSWebViewController.m; sourceTree = "<group>"; };
 		DBC994D11FA8578000126866 /* NSString+TKLoadLocalCSSWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+TKLoadLocalCSSWebViewController.h"; sourceTree = "<group>"; };
 		DBC994D21FA8578000126866 /* NSString+TKLoadLocalCSSWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+TKLoadLocalCSSWebViewController.m"; sourceTree = "<group>"; };
+		DBCEE2571FAAC0A1000DEBEA /* NSDictionary+TKExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+TKExtension.h"; sourceTree = "<group>"; };
+		DBCEE2581FAAC0A1000DEBEA /* NSDictionary+TKExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+TKExtension.m"; sourceTree = "<group>"; };
 		DBCF03121F9EE5E900D44188 /* TKNetWorkingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKNetWorkingManager.h; sourceTree = "<group>"; };
 		DBCF03131F9EE5E900D44188 /* TKNetWorkingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKNetWorkingManager.m; sourceTree = "<group>"; };
 		DBD021A81FA2D01700CA0A3A /* TK_PYSearchViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_PYSearchViewModel.m; sourceTree = "<group>"; };
@@ -258,6 +268,23 @@
 				DB1FEB1B1FA97A2700E1D05B /* TKShareManager.m */,
 			);
 			path = TKShareManager;
+			sourceTree = "<group>";
+		};
+		DB1FEB211FA9BE6F00E1D05B /* CSS */ = {
+			isa = PBXGroup;
+			children = (
+				DB1FEB221FA9BE6F00E1D05B /* detailindex.css */,
+				DB1FEB231FA9BE6F00E1D05B /* iconfont.css */,
+			);
+			path = CSS;
+			sourceTree = "<group>";
+		};
+		DB1FEB291FA9C4E000E1D05B /* JavaScript */ = {
+			isa = PBXGroup;
+			children = (
+				DB1FEB2A1FA9C4E000E1D05B /* tk_nativeTrans.js */,
+			);
+			path = JavaScript;
 			sourceTree = "<group>";
 		};
 		DB223EA41FA1813C00FAA068 /* ViewController */ = {
@@ -387,6 +414,8 @@
 		DB3DD98F1F9B106B007F53E7 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				DB1FEB291FA9C4E000E1D05B /* JavaScript */,
+				DB1FEB211FA9BE6F00E1D05B /* CSS */,
 				DB3DD9901F9B106B007F53E7 /* Assets.xcassets */,
 				DB6417C51F9F0C3F0060CE98 /* AppAssets.xcassets */,
 			);
@@ -457,6 +486,8 @@
 				DB223ED81FA1B70000FAA068 /* UINavigationBar+TKExtension.m */,
 				DB1FEB1D1FA9A53600E1D05B /* UMSocialUIManager+TKExtension.h */,
 				DB1FEB1E1FA9A53600E1D05B /* UMSocialUIManager+TKExtension.m */,
+				DBCEE2571FAAC0A1000DEBEA /* NSDictionary+TKExtension.h */,
+				DBCEE2581FAAC0A1000DEBEA /* NSDictionary+TKExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -472,6 +503,7 @@
 				DB3DD9C41F9B3AB5007F53E7 /* TKRuntimeTool.m */,
 				DB3DD9C51F9B3AB5007F53E7 /* TKTimer.h */,
 				DB3DD9C21F9B3AB5007F53E7 /* TKTimer.m */,
+				DB1FEB201FA9B41A00E1D05B /* TKEnity.h */,
 			);
 			path = FunctionTools;
 			sourceTree = "<group>";
@@ -772,8 +804,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB6417C61F9F0C3F0060CE98 /* AppAssets.xcassets in Resources */,
+				DB1FEB2B1FA9C4E100E1D05B /* tk_nativeTrans.js in Resources */,
+				DB1FEB261FA9BE6F00E1D05B /* detailindex.css in Resources */,
 				DB3DD99A1F9B1130007F53E7 /* Info.plist in Resources */,
 				DB3DD9961F9B106C007F53E7 /* Assets.xcassets in Resources */,
+				DB1FEB271FA9BE6F00E1D05B /* iconfont.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -894,6 +929,7 @@
 				DB223ED21FA186D500FAA068 /* UIView+TKResponse.m in Sources */,
 				DB3DD9B41F9B2E69007F53E7 /* UIColor+ImageGenerate.m in Sources */,
 				DB3DD9C61F9B3AB5007F53E7 /* TKDictionaryProxy.m in Sources */,
+				DBCEE2591FAAC0A1000DEBEA /* NSDictionary+TKExtension.m in Sources */,
 				DBD87FAC1FA326FC00A659B7 /* TKCategoryViewController.m in Sources */,
 				DB223ED91FA1B70000FAA068 /* UINavigationBar+TKExtension.m in Sources */,
 				DB223ED51FA18A2C00FAA068 /* TKViewController+TKPageManagerBridge.m in Sources */,
