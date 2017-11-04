@@ -7,6 +7,7 @@
 //
 
 #import "TKCardCycleScrollView.h"
+#import "TKMiddleFlowLayout.h"
 #import "TKCardCycleCollectionCell.h"
 #import <Masonry.h>
 #import <objc/runtime.h>
@@ -49,10 +50,16 @@ static NSString *TKCardCycleScrollView_ID = @"TKCardCycleScrollView";
         flowLayout.minimumInteritemSpacing = TKScale(10);
         flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         
-        UICollectionView *mainView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:flowLayout];
-        mainView.contentInset = UIEdgeInsetsMake(0, TKScale(15), 0, 0);
+        TKMiddleFlowLayout *midFlowLayout = [TKMiddleFlowLayout new];
+        midFlowLayout.maxItemSize = CGSizeMake(TKScale(315), TKScale(215));
+        midFlowLayout.minItemSize = CGSizeMake(TKScale(315), TKScale(215));
+        midFlowLayout.itemMargin = TKScale(20);
+        midFlowLayout.itemMarginSpace = TKScale(15);
+        
+        UICollectionView *mainView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:midFlowLayout];
+//        mainView.contentInset = UIEdgeInsetsMake(0, TKScale(15), 0, 0);
         mainView.backgroundColor = [UIColor clearColor];
-        mainView.pagingEnabled = YES;
+//        mainView.pagingEnabled = YES;
         mainView.showsHorizontalScrollIndicator = NO;
         mainView.showsVerticalScrollIndicator = NO;
         [mainView registerClass:[TKCardCycleCollectionCell class] forCellWithReuseIdentifier:TKCardCycleScrollView_ID];
@@ -182,9 +189,18 @@ static NSString *TKCardCycleScrollView_ID = @"TKCardCycleScrollView";
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return CGSizeMake(TKScale(330), TKScale(215));
+//}
+
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(TKScale(330), TKScale(215));
+    if (self.delegate && [self.delegate respondsToSelector:@selector(tk_cardCycleScrollView:didSelectItemAtIndex:)]) {
+        
+        [self.delegate tk_cardCycleScrollView:self didSelectItemAtIndex:indexPath.item];
+    }
 }
 
 

@@ -64,4 +64,14 @@ static NSString *const TKConstDictionaryValueKeyCategory = @"category";
 
 static NSString *const TKConstSearchPlaceHolder = @"请输入搜索内容";
 
+
+/// 友盟分享的appKey
+static NSString *const TKUShareAPPKey = @"59fbe3fcb27b0a4b5b000100";
+
+static NSString *const TKUShareSinaAPPKey = @"844674049";
+static NSString *const TKUShareSinaAPPSecret = @"cf7b79603ebf1634b108619e8e6f0b63";
+
+static NSString *const TKUShareWeiXinAPPKey = @"";
+static NSString *const TKUShareWeiXinAPPSecret = @"";
+
 #endif /* TKAppConfig_h */

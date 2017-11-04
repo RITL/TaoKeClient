@@ -80,6 +80,7 @@
 		DBD87FA81FA3247400A659B7 /* TKGeneralLargeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD87FA71FA3247400A659B7 /* TKGeneralLargeTableViewCell.m */; };
 		DBD87FAC1FA326FC00A659B7 /* TKCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD87FAB1FA326FC00A659B7 /* TKCategoryViewController.m */; };
 		DBD87FB31FA327A200A659B7 /* TKSelectionTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD87FB21FA327A200A659B7 /* TKSelectionTableController.m */; };
+		DBE84E181FAC210200E6B109 /* TKMiddleFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE84E171FAC210200E6B109 /* TKMiddleFlowLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -230,6 +231,8 @@
 		DBD87FAB1FA326FC00A659B7 /* TKCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCategoryViewController.m; sourceTree = "<group>"; };
 		DBD87FB11FA327A100A659B7 /* TKSelectionTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKSelectionTableController.h; sourceTree = "<group>"; };
 		DBD87FB21FA327A200A659B7 /* TKSelectionTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKSelectionTableController.m; sourceTree = "<group>"; };
+		DBE84E161FAC210200E6B109 /* TKMiddleFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMiddleFlowLayout.h; sourceTree = "<group>"; };
+		DBE84E171FAC210200E6B109 /* TKMiddleFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMiddleFlowLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -434,6 +437,7 @@
 		DB3DD9921F9B106B007F53E7 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				DBE84E151FAC210200E6B109 /* FlowLayout */,
 				DB223EB61FA1813C00FAA068 /* Manager */,
 				DB223EA41FA1813C00FAA068 /* ViewController */,
 				DB6417DE1F9F22040060CE98 /* View */,
@@ -741,6 +745,15 @@
 			path = CategoryViewController;
 			sourceTree = "<group>";
 		};
+		DBE84E151FAC210200E6B109 /* FlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				DBE84E161FAC210200E6B109 /* TKMiddleFlowLayout.h */,
+				DBE84E171FAC210200E6B109 /* TKMiddleFlowLayout.m */,
+			);
+			path = FlowLayout;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -916,6 +929,7 @@
 				DBC994D31FA8578000126866 /* NSString+TKLoadLocalCSSWebViewController.m in Sources */,
 				DBCF03151F9EE5E900D44188 /* TKNetWorkingManager.m in Sources */,
 				DB6417E91F9F22A60060CE98 /* TKCardCycleCollectionCell.m in Sources */,
+				DBE84E181FAC210200E6B109 /* TKMiddleFlowLayout.m in Sources */,
 				DBD87FA21FA3213500A659B7 /* TKGeneralItem.m in Sources */,
 				DBD021B41FA2DA0900CA0A3A /* TKSelectionPageViewController.m in Sources */,
 				DB6417FA1F9F401E0060CE98 /* NSString+TKExtension.m in Sources */,

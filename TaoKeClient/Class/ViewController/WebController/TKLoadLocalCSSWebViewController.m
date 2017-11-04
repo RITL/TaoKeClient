@@ -49,6 +49,9 @@
 /// 进行转型的数据
 @property (nonatomic, copy)NSArray <id<TKGood>> *goods;
 
+/// 领卷的响应
+@property (nonatomic, strong) UIButton *getDiscount;
+
 @end
 
 @implementation TKLoadLocalCSSWebViewController
@@ -71,8 +74,53 @@
     self.autoTitle = false;
     self.navigationItem.title = self.good.product_name;
     
+    self.getDiscount = ({
+       
+        UIButton *control = [UIButton new];
+        
+        control.backgroundColor = UIColor.redColor;
+        control.titleLabel.font = TKUtilityFont(@"", TKScale(12));
+        [control setTitle:@"领卷" forState:UIControlStateNormal];
+        [control setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
+        
+        control;
+    });
+    
+    //追加响应
+    
+    
+    [self.view addSubview:self.getDiscount];
+    
+    //进行布局
+    [self.getDiscount mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.size.mas_equalTo(CGSizeMake(TKScale(50), TKScale(50)));
+        make.right.offset(TKScale(-20));
+        
+        if (TK_iPhoneX) {
+            //进行布局
+            make.bottom.offset(-1 * TKScale(TK_iPhoneXSafeDistance + 30));
+            
+        }else {
+            
+            make.bottom.offset(-1 * TKScale(30));
+        }
+
+    }];
+    
+    //追加领券
+    [self.getDiscount addTarget:self action:@selector(gotoGetDiscount) forControlEvents:UIControlEventTouchUpInside];
+    
     //请求
     [self requestRecommendInfo];
+}
+
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    
+    self.getDiscount.layer.cornerRadius = self.getDiscount.tk_width / 2.0;
 }
 
 
@@ -80,6 +128,8 @@
 {
     return @"YES";
 }
+
+
 
 
 /// 重写requestUrl
@@ -95,6 +145,9 @@
 }
 
 
+
+
+
 - (void)setInfos:(NSArray<NSDictionary *> *)infos
 {
     _infos = infos.copy;
@@ -106,6 +159,9 @@
         
     }];
 }
+
+
+
 
 
 /// 请求猜你喜欢的信息
@@ -136,6 +192,20 @@
 }
 
 
+#pragma mark - 领券
+
+/// 前去领取
+- (void)gotoGetDiscount
+{
+    //获得当前产品
+    id <TKGood> good = self.good;
+    
+    //跳转领卷
+    [TKPageManager pageManagerFromObject:self info:@{TKPageManagerHandlerPlatformKey:TKConstDictionaryValueKeyWeb,TKConstDictionaryKeyUrl:good.coupon_url}];
+}
+
+
+#pragma mark - delegate
 
 
 

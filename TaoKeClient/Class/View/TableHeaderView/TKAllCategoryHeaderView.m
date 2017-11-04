@@ -11,7 +11,7 @@
 #import "LLSegmentBar+TKExtension.h"
 #import <Masonry.h>
 
-@interface TKAllCategoryHeaderView ()<LLSegmentBarDelegate>
+@interface TKAllCategoryHeaderView ()<LLSegmentBarDelegate,TKCardCycleScrollDelegate>
 
 
 @end
@@ -44,6 +44,8 @@
         scrollView.backgroundColor = [UIColor whiteColor];
         scrollView;
     });
+    
+    self.cycleView.delegate = self;
     
     self.segmentBar = ({
        
@@ -123,5 +125,23 @@
         [self.delegate tk_allCategoryHeaderView:self type:TKAllCategoryHeaderViewActionTypeSegment info:@{TKConstDictionaryKeyPlatform : TKConstDictionaryValueKeyCategory,TKConstDictionaryKeyCategoryTitle : title}];
     }
 }
+
+
+#pragma mark - TKCardCycleScrollDelegate
+
+- (void)tk_cardCycleScrollView:(TKCardCycleScrollView *)scrollView didSelectItemAtIndex:(NSInteger)index
+{
+    //获得good对象
+    id <TKGood> good = scrollView.items[index];
+    
+    //进行回调
+    if (self.delegate && [self.delegate respondsToSelector:@selector(tk_allCategoryHeaderView:type:info:)]) {
+        
+        //进行回调
+        [self.delegate tk_allCategoryHeaderView:self type:TKAllCategoryHeaderViewActionTypeCycle info:@{TKConstDictionaryKeyPlatform : TKConstDictionaryValueKeyLocalWeb,TKConstDictionaryKeyCategoryInfo : good.proxy_real_enity}];
+    }
+}
+
+
 
 @end

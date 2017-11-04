@@ -401,11 +401,10 @@
     // 打开appstore
     if ([url.absoluteString containsString:@"https://itunes.apple.com/cn/app/"])
     {
-        if ([app canOpenURL:url])
-        {
+        if ([app canOpenURL:url]) {
+            
             [app openURL:url];
-            decisionHandler(WKNavigationActionPolicyCancel);
-            return;
+            decisionHandler(WKNavigationActionPolicyCancel); return;
         }
     }
     
